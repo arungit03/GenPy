@@ -1,0 +1,57 @@
+{
+  "report_version": 2,
+  "created_at": "2026-07-22T18:23:36Z",
+  "total_examples": 56947,
+  "examples_per_split": {
+    "train": 45572,
+    "validation": 5824,
+    "test": 5551
+  },
+  "examples_per_category": {
+    "api_usage": 5962,
+    "bug_fixing": 4361,
+    "code_completion": 9380,
+    "code_generation": 9153,
+    "complexity_analysis": 1538,
+    "documentation": 1937,
+    "explanation": 9333,
+    "optimization": 4,
+    "refactoring": 8180,
+    "type_hints": 4335,
+    "unit_testing": 2764
+  },
+  "jsonl_validation": {
+    "valid_jsonl": true,
+    "malformed_records": 0,
+    "invalid_records": 0,
+    "invalid_python_code_responses": 0,
+    "source_group_leakage": 0
+  },
+  "duplicates": {
+    "instruction_output_pairs": {
+      "duplicate_copies": 0,
+      "duplicate_rate": 0.0
+    },
+    "instructions_only": {
+      "duplicate_groups": 3011,
+      "duplicate_copies": 13582,
+      "duplicate_rate": 0.238502
+    },
+    "outputs_only": {
+      "duplicate_groups": 9030,
+      "duplicate_copies": 18561,
+      "duplicate_rate": 0.325935
+    },
+    "note": "Instruction-only and output-only repetition is expected when distinct Phase 4 tasks share a template or approved source response; no complete instruction-input-output pair is duplicated."
+  },
+  "empty_fields": {
+    "empty_required_fields": 0,
+    "empty_input_fields": 11917,
+    "note": "An empty input is valid for direct code-generation and existing-unit-test tasks."
+  },
+  "lengths_characters": {
+    "average_instruction_length": 81.11,
+    "average_output_length": 479.65
+  },
+  "source_groups": 4429
+}

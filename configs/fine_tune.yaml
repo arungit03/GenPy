@@ -1,0 +1,28 @@
+fine_tuning:
+  base_config: configs/code_small.yaml
+  checkpoint: checkpoints/code_base/genpy_code_best.pt
+  dataset: data/fine_tuning/train.jsonl
+  output_dir: checkpoints/code_fine_tune
+  log_dir: logs/fine_tune
+  evaluation_dir: evaluation/fine_tune
+  epochs: 3
+  batch_size: 4
+  learning_rate: 0.00005
+  weight_decay: 0.01
+  warmup_ratio: 0.03
+  max_length: 512
+  gradient_accumulation: 8
+  save_every: 500
+  eval_every: 500
+  seed: 42
+  device: auto
+  resume:
+  validation_split: 0.05
+  response_only_loss: true
+  shuffle: true
+  mixed_precision: fp16
+  max_grad_norm: 1.0
+  early_stopping_patience: 5
+  keep_last: 3
+  generation_max_new_tokens: 96
+  eval_batches: 100

@@ -1,0 +1,457 @@
+{
+  "approved_sources": [
+    {
+      "approval": "Files explicitly placed in or collected into data/raw",
+      "exclude": [
+        "**/__pycache__/**",
+        "**/.venv/**",
+        "**/venv/**",
+        "**/build/**",
+        "**/dist/**"
+      ],
+      "id": "raw_python_corpus",
+      "include": [
+        "**/*.py"
+      ],
+      "license": null,
+      "path": "/Users/macbook/Downloads/GenPy/data/raw",
+      "repository": "Approved raw Python corpus"
+    }
+  ],
+  "category_counts": {
+    "api_usage": 5962,
+    "bug_fixing": 4361,
+    "code_completion": 9380,
+    "code_generation": 9153,
+    "complexity_analysis": 1538,
+    "documentation": 1937,
+    "explanation": 9333,
+    "optimization": 4,
+    "refactoring": 8180,
+    "type_hints": 4335,
+    "unit_testing": 2764
+  },
+  "config": "/Users/macbook/Downloads/GenPy/configs/dataset_pipeline.yaml",
+  "config_sha256": "3ab68c15bbdf1738a4a0143d0d65fa7780c665f3016e2f21ed16d2575067397a",
+  "created_at": "2026-07-22T18:22:19.089894+00:00",
+  "final_outputs": {
+    "test": {
+      "bytes": 11285446,
+      "path": "/Users/macbook/Downloads/GenPy/data/fine_tuning/test.jsonl",
+      "records": 5551,
+      "sha256": "d59fcc78a6c7941a43051ef9e2d5e56f69f5088563074012e20e0b4939945b31"
+    },
+    "train": {
+      "bytes": 91264562,
+      "path": "/Users/macbook/Downloads/GenPy/data/fine_tuning/train.jsonl",
+      "records": 45572,
+      "sha256": "4be3b2aafb1eb2768419ee9570cb75d486ed12ba5b106ecb9b498e37de979bfb"
+    },
+    "validation": {
+      "bytes": 11768870,
+      "path": "/Users/macbook/Downloads/GenPy/data/fine_tuning/validation.jsonl",
+      "records": 5824,
+      "sha256": "38f76bb9bda504fe83fcc963b384e841bee0b983e3dd8a7b6768c21263e9a388"
+    }
+  },
+  "pipeline_implementation_version": 2,
+  "pipeline_version": 1,
+  "settings": {
+    "cleaning": {
+      "maximum_file_bytes": 250000,
+      "minimum_file_bytes": 80,
+      "require_python_definitions": true
+    },
+    "instruction_generation": {
+      "enabled_categories": [
+        "code_generation",
+        "explanation",
+        "bug_fixing",
+        "refactoring",
+        "documentation",
+        "unit_testing",
+        "optimization",
+        "complexity_analysis",
+        "type_hints",
+        "code_completion",
+        "api_usage"
+      ],
+      "include_async_functions": true,
+      "include_classes": true,
+      "include_functions": true,
+      "include_methods": true,
+      "include_private": true,
+      "maximum_examples_per_file": 16,
+      "maximum_instruction_characters": 8000,
+      "maximum_output_bytes": 100000,
+      "minimum_instruction_characters": 8,
+      "require_docstring": false,
+      "selection_seed": 42,
+      "templates": [
+        [
+          "code_generation",
+          "{base_instruction}"
+        ],
+        [
+          "explanation",
+          "Explain the behavior of the {kind} `{qualified_name}`."
+        ],
+        [
+          "bug_fixing",
+          "Fix the bug in the provided implementation of `{qualified_name}`."
+        ],
+        [
+          "refactoring",
+          "Refactor `{qualified_name}` into clear, modern Python without changing behavior."
+        ],
+        [
+          "documentation",
+          "Write concise API documentation for `{qualified_name}`."
+        ],
+        [
+          "unit_testing",
+          "Implement the existing unit test `{qualified_name}`."
+        ],
+        [
+          "optimization",
+          "Optimize `{qualified_name}` while preserving its observable behavior."
+        ],
+        [
+          "complexity_analysis",
+          "Analyze the time and auxiliary-space complexity of `{qualified_name}`."
+        ],
+        [
+          "type_hints",
+          "Add the demonstrated type hints to `{qualified_name}`."
+        ],
+        [
+          "code_completion",
+          "Complete the missing body of `{qualified_name}`."
+        ],
+        [
+          "api_usage",
+          "Demonstrate how `{qualified_name}` uses the `{api}` API."
+        ]
+      ]
+    },
+    "performance": {
+      "max_pending_tasks_per_worker": 4,
+      "sqlite_batch_size": 1000,
+      "verify_output_hashes_on_resume": false,
+      "workers": 0
+    },
+    "split": {
+      "group_by": "source_file",
+      "seed": 42,
+      "test_ratio": 0.1,
+      "train_ratio": 0.8,
+      "validation_ratio": 0.1
+    },
+    "validation": {
+      "fail_on_invalid": true,
+      "maximum_instruction_characters": 8000,
+      "maximum_output_bytes": 100000,
+      "minimum_instruction_characters": 8,
+      "minimum_output_characters": 1,
+      "require_provenance": true,
+      "require_python_syntax": true
+    }
+  },
+  "split_category_counts": {
+    "test": {
+      "api_usage": 562,
+      "bug_fixing": 421,
+      "code_completion": 909,
+      "code_generation": 895,
+      "complexity_analysis": 161,
+      "documentation": 190,
+      "explanation": 924,
+      "refactoring": 806,
+      "type_hints": 426,
+      "unit_testing": 257
+    },
+    "train": {
+      "api_usage": 4788,
+      "bug_fixing": 3482,
+      "code_completion": 7492,
+      "code_generation": 7324,
+      "complexity_analysis": 1228,
+      "documentation": 1536,
+      "explanation": 7455,
+      "optimization": 4,
+      "refactoring": 6540,
+      "type_hints": 3485,
+      "unit_testing": 2238
+    },
+    "validation": {
+      "api_usage": 612,
+      "bug_fixing": 458,
+      "code_completion": 979,
+      "code_generation": 934,
+      "complexity_analysis": 149,
+      "documentation": 211,
+      "explanation": 954,
+      "refactoring": 834,
+      "type_hints": 424,
+      "unit_testing": 269
+    }
+  },
+  "stages": [
+    {
+      "category_counts": {},
+      "completed_at": "2026-07-22T18:21:04.514953+00:00",
+      "duplicate_records": 0,
+      "input_fingerprint": "d09589e9038b3d80587ab71745d0b76baeb1e9ae9049ff65155e6a294e3a113a",
+      "output_files": [
+        "/Users/macbook/Downloads/GenPy/data/dataset_pipeline/01_collected.jsonl"
+      ],
+      "output_hashes": {
+        "/Users/macbook/Downloads/GenPy/data/dataset_pipeline/01_collected.jsonl": "6f14eeee3adda99eb1c591778d4255548ea947007ef491e31479e0b91efe23ec"
+      },
+      "output_metadata": {
+        "/Users/macbook/Downloads/GenPy/data/dataset_pipeline/01_collected.jsonl": {
+          "mtime_ns": 1784744464489387946,
+          "size": 50202293
+        }
+      },
+      "read_records": 6142,
+      "reason_counts": {},
+      "rejected_records": 0,
+      "resumed": true,
+      "split_category_counts": {},
+      "stage": "collect",
+      "written_records": 6142
+    },
+    {
+      "category_counts": {},
+      "completed_at": "2026-07-22T18:21:08.728282+00:00",
+      "duplicate_records": 0,
+      "input_fingerprint": "6ec8971bf0819ac2471bd5b2a08ec282cd9c4af77b3a0a15b92973611b19f0ec",
+      "output_files": [
+        "/Users/macbook/Downloads/GenPy/data/dataset_pipeline/02_cleaned.jsonl"
+      ],
+      "output_hashes": {
+        "/Users/macbook/Downloads/GenPy/data/dataset_pipeline/02_cleaned.jsonl": "df430adf94e70c3de762eb3df65e4f8baf7b9ae37527ffa82e532ae63a46b80e"
+      },
+      "output_metadata": {
+        "/Users/macbook/Downloads/GenPy/data/dataset_pipeline/02_cleaned.jsonl": {
+          "mtime_ns": 1784744468701504760,
+          "size": 47712491
+        }
+      },
+      "read_records": 6142,
+      "reason_counts": {
+        "invalid_python_syntax": 3,
+        "no_python_definitions": 1082,
+        "too_small": 515
+      },
+      "rejected_records": 1600,
+      "resumed": true,
+      "split_category_counts": {},
+      "stage": "clean",
+      "written_records": 4542
+    },
+    {
+      "category_counts": {
+        "api_usage": 6433,
+        "bug_fixing": 4628,
+        "code_completion": 10244,
+        "code_generation": 10108,
+        "complexity_analysis": 1572,
+        "documentation": 2011,
+        "explanation": 10175,
+        "optimization": 5,
+        "refactoring": 8785,
+        "type_hints": 4630,
+        "unit_testing": 2969
+      },
+      "completed_at": "2026-07-22T18:21:33.492027+00:00",
+      "duplicate_records": 0,
+      "input_fingerprint": "960dc83ed8043d799edf9f5c58edc47f14b6dffd6fa33db7017c3405914c3d85",
+      "output_files": [
+        "/Users/macbook/Downloads/GenPy/data/dataset_pipeline/03_instruction_pairs.jsonl"
+      ],
+      "output_hashes": {
+        "/Users/macbook/Downloads/GenPy/data/dataset_pipeline/03_instruction_pairs.jsonl": "89bdc076d73f565559acfe8e2961512dee6c20f353ff162b7ffa11d6f7033123"
+      },
+      "output_metadata": {
+        "/Users/macbook/Downloads/GenPy/data/dataset_pipeline/03_instruction_pairs.jsonl": {
+          "mtime_ns": 1784744493420133290,
+          "size": 114694927
+        }
+      },
+      "read_records": 4542,
+      "reason_counts": {
+        "instruction_too_short": 53,
+        "output_too_large": 1
+      },
+      "rejected_records": 54,
+      "resumed": true,
+      "split_category_counts": {},
+      "stage": "generate",
+      "written_records": 61560
+    },
+    {
+      "category_counts": {},
+      "completed_at": "2026-07-22T18:21:36.996638+00:00",
+      "duplicate_records": 4613,
+      "input_fingerprint": "0b06fe20e3ed23d0f7e1e3702f80b1f7bc66b4ba3855bafb4fde2deefead1b22",
+      "output_files": [
+        "/Users/macbook/Downloads/GenPy/data/dataset_pipeline/04_deduplicated.jsonl"
+      ],
+      "output_hashes": {
+        "/Users/macbook/Downloads/GenPy/data/dataset_pipeline/04_deduplicated.jsonl": "d650de083ea85d6f036b7a8268c834266e6f39497b97cd9a8b61876b01741fd1"
+      },
+      "output_metadata": {
+        "/Users/macbook/Downloads/GenPy/data/dataset_pipeline/04_deduplicated.jsonl": {
+          "mtime_ns": 1784744496938788981,
+          "size": 114318878
+        }
+      },
+      "read_records": 61560,
+      "reason_counts": {},
+      "rejected_records": 0,
+      "resumed": true,
+      "split_category_counts": {},
+      "stage": "deduplicate",
+      "written_records": 56947
+    },
+    {
+      "category_counts": {
+        "api_usage": 5962,
+        "bug_fixing": 4361,
+        "code_completion": 9380,
+        "code_generation": 9153,
+        "complexity_analysis": 1538,
+        "documentation": 1937,
+        "explanation": 9333,
+        "optimization": 4,
+        "refactoring": 8180,
+        "type_hints": 4335,
+        "unit_testing": 2764
+      },
+      "completed_at": "2026-07-22T18:21:44.533234+00:00",
+      "duplicate_records": 0,
+      "input_fingerprint": "d105579bc37c690b6a6498af13aa1c5c336c26f3d84bd77c7f273400e9d7e04a",
+      "output_files": [
+        "/Users/macbook/Downloads/GenPy/data/dataset_pipeline/05_validated.jsonl",
+        "/Users/macbook/Downloads/GenPy/data/dataset_pipeline/validation_rejections.jsonl"
+      ],
+      "output_hashes": {
+        "/Users/macbook/Downloads/GenPy/data/dataset_pipeline/05_validated.jsonl": "d650de083ea85d6f036b7a8268c834266e6f39497b97cd9a8b61876b01741fd1",
+        "/Users/macbook/Downloads/GenPy/data/dataset_pipeline/validation_rejections.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "output_metadata": {
+        "/Users/macbook/Downloads/GenPy/data/dataset_pipeline/05_validated.jsonl": {
+          "mtime_ns": 1784744504473029662,
+          "size": 114318878
+        },
+        "/Users/macbook/Downloads/GenPy/data/dataset_pipeline/validation_rejections.jsonl": {
+          "mtime_ns": 1784744496999487709,
+          "size": 0
+        }
+      },
+      "read_records": 56947,
+      "reason_counts": {},
+      "rejected_records": 0,
+      "resumed": true,
+      "split_category_counts": {},
+      "stage": "validate",
+      "written_records": 56947
+    },
+    {
+      "category_counts": {
+        "api_usage": 5962,
+        "bug_fixing": 4361,
+        "code_completion": 9380,
+        "code_generation": 9153,
+        "complexity_analysis": 1538,
+        "documentation": 1937,
+        "explanation": 9333,
+        "optimization": 4,
+        "refactoring": 8180,
+        "type_hints": 4335,
+        "unit_testing": 2764
+      },
+      "completed_at": "2026-07-22T18:21:46.672257+00:00",
+      "duplicate_records": 0,
+      "input_fingerprint": "3a19371eccac999cf435c4f051ce22bb4532e599ac9ef608e8a6ae15e5140878",
+      "output_files": [
+        "/Users/macbook/Downloads/GenPy/data/fine_tuning/train.jsonl",
+        "/Users/macbook/Downloads/GenPy/data/fine_tuning/validation.jsonl",
+        "/Users/macbook/Downloads/GenPy/data/fine_tuning/test.jsonl"
+      ],
+      "output_hashes": {
+        "/Users/macbook/Downloads/GenPy/data/fine_tuning/test.jsonl": "d59fcc78a6c7941a43051ef9e2d5e56f69f5088563074012e20e0b4939945b31",
+        "/Users/macbook/Downloads/GenPy/data/fine_tuning/train.jsonl": "4be3b2aafb1eb2768419ee9570cb75d486ed12ba5b106ecb9b498e37de979bfb",
+        "/Users/macbook/Downloads/GenPy/data/fine_tuning/validation.jsonl": "38f76bb9bda504fe83fcc963b384e841bee0b983e3dd8a7b6768c21263e9a388"
+      },
+      "output_metadata": {
+        "/Users/macbook/Downloads/GenPy/data/fine_tuning/test.jsonl": {
+          "mtime_ns": 1784744506575594477,
+          "size": 11285446
+        },
+        "/Users/macbook/Downloads/GenPy/data/fine_tuning/train.jsonl": {
+          "mtime_ns": 1784744506536211500,
+          "size": 91264562
+        },
+        "/Users/macbook/Downloads/GenPy/data/fine_tuning/validation.jsonl": {
+          "mtime_ns": 1784744506556043219,
+          "size": 11768870
+        }
+      },
+      "read_records": 56947,
+      "reason_counts": {
+        "test_records": 5551,
+        "test_source_groups": 443,
+        "train_records": 45572,
+        "train_source_groups": 3543,
+        "validation_records": 5824,
+        "validation_source_groups": 443
+      },
+      "rejected_records": 0,
+      "resumed": true,
+      "split_category_counts": {
+        "test": {
+          "api_usage": 562,
+          "bug_fixing": 421,
+          "code_completion": 909,
+          "code_generation": 895,
+          "complexity_analysis": 161,
+          "documentation": 190,
+          "explanation": 924,
+          "refactoring": 806,
+          "type_hints": 426,
+          "unit_testing": 257
+        },
+        "train": {
+          "api_usage": 4788,
+          "bug_fixing": 3482,
+          "code_completion": 7492,
+          "code_generation": 7324,
+          "complexity_analysis": 1228,
+          "documentation": 1536,
+          "explanation": 7455,
+          "optimization": 4,
+          "refactoring": 6540,
+          "type_hints": 3485,
+          "unit_testing": 2238
+        },
+        "validation": {
+          "api_usage": 612,
+          "bug_fixing": 458,
+          "code_completion": 979,
+          "code_generation": 934,
+          "complexity_analysis": 149,
+          "documentation": 211,
+          "explanation": 954,
+          "refactoring": 834,
+          "type_hints": 424,
+          "unit_testing": 269
+        }
+      },
+      "stage": "split",
+      "written_records": 56947
+    }
+  ]
+}

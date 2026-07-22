@@ -1,0 +1,9 @@
+Hello     World!
+
+This	is a sample dataset.
+
+GenPy LLM learns from cleaned text.
+
+வணக்கம்! இது GenPy LLM திட்டத்திற்கான தமிழ் எடுத்துக்காட்டு.
+
+Mixed    CAPITALIZATION, punctuation!!!     and extra spaces.

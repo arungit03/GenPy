@@ -1,0 +1,12 @@
+{
+  "build_fingerprint": "d3cd35dc374822e26ed56c5cb177f726e71d4e6bef9ae5318f8acc1ac5267e27",
+  "byte_count": 21553700,
+  "context_length": 1024,
+  "corpus_files": 5532,
+  "creation_timestamp": "2026-07-22T20:34:12.672947+00:00",
+  "format_version": 1,
+  "sequence_length": 1025,
+  "shard_count": 2,
+  "total_tokens": 10777409,
+  "training_sequences": 10514
+}

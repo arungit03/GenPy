@@ -1,0 +1,44 @@
+# GenPy Phase 5: production ByteLevel BPE tokenizer configuration.
+corpus:
+  files:
+    - data/fine_tuning/train.jsonl
+    - data/fine_tuning/validation.jsonl
+    - data/fine_tuning/test.jsonl
+  # null trains on the complete configured corpus. Set an integer byte cap for experiments.
+  max_training_bytes: null
+
+tokenizer:
+  type: byte_level_bpe
+  vocab_size: 32000
+  min_frequency: 2
+  normalization: NFC
+  special_tokens:
+    - <pad>
+    - <unk>
+    - <bos>
+    - <eos>
+    - <mask>
+    - <instruction>
+    - <input>
+    - <output>
+
+training:
+  # BPE training has no stochastic choices; the seed is fixed and recorded for reproducibility.
+  seed: 42
+  show_progress: true
+
+statistics:
+  # null evaluates the complete corpus. Use a positive integer for a faster sampled report.
+  sample_size: null
+
+artifacts:
+  output_directory: data/tokenizer
+  tokenizer: tokenizer.json
+  # Kept as a byte-identical compatibility artifact for older GenPy commands.
+  legacy_tokenizer: code_tokenizer.json
+  vocab: vocab.json
+  merges: merges.txt
+  tokenizer_config: tokenizer_config.json
+  special_tokens: special_tokens.json
+  metadata: tokenizer_metadata.json
+  statistics: tokenizer_statistics.json

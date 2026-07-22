@@ -1,0 +1,94 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "genpy-llm"
+version = "0.1.0"
+description = "Educational GPT-style language model built from scratch in Python."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26,<3.0",
+    "python-dotenv>=1.0,<2.0",
+    "PyYAML>=6.0,<7.0",
+    "torch>=2.2,<3.0",
+    "gradio>=4.44,<6.0",
+    "datasets>=2.19,<4.0",
+    "tokenizers>=0.19,<1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0,<9.0",
+    "ruff>=0.5,<1.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+# Imported third-party corpora are data, not GenPy source to lint.
+extend-exclude = ["data/raw", "data/imports"]
+
+[tool.ruff.lint]
+select = ["B", "BLE", "E", "F", "I", "UP", "W"]
+ignore = []
+
+[tool.ruff.lint.per-file-ignores]
+"main.py" = ["E402"]
+"scripts/check_setup.py" = ["E402"]
+"scripts/preprocess_text.py" = ["E402"]
+"scripts/tokenize_text.py" = ["E402"]
+"scripts/build_vocabulary.py" = ["E402"]
+"scripts/prepare_dataset.py" = ["E402"]
+"scripts/inspect_embeddings.py" = ["E402"]
+"scripts/inspect_positional_encoding.py" = ["E402"]
+"scripts/inspect_self_attention.py" = ["E402"]
+"scripts/inspect_multi_head_attention.py" = ["E402"]
+"scripts/inspect_feed_forward.py" = ["E402"]
+"scripts/inspect_norm_residual.py" = ["E402"]
+"scripts/inspect_transformer_block.py" = ["E402"]
+"scripts/inspect_gpt_model.py" = ["E402"]
+"scripts/run_training_loop.py" = ["E402"]
+"scripts/inspect_loss_optimizer.py" = ["E402"]
+"scripts/inspect_checkpoint.py" = ["E402"]
+"scripts/train_gpt.py" = ["E402"]
+"scripts/generate_text.py" = ["E402"]
+"scripts/fine_tune_gpt.py" = ["E402"]
+"scripts/benchmark_model.py" = ["E402"]
+"scripts/run_web_interface.py" = ["E402"]
+"scripts/download_code_training_data.py" = ["E402"]
+"scripts/train_code_tokenizer.py" = ["E402"]
+"scripts/inspect_code_tokenizer.py" = ["E402"]
+"scripts/inspect_streaming_dataset.py" = ["E402"]
+"scripts/train_code_model.py" = ["E402"]
+"scripts/fine_tune_code_model.py" = ["E402"]
+"scripts/generate_code.py" = ["E402"]
+"scripts/evaluate_code_model.py" = ["E402"]
+"scripts/collect_python_data.py" = ["E402", "I001"]
+"scripts/clean_python_dataset.py" = ["E402", "I001"]
+"scripts/generate_instruction_pairs.py" = ["E402", "I001"]
+"scripts/deduplicate_dataset.py" = ["E402", "I001"]
+"scripts/validate_dataset.py" = ["E402", "I001"]
+"scripts/split_dataset.py" = ["E402", "I001"]
+"scripts/build_dataset.py" = ["E402", "I001"]
+"scripts/collect_python_corpus.py" = ["E402", "I001"]
+"scripts/expand_python_corpus.py" = ["E402", "I001"]
+"scripts/populate_python_corpus.py" = ["E402", "I001"]
+"scripts/build_github_corpus.py" = ["E402", "I001"]
+"scripts/build_pypi_corpus.py" = ["E402", "I001"]
+"scripts/build_pretraining_corpus.py" = ["E402", "I001"]
+"scripts/pretrain_gpt.py" = ["E402", "I001"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"

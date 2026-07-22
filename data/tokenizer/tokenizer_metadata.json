@@ -1,0 +1,43 @@
+{
+  "actual_sample_bytes": 51457192,
+  "actual_vocab_size": 32000,
+  "creation_timestamp": "2026-07-22T18:38:37.636332+00:00",
+  "format_version": 2,
+  "minimum_frequency": 2,
+  "normalization": "NFC",
+  "requested_sample_bytes": null,
+  "requested_vocab_size": 32000,
+  "seed": 42,
+  "special_token_ids": {
+    "<bos>": 2,
+    "<eos>": 3,
+    "<input>": 6,
+    "<instruction>": 5,
+    "<mask>": 4,
+    "<output>": 7,
+    "<pad>": 0,
+    "<unk>": 1
+  },
+  "special_tokens": [
+    "<pad>",
+    "<unk>",
+    "<bos>",
+    "<eos>",
+    "<mask>",
+    "<instruction>",
+    "<input>",
+    "<output>"
+  ],
+  "tokenizer_type": "byte_bpe",
+  "training_corpus": [
+    "data/fine_tuning/train.jsonl",
+    "data/fine_tuning/validation.jsonl",
+    "data/fine_tuning/test.jsonl"
+  ],
+  "training_shard_names": [
+    "train.jsonl",
+    "validation.jsonl",
+    "test.jsonl"
+  ],
+  "vocab_size": 32000
+}

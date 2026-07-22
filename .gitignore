@@ -1,0 +1,77 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/*
+!logs/.gitkeep
+*.log
+
+# Checkpoints
+checkpoints/*
+!checkpoints/.gitkeep
+*.pt
+*.pth
+*.ckpt
+
+# Datasets
+data/raw/*
+data/imports/*
+data/processed/*
+data/tokenized/*
+data/vocabulary/*
+data/datasets/*
+data/code_shards/
+data/dataset_pipeline/
+data/tokenizer/*
+!data/tokenizer/code_tokenizer.json
+!data/tokenizer/tokenizer_metadata.json
+data/metadata/accepted_hashes.txt
+data/metadata/code_download_manifest.json
+data/fine_tuning/code_instructions.jsonl
+!data/README.md
+!data/raw/.gitkeep
+!data/imports/.gitkeep
+!data/raw/sample.txt
+!data/processed/.gitkeep
+!data/tokenized/.gitkeep
+!data/tokenized/sample_tokens.jsonl
+!data/vocabulary/.gitkeep
+!data/vocabulary/sample_vocab.json
+!data/vocabulary/sample_vocab_metadata.json
+!data/datasets/.gitkeep
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDEs
+.idea/
+.vscode/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.partial
+*.tmp
+
+# Code-model artifacts
+checkpoints/code_base/
+checkpoints/code_instruct/

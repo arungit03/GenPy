@@ -1,0 +1,28 @@
+{
+  "byte_count": 21553700,
+  "shard_count": 2,
+  "shards": [
+    {
+      "byte_count": 19999800,
+      "filename": "shard_00000.bin",
+      "metadata_filename": "shard_00000.metadata.json.gz",
+      "metadata_sha256": "a83f751fe6a7e74b9375430b3e356a2941d6495c8df2697cd41a34a9577f72f8",
+      "sequence_count": 9756,
+      "sha256": "035d306b9c4a8642d70d935d9256facd01e73cf627c0e602b5c0bf72446fecdb",
+      "shard_index": 0,
+      "token_count": 9999900
+    },
+    {
+      "byte_count": 1553900,
+      "filename": "shard_00001.bin",
+      "metadata_filename": "shard_00001.metadata.json.gz",
+      "metadata_sha256": "ebc55793f10ac1d52f74a94acce5fe4b9c97c09583067a123e1fda8b3abb961a",
+      "sequence_count": 758,
+      "sha256": "aa4359d6249a75c80920383349f86b550043fa676162dbfce897ad6e728f6039",
+      "shard_index": 1,
+      "token_count": 776950
+    }
+  ],
+  "total_tokens": 10776850,
+  "training_sequences": 10514
+}

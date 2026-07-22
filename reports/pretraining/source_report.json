@@ -1,0 +1,91 @@
+{
+  "source_types": {
+    "git": 5454,
+    "local": 78
+  },
+  "sources": {
+    "genpy_library": {
+      "bytes": 589050,
+      "files": 39,
+      "source_type": "local"
+    },
+    "genpy_scripts": {
+      "bytes": 258977,
+      "files": 39,
+      "source_type": "local"
+    },
+    "import-black": {
+      "bytes": 1339905,
+      "files": 224,
+      "source_type": "git"
+    },
+    "import-click": {
+      "bytes": 884387,
+      "files": 71,
+      "source_type": "git"
+    },
+    "import-fastapi": {
+      "bytes": 3263541,
+      "files": 934,
+      "source_type": "git"
+    },
+    "import-flask": {
+      "bytes": 589696,
+      "files": 80,
+      "source_type": "git"
+    },
+    "import-httpx": {
+      "bytes": 570031,
+      "files": 57,
+      "source_type": "git"
+    },
+    "import-jinja": {
+      "bytes": 734138,
+      "files": 56,
+      "source_type": "git"
+    },
+    "import-pillow": {
+      "bytes": 2493581,
+      "files": 298,
+      "source_type": "git"
+    },
+    "import-pydantic": {
+      "bytes": 5518525,
+      "files": 356,
+      "source_type": "git"
+    },
+    "import-pytest": {
+      "bytes": 3654170,
+      "files": 249,
+      "source_type": "git"
+    },
+    "import-requests": {
+      "bytes": 394979,
+      "files": 35,
+      "source_type": "git"
+    },
+    "import-rich": {
+      "bytes": 1187367,
+      "files": 181,
+      "source_type": "git"
+    },
+    "import-ruff": {
+      "bytes": 2203913,
+      "files": 1783,
+      "source_type": "git"
+    },
+    "import-sqlalchemy": {
+      "bytes": 19042925,
+      "files": 617,
+      "source_type": "git"
+    },
+    "import-typer": {
+      "bytes": 979255,
+      "files": 513,
+      "source_type": "git"
+    }
+  },
+  "total_packages": 0,
+  "total_repositories": 0,
+  "total_sources": 16
+}

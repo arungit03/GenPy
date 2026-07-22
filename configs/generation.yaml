@@ -1,0 +1,15 @@
+version: 1
+
+generation:
+  prompts:
+    - "def fibonacci(n):"
+    - "class Stack:"
+    - "with open(path) as file:"
+  max_new_tokens: 128
+  temperature: 0.8
+  top_k: 50
+  top_p: 0.95
+  do_sample: true
+  repetition_penalty: 1.05
+  stop_tokens:
+    - "<eos>"

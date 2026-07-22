@@ -1,0 +1,15 @@
+{
+  "average_tokens_per_file": 1948.193962,
+  "build_fingerprint": "d3cd35dc374822e26ed56c5cb177f726e71d4e6bef9ae5318f8acc1ac5267e27",
+  "creation_timestamp": "2026-07-22T20:34:12.672947+00:00",
+  "files": 5532,
+  "maximum_tokens_per_file": 67068,
+  "median_tokens_per_file": 363,
+  "minimum_tokens_per_file": 5,
+  "p95_tokens_per_file": 9612,
+  "tokenizer_sha256": "dc88d1cd66355e38cdfd1c3289eea138ea7c457b9f4534e8f1e24f6a0e7f6492",
+  "total_tokens": 10777409,
+  "used_token_ids": 29366,
+  "vocab_size": 32000,
+  "vocabulary_utilization": 0.917687
+}

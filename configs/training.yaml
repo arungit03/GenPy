@@ -1,0 +1,53 @@
+version: 1
+
+pretraining:
+  data:
+    shard_pattern: data/pretraining/shard_*.bin
+    shard_index: data/pretraining/index.json
+    manifest: data/pretraining/manifest.json
+    tokenizer: data/tokenizer/tokenizer.json
+    validation_fraction: 0.01
+    batch_size: 2
+    dataloader_workers: 0
+    pin_memory: true
+    prefetch_factor:
+    mmap: true
+    shuffle: true
+    seed: 42
+    distributed_ready: true
+
+  training:
+    seed: 42
+    max_steps: 100000
+    gradient_accumulation_steps: 1
+    max_grad_norm: 1.0
+    device: auto
+    mixed_precision: none
+    log_every_steps: 10
+    save_every_steps: 1000
+    validate_every_steps: 1000
+    validation_steps: 100
+    keep_last: 3
+    resume: true
+    resume_from:
+
+  scheduler:
+    warmup_steps: 1000
+    minimum_learning_rate_ratio: 0.1
+
+  checkpoint:
+    directory: checkpoints
+    step_prefix: step
+    best_filename: best_model.pt
+    last_filename: last_checkpoint.pt
+    monitor: validation_loss
+    mode: min
+
+  outputs:
+    metrics_directory: metrics
+    samples_directory: generated_samples
+    tensorboard_directory: tensorboard
+    log_file: logs/pretraining.jsonl
+
+logging:
+  level: INFO

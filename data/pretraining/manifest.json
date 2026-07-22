@@ -1,0 +1,25 @@
+{
+  "accepted_files": 5532,
+  "build_fingerprint": "d3cd35dc374822e26ed56c5cb177f726e71d4e6bef9ae5318f8acc1ac5267e27",
+  "checksums": {
+    "shard_00000.bin": "035d306b9c4a8642d70d935d9256facd01e73cf627c0e602b5c0bf72446fecdb",
+    "shard_00001.bin": "aa4359d6249a75c80920383349f86b550043fa676162dbfce897ad6e728f6039"
+  },
+  "context_length": 1024,
+  "corpus_version": 1,
+  "creation_date": "2026-07-22T20:34:12.696631+00:00",
+  "duplicates_removed": 84,
+  "merged_manifest": "/Users/macbook/Downloads/GenPy/data/pretraining/corpus_manifest.jsonl",
+  "number_of_packages": 0,
+  "number_of_repositories": 0,
+  "rejected_files": 610,
+  "sequence_length": 1025,
+  "shard_count": 2,
+  "source_manifest": "/Users/macbook/Downloads/GenPy/data/raw/collection_manifest.jsonl",
+  "tokenizer": "/Users/macbook/Downloads/GenPy/data/tokenizer/tokenizer.json",
+  "tokenizer_hash": "dc88d1cd66355e38cdfd1c3289eea138ea7c457b9f4534e8f1e24f6a0e7f6492",
+  "tokenizer_version": "2",
+  "total_files": 6142,
+  "total_tokens": 10777409,
+  "training_sequences": 10514
+}

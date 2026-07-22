@@ -1,0 +1,71 @@
+version: 1
+
+phase7:
+  model_config: configs/model.yaml
+  optimizer_config: configs/optimizer.yaml
+  learning_rate: 0.00005
+  warmup_steps: 0
+  log_level: INFO
+
+  data:
+    train_path: data/fine_tuning/train.jsonl
+    validation_path: data/fine_tuning/validation.jsonl
+    validation_fraction: 0.0
+    tokenizer: data/tokenizer/tokenizer.json
+    context_length: 256
+    mask_prompt_tokens: true
+    batch_size: 1
+    dataloader_workers: 0
+    prefetch_factor:
+    pin_memory: false
+    shuffle: true
+    seed: 42
+
+  training:
+    device: auto
+    mixed_precision: none
+    epochs: 1
+    max_steps:
+    gradient_accumulation_steps: 1
+    max_grad_norm: 1.0
+    log_every_steps: 1
+    save_every_steps: 100
+    eval_every_steps: 100
+    evaluation_steps: 10
+    resume: false
+    resume_from:
+    seed: 42
+
+  checkpoint:
+    base_checkpoint: checkpoints/last_checkpoint.pt
+    output_dir: checkpoints/fine_tuned
+    step_prefix: step
+    best_filename: best_checkpoint.pt
+    last_filename: last_checkpoint.pt
+    keep_last: 3
+
+  template:
+    system_prefix: "<|system|>"
+    user_prefix: "<|user|>"
+    assistant_prefix: "<|assistant|>"
+    system_prompt: "You are GenPy, a Python coding assistant."
+
+  generation:
+    prompts:
+      - Write bubble sort.
+      - Reverse linked list.
+      - Binary search.
+      - Read CSV with pandas.
+    max_new_tokens: 64
+    temperature: 0.8
+    top_k:
+    top_p:
+    do_sample: false
+    repetition_penalty: 1.0
+    stop_tokens:
+      - "<eos>"
+
+  outputs:
+    metrics_dir: metrics/phase7
+    samples_dir: generated_samples
+    log_file: logs/phase7_finetuning.jsonl

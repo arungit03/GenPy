@@ -1,0 +1,12 @@
+{
+  "accepted_files": 5532,
+  "binary_shards": 2,
+  "completed_at": "2026-07-22T20:34:12.696631+00:00",
+  "duplicates_removed": 84,
+  "final_files": 5532,
+  "input_files": 6142,
+  "rejected_files": 610,
+  "started_at": "2026-07-22T20:33:25.196908+00:00",
+  "total_tokens": 10777409,
+  "training_sequences": 10514
+}

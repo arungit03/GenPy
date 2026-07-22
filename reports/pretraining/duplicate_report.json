@@ -1,0 +1,1991 @@
+{
+  "accepted_count": 5532,
+  "duplicate_count": 84,
+  "duplicate_groups": [
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pyupgrade/UP009_1.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/pyupgrade/UP009_1.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pyupgrade/UP009_1.py"
+      },
+      "duplicate_count": 3,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pyupgrade/UP009_2.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/pyupgrade/UP009_2.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pyupgrade/UP009_2.py"
+        },
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pyupgrade/UP009_3.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/pyupgrade/UP009_3.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pyupgrade/UP009_3.py"
+        },
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pyupgrade/UP009_5.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/pyupgrade/UP009_5.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pyupgrade/UP009_5.py"
+        }
+      ],
+      "key": "024afbdba469b062c935dedfee7f2cf8e0d05b9dcf1ea1e9bd072d2e93f8a034",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/pydantic",
+        "package": null,
+        "relative_path": "import-pydantic/tests/mypy/modules/plugin_strict_fields.py",
+        "repository": null,
+        "source_id": "import-pydantic",
+        "source_path": "tests/mypy/modules/plugin_strict_fields.py",
+        "source_type": "git",
+        "stored_path": "import-pydantic/tests/mypy/modules/plugin_strict_fields.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-plugin_ini/plugin_strict_fields.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-plugin_ini/plugin_strict_fields.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-plugin_ini/plugin_strict_fields.py"
+        }
+      ],
+      "key": "0f1e4ab62aa097ad3e6ed0f6d116832c7df5eabce45540b9a8d65cee0b70ffe3",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/black",
+        "package": null,
+        "relative_path": "import-black/tests/data/cases/pep_572_py310.py",
+        "repository": null,
+        "source_id": "import-black",
+        "source_path": "tests/data/cases/pep_572_py310.py",
+        "source_type": "git",
+        "stored_path": "import-black/tests/data/cases/pep_572_py310.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/pep_572_py310.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_formatter/resources/test/fixtures/black/cases/pep_572_py310.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/pep_572_py310.py"
+        }
+      ],
+      "key": "10f1719c4814cf5138a12f497ee67006fbab109421ba333a73e146fc59d96a6e",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/black",
+        "package": null,
+        "relative_path": "import-black/tests/data/cases/fmtskip_in_clause.py",
+        "repository": null,
+        "source_id": "import-black",
+        "source_path": "tests/data/cases/fmtskip_in_clause.py",
+        "source_type": "git",
+        "stored_path": "import-black/tests/data/cases/fmtskip_in_clause.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/black",
+          "package": null,
+          "relative_path": "import-black/tests/data/cases/fmtskip_multiple_in_clause.py",
+          "repository": null,
+          "source_id": "import-black",
+          "source_path": "tests/data/cases/fmtskip_multiple_in_clause.py",
+          "source_type": "git",
+          "stored_path": "import-black/tests/data/cases/fmtskip_multiple_in_clause.py"
+        }
+      ],
+      "key": "147001102fb411f0dce24bd3b2a29ef5b5b2d56ddfe9e23a841820d442275e0e",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/black",
+        "package": null,
+        "relative_path": "import-black/tests/data/cases/starred_for_target.py",
+        "repository": null,
+        "source_id": "import-black",
+        "source_path": "tests/data/cases/starred_for_target.py",
+        "source_type": "git",
+        "stored_path": "import-black/tests/data/cases/starred_for_target.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/starred_for_target.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_formatter/resources/test/fixtures/black/cases/starred_for_target.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/starred_for_target.py"
+        }
+      ],
+      "key": "16c8755581925664654cac836a851bdaff221c866aa95cbcfd0c44bf7ab9e73a",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/pydantic",
+        "package": null,
+        "relative_path": "import-pydantic/tests/mypy/modules/plugin_fail_baseConfig.py",
+        "repository": null,
+        "source_id": "import-pydantic",
+        "source_path": "tests/mypy/modules/plugin_fail_baseConfig.py",
+        "source_type": "git",
+        "stored_path": "import-pydantic/tests/mypy/modules/plugin_fail_baseConfig.py"
+      },
+      "duplicate_count": 2,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-plugin-strict_ini/plugin_fail_baseConfig.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-plugin-strict_ini/plugin_fail_baseConfig.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-plugin-strict_ini/plugin_fail_baseConfig.py"
+        },
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-plugin_ini/plugin_fail_baseConfig.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-plugin_ini/plugin_fail_baseConfig.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-plugin_ini/plugin_fail_baseConfig.py"
+        }
+      ],
+      "key": "16d914a1664a223edde5838c347735d8b095bfc79e353d7b97b0eb5bf26e2f35",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/pydantic",
+        "package": null,
+        "relative_path": "import-pydantic/tests/mypy/modules/decorator_implicit_classmethod.py",
+        "repository": null,
+        "source_id": "import-pydantic",
+        "source_path": "tests/mypy/modules/decorator_implicit_classmethod.py",
+        "source_type": "git",
+        "stored_path": "import-pydantic/tests/mypy/modules/decorator_implicit_classmethod.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-plugin_ini/decorator_implicit_classmethod.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-plugin_ini/decorator_implicit_classmethod.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-plugin_ini/decorator_implicit_classmethod.py"
+        }
+      ],
+      "key": "1a6bff623c62240ba4ed78d57d9afceca442ecdc93300285a2cde542770b6bd9",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_python_parser/resources/inline/err/decorator_await_expression_py38.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_python_parser/resources/inline/err/decorator_await_expression_py38.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_python_parser/resources/inline/err/decorator_await_expression_py38.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_parser/resources/inline/ok/decorator_await_expression_py39.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_parser/resources/inline/ok/decorator_await_expression_py39.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_parser/resources/inline/ok/decorator_await_expression_py39.py"
+        }
+      ],
+      "key": "26605174f378aa49134d7f774a6b4706874c18f4d1175e24459d37a28c6fa2e2",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_executable/EXE001_1.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/flake8_executable/EXE001_1.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_executable/EXE001_1.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_executable/EXE001_2.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/flake8_executable/EXE001_2.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_executable/EXE001_2.py"
+        }
+      ],
+      "key": "2f1dec482ddfa4595ed737dcca80b7fefda06c133fb4a82e62f4212800e46567",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/E302_first_line_statement.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/pycodestyle/E302_first_line_statement.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/E302_first_line_statement.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/E303_first_line_statement.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/pycodestyle/E303_first_line_statement.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/E303_first_line_statement.py"
+        }
+      ],
+      "key": "2f3c9d019efdffb84cac233a23c2704d416722ea93ac12f9dd3fc7e2440f0552",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/black",
+        "package": null,
+        "relative_path": "import-black/tests/data/cases/comments5.py",
+        "repository": null,
+        "source_id": "import-black",
+        "source_path": "tests/data/cases/comments5.py",
+        "source_type": "git",
+        "stored_path": "import-black/tests/data/cases/comments5.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/comments5.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_formatter/resources/test/fixtures/black/cases/comments5.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/comments5.py"
+        }
+      ],
+      "key": "300d728fc317304f3438964730a0bb96f8b72e11d85551896c0e9be145abb425",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/isort/import_heading.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/isort/import_heading.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/isort/import_heading.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/isort/import_heading_already_present.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/isort/import_heading_already_present.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/isort/import_heading_already_present.py"
+        }
+      ],
+      "key": "3228bbc8df9c5b6828402d727c91d7f2aa7504838fec1db5ebd8ef0310402b2d",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_python_parser/resources/inline/err/for_iter_unpack_py38.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_python_parser/resources/inline/err/for_iter_unpack_py38.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_python_parser/resources/inline/err/for_iter_unpack_py38.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_parser/resources/inline/ok/for_iter_unpack_py39.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_parser/resources/inline/ok/for_iter_unpack_py39.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_parser/resources/inline/ok/for_iter_unpack_py39.py"
+        }
+      ],
+      "key": "344b5d248348d3b90686ec97d4a956adb15ff5c6132b737e639c68e2980f2adb",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/pydantic",
+        "package": null,
+        "relative_path": "import-pydantic/tests/mypy/modules/fail_defaults.py",
+        "repository": null,
+        "source_id": "import-pydantic",
+        "source_path": "tests/mypy/modules/fail_defaults.py",
+        "source_type": "git",
+        "stored_path": "import-pydantic/tests/mypy/modules/fail_defaults.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-plugin-strict_ini/fail_defaults.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-plugin-strict_ini/fail_defaults.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-plugin-strict_ini/fail_defaults.py"
+        }
+      ],
+      "key": "3509d7898605e3f6e23f63c5ab73570b1367f1eee98ab657e122e64b6324d249",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_python_parser/resources/inline/err/iter_unpack_return_py37.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_python_parser/resources/inline/err/iter_unpack_return_py37.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_python_parser/resources/inline/err/iter_unpack_return_py37.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_parser/resources/inline/ok/iter_unpack_return_py38.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_parser/resources/inline/ok/iter_unpack_return_py38.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_parser/resources/inline/ok/iter_unpack_return_py38.py"
+        }
+      ],
+      "key": "382959df11eebedb955e959905718e6b28fcc1e7df2901b3755b62944cdcf9c0",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_python_parser/resources/inline/err/invalid_annotation_function_py314.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_python_parser/resources/inline/err/invalid_annotation_function_py314.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_python_parser/resources/inline/err/invalid_annotation_function_py314.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_parser/resources/inline/ok/valid_annotation_function_py313.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_parser/resources/inline/ok/valid_annotation_function_py313.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_parser/resources/inline/ok/valid_annotation_function_py313.py"
+        }
+      ],
+      "key": "39baa5677d790530318abde8a989b4c3672cd001a9074c859a6c98350fda2246",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/pydantic",
+        "package": null,
+        "relative_path": "import-pydantic/tests/mypy/modules/plugin_success_baseConfig.py",
+        "repository": null,
+        "source_id": "import-pydantic",
+        "source_path": "tests/mypy/modules/plugin_success_baseConfig.py",
+        "source_type": "git",
+        "stored_path": "import-pydantic/tests/mypy/modules/plugin_success_baseConfig.py"
+      },
+      "duplicate_count": 2,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-default_ini/plugin_success_baseConfig.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-default_ini/plugin_success_baseConfig.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-default_ini/plugin_success_baseConfig.py"
+        },
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-plugin-strict_ini/plugin_success_baseConfig.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-plugin-strict_ini/plugin_success_baseConfig.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-plugin-strict_ini/plugin_success_baseConfig.py"
+        }
+      ],
+      "key": "3a8008bb5c516db0ce25940755419ade880de2b123c8b5c2d60093f580e52b6d",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/black",
+        "package": null,
+        "relative_path": "import-black/tests/data/cases/comment_type_hint.py",
+        "repository": null,
+        "source_id": "import-black",
+        "source_path": "tests/data/cases/comment_type_hint.py",
+        "source_type": "git",
+        "stored_path": "import-black/tests/data/cases/comment_type_hint.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/comment_type_hint.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_formatter/resources/test/fixtures/black/cases/comment_type_hint.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/comment_type_hint.py"
+        }
+      ],
+      "key": "3cf676490af048efc2951bed4e48c75291f39669be263e6664e948b72be12d13",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/ruff/flake8_noqa.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/ruff/flake8_noqa.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/ruff/flake8_noqa.py"
+      },
+      "duplicate_count": 3,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/ruff/ruff_noqa_all.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/ruff/ruff_noqa_all.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/ruff/ruff_noqa_all.py"
+        },
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/ruff/ruff_noqa_invalid.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/ruff/ruff_noqa_invalid.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/ruff/ruff_noqa_invalid.py"
+        },
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/project/examples/docs/docs/concepts/file.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/project/examples/docs/docs/concepts/file.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/project/examples/docs/docs/concepts/file.py"
+        }
+      ],
+      "key": "4281979fce8eeebd563c1214a3fa643819c8837a5e8482a61614849d855aa45c",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_python_parser/resources/inline/err/star_index_py310.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_python_parser/resources/inline/err/star_index_py310.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_python_parser/resources/inline/err/star_index_py310.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_parser/resources/inline/ok/star_index_py311.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_parser/resources/inline/ok/star_index_py311.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_parser/resources/inline/ok/star_index_py311.py"
+        }
+      ],
+      "key": "42eccfc42dd86f9158bad91dab8363c7b2b7f244291034750abc549b6dfb43da",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/black",
+        "package": null,
+        "relative_path": "import-black/tests/data/cases/pep_654.py",
+        "repository": null,
+        "source_id": "import-black",
+        "source_path": "tests/data/cases/pep_654.py",
+        "source_type": "git",
+        "stored_path": "import-black/tests/data/cases/pep_654.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/pep_654.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_formatter/resources/test/fixtures/black/cases/pep_654.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/pep_654.py"
+        }
+      ],
+      "key": "4483d2ec69b2959d62ba53d502cc947b28a1fe75877a86e8cc6d95be48a5998c",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pyflakes/F841_1.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/pyflakes/F841_1.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pyflakes/F841_1.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/ruff/RUF059_1.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/ruff/RUF059_1.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/ruff/RUF059_1.py"
+        }
+      ],
+      "key": "46ebd851d492ec2ff89f3a9f620c8d3179b3be5ed98367898bca28d381388179",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/isort/line_ending_crlf.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/isort/line_ending_crlf.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/isort/line_ending_crlf.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/isort/line_ending_lf.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/isort/line_ending_lf.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/isort/line_ending_lf.py"
+        }
+      ],
+      "key": "5246ce96043c348e37bc8b71d00fb1f002658ff9e56e0bb9ee68702b14ff3431",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/isort/isort_skip_file.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/isort/isort_skip_file.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/isort/isort_skip_file.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/isort/ruff_skip_file.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/isort/ruff_skip_file.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/isort/ruff_skip_file.py"
+        }
+      ],
+      "key": "5549db4a0e116724ab95c548b939a1defbb9c909e7e886e53db9645c782e16cd",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/black",
+        "package": null,
+        "relative_path": "import-black/tests/data/cases/line_ranges_outside_source.py",
+        "repository": null,
+        "source_id": "import-black",
+        "source_path": "tests/data/cases/line_ranges_outside_source.py",
+        "source_type": "git",
+        "stored_path": "import-black/tests/data/cases/line_ranges_outside_source.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/line_ranges_exceeding_end.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_formatter/resources/test/fixtures/black/cases/line_ranges_exceeding_end.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/line_ranges_exceeding_end.py"
+        }
+      ],
+      "key": "56f5089078bda4236966222464baaddec23c94d41befafd3541c2e8bc53eab6d",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_bugbear/B006_6.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/flake8_bugbear/B006_6.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_bugbear/B006_6.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_bugbear/B006_7.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/flake8_bugbear/B006_7.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_bugbear/B006_7.py"
+        }
+      ],
+      "key": "597d41ca59174f5217c561d826d08ea857e719a0a724cef06467e3cdc23b9701",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/black",
+        "package": null,
+        "relative_path": "import-black/tests/data/cases/fmtskip11.py",
+        "repository": null,
+        "source_id": "import-black",
+        "source_path": "tests/data/cases/fmtskip11.py",
+        "source_type": "git",
+        "stored_path": "import-black/tests/data/cases/fmtskip11.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/fmtskip11.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_formatter/resources/test/fixtures/black/cases/fmtskip11.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/fmtskip11.py"
+        }
+      ],
+      "key": "5c5b68c9afab0c272d5977be1ae1277e9b57581af665432b6de691dbe0ca6b5a",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/black",
+        "package": null,
+        "relative_path": "import-black/tests/data/cases/comments3.py",
+        "repository": null,
+        "source_id": "import-black",
+        "source_path": "tests/data/cases/comments3.py",
+        "source_type": "git",
+        "stored_path": "import-black/tests/data/cases/comments3.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/comments3.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_formatter/resources/test/fixtures/black/cases/comments3.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/comments3.py"
+        }
+      ],
+      "key": "5fd3341196f7fd141739b0f3bc02af9289e4820160d652938ff86c3ece15eb4f",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/W292_0.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/pycodestyle/W292_0.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/W292_0.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/W292_1.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/pycodestyle/W292_1.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/W292_1.py"
+        }
+      ],
+      "key": "675acaa26ad435e5b63d170f5778c2b221f611a98187d8cb3052e35e35192c14",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/isort/import_heading_duplicate.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/isort/import_heading_duplicate.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/isort/import_heading_duplicate.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/isort/import_heading_partial.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/isort/import_heading_partial.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/isort/import_heading_partial.py"
+        }
+      ],
+      "key": "74dc26fd880a9729d00659a1dc7ac40dbcfd5b68b222acd9672c120f0cc464da",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/pydantic",
+        "package": null,
+        "relative_path": "import-pydantic/tests/mypy/modules/metaclass_args.py",
+        "repository": null,
+        "source_id": "import-pydantic",
+        "source_path": "tests/mypy/modules/metaclass_args.py",
+        "source_type": "git",
+        "stored_path": "import-pydantic/tests/mypy/modules/metaclass_args.py"
+      },
+      "duplicate_count": 2,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-default_ini/metaclass_args.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-default_ini/metaclass_args.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-default_ini/metaclass_args.py"
+        },
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-plugin-very-strict_ini/metaclass_args.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-plugin-very-strict_ini/metaclass_args.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-plugin-very-strict_ini/metaclass_args.py"
+        }
+      ],
+      "key": "75c03415d5b6c096365f00edddd3e79d039f6f92e818644058e38e6184e0ed92",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/pydantic",
+        "package": null,
+        "relative_path": "import-pydantic/tests/mypy/modules/plugin_optional_inheritance.py",
+        "repository": null,
+        "source_id": "import-pydantic",
+        "source_path": "tests/mypy/modules/plugin_optional_inheritance.py",
+        "source_type": "git",
+        "stored_path": "import-pydantic/tests/mypy/modules/plugin_optional_inheritance.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-plugin_ini/plugin_optional_inheritance.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-plugin_ini/plugin_optional_inheritance.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-plugin_ini/plugin_optional_inheritance.py"
+        }
+      ],
+      "key": "75da3ac167b2f498ff0654debb3788461ed9b515400e7084daee6fc1cc1a4cb1",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/E302_first_line_expression.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/pycodestyle/E302_first_line_expression.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/E302_first_line_expression.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/E303_first_line_expression.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/pycodestyle/E303_first_line_expression.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/E303_first_line_expression.py"
+        }
+      ],
+      "key": "7810671fb1bdb76e8481c38b4fee8b1fc1cbf5736b51c08c4ab824a343934a45",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/black",
+        "package": null,
+        "relative_path": "import-black/tests/data/cases/raw_docstring_no_string_normalization.py",
+        "repository": null,
+        "source_id": "import-black",
+        "source_path": "tests/data/cases/raw_docstring_no_string_normalization.py",
+        "source_type": "git",
+        "stored_path": "import-black/tests/data/cases/raw_docstring_no_string_normalization.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/raw_docstring_no_string_normalization.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_formatter/resources/test/fixtures/black/cases/raw_docstring_no_string_normalization.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/raw_docstring_no_string_normalization.py"
+        }
+      ],
+      "key": "7a09c262e8e0a2a95fb5e8cdaf5031a564780df34b72a154e6a20aea6cc271ea",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/pydantic",
+        "package": null,
+        "relative_path": "import-pydantic/tests/mypy/modules/root_models.py",
+        "repository": null,
+        "source_id": "import-pydantic",
+        "source_path": "tests/mypy/modules/root_models.py",
+        "source_type": "git",
+        "stored_path": "import-pydantic/tests/mypy/modules/root_models.py"
+      },
+      "duplicate_count": 2,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-default_ini/root_models.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-default_ini/root_models.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-default_ini/root_models.py"
+        },
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-plugin_ini/root_models.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-plugin_ini/root_models.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-plugin_ini/root_models.py"
+        }
+      ],
+      "key": "7fa98e7b85d087b42e1ea00421944d74ec71a14599a70aa22eeb86446f946631",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/pydantic",
+        "package": null,
+        "relative_path": "import-pydantic/tests/mypy/modules/plugin_success.py",
+        "repository": null,
+        "source_id": "import-pydantic",
+        "source_path": "tests/mypy/modules/plugin_success.py",
+        "source_type": "git",
+        "stored_path": "import-pydantic/tests/mypy/modules/plugin_success.py"
+      },
+      "duplicate_count": 2,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-default_ini/plugin_success.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-default_ini/plugin_success.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-default_ini/plugin_success.py"
+        },
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-plugin-strict_ini/plugin_success.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-plugin-strict_ini/plugin_success.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-plugin-strict_ini/plugin_success.py"
+        }
+      ],
+      "key": "8d5080b560f050fcdddb38f30b524a725ca2249ff13959a3f33d4dbec191e638",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/pydantic",
+        "package": null,
+        "relative_path": "import-pydantic/tests/mypy/modules/pydantic_settings.py",
+        "repository": null,
+        "source_id": "import-pydantic",
+        "source_path": "tests/mypy/modules/pydantic_settings.py",
+        "source_type": "git",
+        "stored_path": "import-pydantic/tests/mypy/modules/pydantic_settings.py"
+      },
+      "duplicate_count": 2,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-default_ini/pydantic_settings.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-default_ini/pydantic_settings.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-default_ini/pydantic_settings.py"
+        },
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-plugin_ini/pydantic_settings.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-plugin_ini/pydantic_settings.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-plugin_ini/pydantic_settings.py"
+        }
+      ],
+      "key": "8f2fd33bbffbeca30078afa7144a1dbe276aaea1ff133507c8062d0bcdce678d",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/black",
+        "package": null,
+        "relative_path": "import-black/tests/data/cases/pattern_matching_simple.py",
+        "repository": null,
+        "source_id": "import-black",
+        "source_path": "tests/data/cases/pattern_matching_simple.py",
+        "source_type": "git",
+        "stored_path": "import-black/tests/data/cases/pattern_matching_simple.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/pattern_matching_simple.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_formatter/resources/test/fixtures/black/cases/pattern_matching_simple.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/pattern_matching_simple.py"
+        }
+      ],
+      "key": "94824f67d0ae557814d826546e31aa9a226bc742a829a89aa276b177d27c7031",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/black",
+        "package": null,
+        "relative_path": "import-black/tests/data/cases/power_op_spacing.py",
+        "repository": null,
+        "source_id": "import-black",
+        "source_path": "tests/data/cases/power_op_spacing.py",
+        "source_type": "git",
+        "stored_path": "import-black/tests/data/cases/power_op_spacing.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/black",
+          "package": null,
+          "relative_path": "import-black/tests/data/cases/preview_simplify_power_operator_hugging.py",
+          "repository": null,
+          "source_id": "import-black",
+          "source_path": "tests/data/cases/preview_simplify_power_operator_hugging.py",
+          "source_type": "git",
+          "stored_path": "import-black/tests/data/cases/preview_simplify_power_operator_hugging.py"
+        }
+      ],
+      "key": "95c90dcbc94f7c66b24c0b46f738455d0feb40471ad3f9d531c3caee9e2c53fe",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/E302_first_line_docstring.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/pycodestyle/E302_first_line_docstring.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/E302_first_line_docstring.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/E303_first_line_docstring.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/pycodestyle/E303_first_line_docstring.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/E303_first_line_docstring.py"
+        }
+      ],
+      "key": "992c07af8cd99e92e0460eb9675cd8ed844f8c899ee47c95af6b7f5e986ecce4",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/syntax_errors/yield_from_in_async_function.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/syntax_errors/yield_from_in_async_function.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/syntax_errors/yield_from_in_async_function.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_parser/resources/inline/err/yield_from_in_async_function.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_parser/resources/inline/err/yield_from_in_async_function.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_parser/resources/inline/err/yield_from_in_async_function.py"
+        }
+      ],
+      "key": "9a5ee52207b1ca6b0ad5a1f37b9203601f01a525c068fcaa5188e0d27853aa91",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/pydantic",
+        "package": null,
+        "relative_path": "import-pydantic/tests/mypy/modules/plugin_fail.py",
+        "repository": null,
+        "source_id": "import-pydantic",
+        "source_path": "tests/mypy/modules/plugin_fail.py",
+        "source_type": "git",
+        "stored_path": "import-pydantic/tests/mypy/modules/plugin_fail.py"
+      },
+      "duplicate_count": 2,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-plugin-strict_ini/plugin_fail.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-plugin-strict_ini/plugin_fail.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-plugin-strict_ini/plugin_fail.py"
+        },
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-plugin_ini/plugin_fail.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-plugin_ini/plugin_fail.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-plugin_ini/plugin_fail.py"
+        }
+      ],
+      "key": "9de5f91036a6a83f23bda573d3744876490430f4d66e556b51347cb1c34a3f85",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/isort/required_imports/future_import.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/isort/required_imports/future_import.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/isort/required_imports/future_import.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_parser/resources/inline/ok/valid_future_feature.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_parser/resources/inline/ok/valid_future_feature.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_parser/resources/inline/ok/valid_future_feature.py"
+        }
+      ],
+      "key": "a6284e6d3d43bdfbf0da732945adb2b4f31147c92bea47aee100d7f556c22d00",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_python_parser/resources/inline/err/invalid_annotation_py314.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_python_parser/resources/inline/err/invalid_annotation_py314.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_python_parser/resources/inline/err/invalid_annotation_py314.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_parser/resources/inline/ok/valid_annotation_py313.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_parser/resources/inline/ok/valid_annotation_py313.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_parser/resources/inline/ok/valid_annotation_py313.py"
+        }
+      ],
+      "key": "a677bb4a2065aa596a6ebda76d621be1a9459340c46b5316ae7fe91bc0129577",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_executable/EXE003.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/flake8_executable/EXE003.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_executable/EXE003.py"
+      },
+      "duplicate_count": 2,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_executable/EXE003_uv_tool.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/flake8_executable/EXE003_uv_tool.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_executable/EXE003_uv_tool.py"
+        },
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_executable/EXE003_uvx.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/flake8_executable/EXE003_uvx.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_executable/EXE003_uvx.py"
+        }
+      ],
+      "key": "a84bb1230b2edd73f469afd5aba69b3ca191e6c25b444cf93d23342b64d6af18",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/W391_0.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/pycodestyle/W391_0.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/W391_0.py"
+      },
+      "duplicate_count": 3,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/W391_1.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/pycodestyle/W391_1.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/W391_1.py"
+        },
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/W391_2.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/pycodestyle/W391_2.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/W391_2.py"
+        },
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/W391_3.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/pycodestyle/W391_3.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pycodestyle/W391_3.py"
+        }
+      ],
+      "key": "aa4dbd5984863337604f403071ea4d72542b1877713ad71945abafea4c119395",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/pydantic",
+        "package": null,
+        "relative_path": "import-pydantic/tests/mypy/modules/strict_equality.py",
+        "repository": null,
+        "source_id": "import-pydantic",
+        "source_path": "tests/mypy/modules/strict_equality.py",
+        "source_type": "git",
+        "stored_path": "import-pydantic/tests/mypy/modules/strict_equality.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/pyproject-plugin-strict-equality_toml/strict_equality.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/pyproject-plugin-strict-equality_toml/strict_equality.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/pyproject-plugin-strict-equality_toml/strict_equality.py"
+        }
+      ],
+      "key": "aee4bae7ba26f4814cf4b985b597bd0d3f56965407dd378b089817eb1f7c885e",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/pytest",
+        "package": null,
+        "relative_path": "import-pytest/doc/en/example/customdirectory/tests/test_second.py",
+        "repository": null,
+        "source_id": "import-pytest",
+        "source_path": "doc/en/example/customdirectory/tests/test_second.py",
+        "source_type": "git",
+        "stored_path": "import-pytest/doc/en/example/customdirectory/tests/test_second.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/pytest",
+          "package": null,
+          "relative_path": "import-pytest/testing/example_scripts/customdirectory/tests/test_second.py",
+          "repository": null,
+          "source_id": "import-pytest",
+          "source_path": "testing/example_scripts/customdirectory/tests/test_second.py",
+          "source_type": "git",
+          "stored_path": "import-pytest/testing/example_scripts/customdirectory/tests/test_second.py"
+        }
+      ],
+      "key": "b031eb730bd3543678e0aaff57ebd9804e0f00b23ab9e3a6a4fe6b26f2bcd8a5",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pygrep_hooks/PGH004_2.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/pygrep_hooks/PGH004_2.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pygrep_hooks/PGH004_2.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pygrep_hooks/PGH004_3.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/pygrep_hooks/PGH004_3.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pygrep_hooks/PGH004_3.py"
+        }
+      ],
+      "key": "b42156589b5429a548fa233d17726f9e0afcdc26dc1e0d436e99418b64eb0702",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/pydantic",
+        "package": null,
+        "relative_path": "import-pydantic/tests/mypy/modules/plugin_no_any_dynamic_alias.py",
+        "repository": null,
+        "source_id": "import-pydantic",
+        "source_path": "tests/mypy/modules/plugin_no_any_dynamic_alias.py",
+        "source_type": "git",
+        "stored_path": "import-pydantic/tests/mypy/modules/plugin_no_any_dynamic_alias.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-plugin-strict-no-any_ini/plugin_no_any_dynamic_alias.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-plugin-strict-no-any_ini/plugin_no_any_dynamic_alias.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-plugin-strict-no-any_ini/plugin_no_any_dynamic_alias.py"
+        }
+      ],
+      "key": "b62e4361543260ca2769fc8ae695248fca7cce394c4546e0c683d03277e0bc4a",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/black",
+        "package": null,
+        "relative_path": "import-black/tests/data/cases/linelength6.py",
+        "repository": null,
+        "source_id": "import-black",
+        "source_path": "tests/data/cases/linelength6.py",
+        "source_type": "git",
+        "stored_path": "import-black/tests/data/cases/linelength6.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/linelength6.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_formatter/resources/test/fixtures/black/cases/linelength6.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/linelength6.py"
+        }
+      ],
+      "key": "b781859c540c8acef763599faf1c15177b502ddd801cfd8fc23054abd9a690f9",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/black",
+        "package": null,
+        "relative_path": "import-black/tests/data/cases/pattern_matching_extras.py",
+        "repository": null,
+        "source_id": "import-black",
+        "source_path": "tests/data/cases/pattern_matching_extras.py",
+        "source_type": "git",
+        "stored_path": "import-black/tests/data/cases/pattern_matching_extras.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/pattern_matching_extras.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_formatter/resources/test/fixtures/black/cases/pattern_matching_extras.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/pattern_matching_extras.py"
+        }
+      ],
+      "key": "bd82e03e2cbdf110a5e93462a88cbff4993ef41ef39d8d1cab1f1c23e2fdb651",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/black",
+        "package": null,
+        "relative_path": "import-black/tests/data/cases/pep_646.py",
+        "repository": null,
+        "source_id": "import-black",
+        "source_path": "tests/data/cases/pep_646.py",
+        "source_type": "git",
+        "stored_path": "import-black/tests/data/cases/pep_646.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/pep_646.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_formatter/resources/test/fixtures/black/cases/pep_646.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/pep_646.py"
+        }
+      ],
+      "key": "c0ec8953f21cc2d852cd9fec71cb3908e5e3f42625b1fac43c967fdf6bd44485",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pyupgrade/UP009_0.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/pyupgrade/UP009_0.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pyupgrade/UP009_0.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pyupgrade/UP009_4.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/pyupgrade/UP009_4.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pyupgrade/UP009_4.py"
+        }
+      ],
+      "key": "c2781dffe0cb4bf22f562a82ef4837ea8fb3252f102a9f4ea21259e7fcf04fc9",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_no_pep420/test_fail_nonempty/example.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/flake8_no_pep420/test_fail_nonempty/example.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_no_pep420/test_fail_nonempty/example.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_no_pep420/test_pass_shebang/example.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/flake8_no_pep420/test_pass_shebang/example.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_no_pep420/test_pass_shebang/example.py"
+        }
+      ],
+      "key": "c2d0a5e0790d97a015387a995c0d0b5eb3e88138466586fc980787c9b1731eb8",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/black",
+        "package": null,
+        "relative_path": "import-black/tests/data/cases/pattern_matching_complex.py",
+        "repository": null,
+        "source_id": "import-black",
+        "source_path": "tests/data/cases/pattern_matching_complex.py",
+        "source_type": "git",
+        "stored_path": "import-black/tests/data/cases/pattern_matching_complex.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/pattern_matching_complex.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_formatter/resources/test/fixtures/black/cases/pattern_matching_complex.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/pattern_matching_complex.py"
+        }
+      ],
+      "key": "c7d5c7eaa0f0398f93fd2ce7cb36d366617e79ffb5aed5e4afbf634541dc9c4b",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/pytest",
+        "package": null,
+        "relative_path": "import-pytest/doc/en/example/customdirectory/conftest.py",
+        "repository": null,
+        "source_id": "import-pytest",
+        "source_path": "doc/en/example/customdirectory/conftest.py",
+        "source_type": "git",
+        "stored_path": "import-pytest/doc/en/example/customdirectory/conftest.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/pytest",
+          "package": null,
+          "relative_path": "import-pytest/testing/example_scripts/customdirectory/conftest.py",
+          "repository": null,
+          "source_id": "import-pytest",
+          "source_path": "testing/example_scripts/customdirectory/conftest.py",
+          "source_type": "git",
+          "stored_path": "import-pytest/testing/example_scripts/customdirectory/conftest.py"
+        }
+      ],
+      "key": "cb6542561abe800f8e5daee23c603f25eccdb7efed1d1baa2f86c9a7082ac1f1",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/black",
+        "package": null,
+        "relative_path": "import-black/tests/data/cases/pattern_matching_generic.py",
+        "repository": null,
+        "source_id": "import-black",
+        "source_path": "tests/data/cases/pattern_matching_generic.py",
+        "source_type": "git",
+        "stored_path": "import-black/tests/data/cases/pattern_matching_generic.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/pattern_matching_generic.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_formatter/resources/test/fixtures/black/cases/pattern_matching_generic.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/pattern_matching_generic.py"
+        }
+      ],
+      "key": "ccb135f3b088350d3756f6787be55a6b306413183801d2d9d99203eb5d2a1238",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_bugbear/B006_1.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_linter/resources/test/fixtures/flake8_bugbear/B006_1.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_bugbear/B006_1.py"
+      },
+      "duplicate_count": 2,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_bugbear/B006_2.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/flake8_bugbear/B006_2.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_bugbear/B006_2.py"
+        },
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_bugbear/B006_3.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/flake8_bugbear/B006_3.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_bugbear/B006_3.py"
+        }
+      ],
+      "key": "d4efecb2f22dcce0a2e1357e3be0497aa48dc8b0091a2d54ec09a78378cc34cd",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/pydantic",
+        "package": null,
+        "relative_path": "import-pydantic/tests/mypy/modules/frozen_field.py",
+        "repository": null,
+        "source_id": "import-pydantic",
+        "source_path": "tests/mypy/modules/frozen_field.py",
+        "source_type": "git",
+        "stored_path": "import-pydantic/tests/mypy/modules/frozen_field.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-plugin_ini/frozen_field.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-plugin_ini/frozen_field.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-plugin_ini/frozen_field.py"
+        }
+      ],
+      "key": "dea1347bd0a3125393a739bbde0ad5333712590bd0b176cf4f1309bf5daea223",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/pytest",
+        "package": null,
+        "relative_path": "import-pytest/doc/en/example/customdirectory/tests/test_third.py",
+        "repository": null,
+        "source_id": "import-pytest",
+        "source_path": "doc/en/example/customdirectory/tests/test_third.py",
+        "source_type": "git",
+        "stored_path": "import-pytest/doc/en/example/customdirectory/tests/test_third.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/pytest",
+          "package": null,
+          "relative_path": "import-pytest/testing/example_scripts/customdirectory/tests/test_third.py",
+          "repository": null,
+          "source_id": "import-pytest",
+          "source_path": "testing/example_scripts/customdirectory/tests/test_third.py",
+          "source_type": "git",
+          "stored_path": "import-pytest/testing/example_scripts/customdirectory/tests/test_third.py"
+        }
+      ],
+      "key": "e1397839eed597f34e186d14e37d1ca36e72ef4752ddf8fe987b19ca4c93f3ba",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_python_parser/resources/inline/err/param_with_star_annotation_py310.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_python_parser/resources/inline/err/param_with_star_annotation_py310.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_python_parser/resources/inline/err/param_with_star_annotation_py310.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_parser/resources/inline/ok/param_with_star_annotation_py311.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_parser/resources/inline/ok/param_with_star_annotation_py311.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_parser/resources/inline/ok/param_with_star_annotation_py311.py"
+        }
+      ],
+      "key": "e27e1c5ef18006246a70485a45e8310cdc33a4aac4d23f0da77d99513b37dc45",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/fastapi",
+        "package": null,
+        "relative_path": "import-fastapi/tests/test_request_params/test_cookie/test_list.py",
+        "repository": null,
+        "source_id": "import-fastapi",
+        "source_path": "tests/test_request_params/test_cookie/test_list.py",
+        "source_type": "git",
+        "stored_path": "import-fastapi/tests/test_request_params/test_cookie/test_list.py"
+      },
+      "duplicate_count": 3,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_todos/TD005.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/flake8_todos/TD005.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/flake8_todos/TD005.py"
+        },
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pyflakes/F401_24/aliased.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_linter/resources/test/fixtures/pyflakes/F401_24/aliased.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_linter/resources/test/fixtures/pyflakes/F401_24/aliased.py"
+        },
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ty_python_semantic/resources/corpus/58_async_for_break.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ty_python_semantic/resources/corpus/58_async_for_break.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ty_python_semantic/resources/corpus/58_async_for_break.py"
+        }
+      ],
+      "key": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/pytest",
+        "package": null,
+        "relative_path": "import-pytest/doc/en/example/customdirectory/tests/test_first.py",
+        "repository": null,
+        "source_id": "import-pytest",
+        "source_path": "doc/en/example/customdirectory/tests/test_first.py",
+        "source_type": "git",
+        "stored_path": "import-pytest/doc/en/example/customdirectory/tests/test_first.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/pytest",
+          "package": null,
+          "relative_path": "import-pytest/testing/example_scripts/customdirectory/tests/test_first.py",
+          "repository": null,
+          "source_id": "import-pytest",
+          "source_path": "testing/example_scripts/customdirectory/tests/test_first.py",
+          "source_type": "git",
+          "stored_path": "import-pytest/testing/example_scripts/customdirectory/tests/test_first.py"
+        }
+      ],
+      "key": "e81a99b34f7748686fa6bc413db0ccafb6a330503a4b6dda2d42deb2a145a178",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/ruff",
+        "package": null,
+        "relative_path": "import-ruff/crates/ruff_python_parser/resources/inline/err/iter_unpack_yield_py37.py",
+        "repository": null,
+        "source_id": "import-ruff",
+        "source_path": "crates/ruff_python_parser/resources/inline/err/iter_unpack_yield_py37.py",
+        "source_type": "git",
+        "stored_path": "import-ruff/crates/ruff_python_parser/resources/inline/err/iter_unpack_yield_py37.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_parser/resources/inline/ok/iter_unpack_yield_py38.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_parser/resources/inline/ok/iter_unpack_yield_py38.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_parser/resources/inline/ok/iter_unpack_yield_py38.py"
+        }
+      ],
+      "key": "eb0c1caacdb4165ed684b4fee41018f15b4d47daa547a7bb979e93301a2c457b",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/pydantic",
+        "package": null,
+        "relative_path": "import-pydantic/tests/mypy/modules/custom_constructor.py",
+        "repository": null,
+        "source_id": "import-pydantic",
+        "source_path": "tests/mypy/modules/custom_constructor.py",
+        "source_type": "git",
+        "stored_path": "import-pydantic/tests/mypy/modules/custom_constructor.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/pydantic",
+          "package": null,
+          "relative_path": "import-pydantic/tests/mypy/outputs/mypy-plugin_ini/custom_constructor.py",
+          "repository": null,
+          "source_id": "import-pydantic",
+          "source_path": "tests/mypy/outputs/mypy-plugin_ini/custom_constructor.py",
+          "source_type": "git",
+          "stored_path": "import-pydantic/tests/mypy/outputs/mypy-plugin_ini/custom_constructor.py"
+        }
+      ],
+      "key": "f05843cb6ca43d6f27e3d29f35ff7eb2d0cac1be0780fee942abed2e0744cc11",
+      "reason": "normalized_duplicate"
+    },
+    {
+      "canonical": {
+        "origin_url": "data/imports/black",
+        "package": null,
+        "relative_path": "import-black/tests/data/cases/pep646_typed_star_arg_type_var_tuple.py",
+        "repository": null,
+        "source_id": "import-black",
+        "source_path": "tests/data/cases/pep646_typed_star_arg_type_var_tuple.py",
+        "source_type": "git",
+        "stored_path": "import-black/tests/data/cases/pep646_typed_star_arg_type_var_tuple.py"
+      },
+      "duplicate_count": 1,
+      "duplicates": [
+        {
+          "origin_url": "data/imports/ruff",
+          "package": null,
+          "relative_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/pep646_typed_star_arg_type_var_tuple.py",
+          "repository": null,
+          "source_id": "import-ruff",
+          "source_path": "crates/ruff_python_formatter/resources/test/fixtures/black/cases/pep646_typed_star_arg_type_var_tuple.py",
+          "source_type": "git",
+          "stored_path": "import-ruff/crates/ruff_python_formatter/resources/test/fixtures/black/cases/pep646_typed_star_arg_type_var_tuple.py"
+        }
+      ],
+      "key": "f7c51aa51e3bd39b988273e3a060cc2c184a0ce39cc92707a5abae582152c9f4",
+      "reason": "normalized_duplicate"
+    }
+  ],
+  "duplicate_groups_truncated": false,
+  "duplicate_percentage": 1.495726,
+  "reasons": {
+    "normalized_duplicate": 84
+  },
+  "total_candidates": 5616
+}

@@ -1,0 +1,235 @@
+project:
+  name: GenPy LLM
+  version: 0.1.0
+  description: Educational GPT-style language model built step by step.
+
+paths:
+  data_dir: data
+  raw_data_dir: data/raw
+  processed_data_dir: data/processed
+  tokenized_data_dir: data/tokenized
+  checkpoints_dir: checkpoints
+  logs_dir: logs
+  notebooks_dir: notebooks
+
+data:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  tokenized_dir: data/tokenized
+  vocabulary_dir: data/vocabulary
+  dataset_dir: data/datasets
+  input_file: data/raw/sample.txt
+  output_file: data/processed/cleaned_text.txt
+  tokenized_file: data/tokenized/tokens.jsonl
+  vocabulary_file: data/vocabulary/vocab.json
+  vocabulary_metadata_file: data/vocabulary/vocab_metadata.json
+  encoded_file: data/vocabulary/encoded_tokens.jsonl
+  train_dataset_file: data/datasets/train.pt
+  validation_dataset_file: data/datasets/validation.pt
+  test_dataset_file: data/datasets/test.pt
+  dataset_metadata_file: data/datasets/dataset_metadata.json
+  encoding: utf-8
+
+preprocessing:
+  unicode_normalization: NFKC
+  lowercase: false
+  normalize_whitespace: true
+  preserve_newlines: true
+  remove_control_characters: true
+  remove_empty_lines: true
+  strip_lines: true
+  min_line_length: 1
+  max_line_length: null
+
+tokenizer:
+  type: word
+  vocab_size: 5000
+  min_frequency: 1
+  lowercase: true
+
+tokenization:
+  method: word
+  preserve_case: true
+  preserve_punctuation: true
+  preserve_newlines: true
+  split_contractions: false
+  normalize_quotes: true
+  normalize_dashes: true
+  add_bos_token: false
+  add_eos_token: true
+  add_newline_token: true
+  bos_token: "<BOS>"
+  eos_token: "<EOS>"
+  newline_token: "<NL>"
+  unknown_token: "<UNK>"
+
+vocabulary:
+  min_frequency: 1
+  max_size: 5000
+  include_special_tokens: true
+  save_frequencies: true
+  strict_special_token_validation: true
+  pad_token: "<PAD>"
+  unknown_token: "<UNK>"
+  bos_token: "<BOS>"
+  eos_token: "<EOS>"
+  newline_token: "<NL>"
+  special_token_order:
+    - "<PAD>"
+    - "<UNK>"
+    - "<BOS>"
+    - "<EOS>"
+    - "<NL>"
+
+dataset:
+  context_length: 128
+  stride: 128
+  sequence_mode: continuous
+  short_sequence_policy: pad
+  add_eos_between_sequences: false
+  split_unit: sequence
+  train_ratio: 0.8
+  validation_ratio: 0.1
+  test_ratio: 0.1
+  split_seed: 42
+  shuffle_before_split: true
+  batch_size: 16
+  shuffle_train: true
+  shuffle_validation: false
+  shuffle_test: false
+  num_workers: 0
+  pin_memory: false
+  drop_last_train: false
+  drop_last_validation: false
+  drop_last_test: false
+  save_prepared_tensors: true
+
+embeddings:
+  initialization: normal
+  initialization_std: 0.02
+  scale_embeddings: false
+  freeze_embeddings: false
+  zero_padding_embedding: true
+
+positional_encoding:
+  type: learned
+  max_sequence_length: 128
+  dropout: 0.0
+  initialization_std: 0.02
+
+attention:
+  dropout: 0.1
+  use_bias: true
+  causal: true
+
+feed_forward:
+  hidden_dim: null
+  hidden_multiplier: 4
+  activation: gelu
+  dropout: 0.1
+  use_bias: true
+  initialization_std: 0.02
+
+normalization:
+  type: layer_norm
+  epsilon: 0.00001
+  elementwise_affine: true
+
+residual:
+  dropout: 0.1
+
+transformer_block:
+  attention_dropout: 0.1
+  residual_dropout: 0.1
+  feed_forward_dropout: 0.1
+
+model:
+  context_length: 128
+  vocab_size: 5000
+  embedding_dim: 128
+  num_heads: 4
+  num_layers: 4
+  dropout: 0.1
+  use_bias: true
+  tie_embeddings: true
+  initialization_std: 0.02
+
+training:
+  batch_size: 16
+  learning_rate: 0.0003
+  epochs: 10
+  gradient_accumulation_steps: 1
+  max_grad_norm: 1.0
+  log_every_steps: 10
+  validate_every_epochs: 1
+  seed: 42
+  device: auto
+
+loss:
+  type: cross_entropy
+  ignore_padding: true
+  label_smoothing: 0.0
+
+optimizer:
+  type: adamw
+  learning_rate: 0.0003
+  weight_decay: 0.1
+  beta1: 0.9
+  beta2: 0.95
+  epsilon: 0.00000001
+  separate_weight_decay: true
+
+checkpoint:
+  directory: checkpoints
+  save_every_epochs: 1
+  keep_last: 3
+  save_best: true
+  monitor: validation_loss
+  mode: min
+  filename_prefix: genpy
+
+generation:
+  max_new_tokens: 50
+  temperature: 1.0
+  top_k: null
+  top_p: null
+  do_sample: true
+  repetition_penalty: 1.0
+  stop_on_eos: true
+
+fine_tuning:
+  dataset_file: data/fine_tuning/train.jsonl
+  output_directory: checkpoints/fine_tuned
+  epochs: 3
+  batch_size: 4
+  learning_rate: 0.00005
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  gradient_accumulation_steps: 1
+  freeze_embeddings: false
+  freeze_first_n_layers: 0
+  train_validation_ratio: 0.9
+  seed: 42
+
+optimization:
+  mixed_precision: none
+  torch_compile: false
+  compile_mode: default
+  gradient_checkpointing: false
+  quantization: none
+  benchmark_warmup_steps: 2
+  benchmark_steps: 10
+
+web_interface:
+  title: GenPy LLM
+  description: Generate text using the trained GenPy model.
+  host: 127.0.0.1
+  port: 7860
+  share: false
+  default_checkpoint: checkpoints/genpy_best.pt
+  default_prompt: Hello
+  max_prompt_characters: 2000
+
+logging:
+  level: INFO
+  log_file: genpy_llm.log

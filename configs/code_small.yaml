@@ -1,0 +1,104 @@
+project:
+  name: GenPy Code LLM
+  seed: 42
+
+tokenizer:
+  path: data/tokenizer/tokenizer.json
+  metadata_path: data/tokenizer/tokenizer_metadata.json
+  type: byte_bpe
+  vocab_size: 32000
+  pad_token: "<pad>"
+  unknown_token: "<unk>"
+  bos_token: "<bos>"
+  eos_token: "<eos>"
+
+streaming_dataset:
+  train_pattern: data/code_shards/train/*.jsonl.gz
+  validation_pattern: data/code_shards/validation/*.jsonl.gz
+  text_field: text
+  context_length: 512
+  stride: 512
+  append_eos: true
+  pack_across_files: true
+  shuffle_shards: true
+  shuffle_buffer_records: 1000
+  seed: 42
+  incomplete_window_policy: drop
+  num_workers: 0
+  pin_memory: true
+
+model:
+  embedding_dim: 256
+  num_heads: 8
+  num_layers: 8
+  context_length: 512
+  dropout: 0.1
+  use_bias: true
+  tie_embeddings: true
+  initialization_std: 0.02
+  gradient_checkpointing: false
+
+training:
+  max_steps: 50000
+  batch_size: 4
+  gradient_accumulation_steps: 8
+  max_grad_norm: 1.0
+  device: auto
+  mixed_precision: fp16
+  log_every_steps: 20
+  save_every_steps: 1000
+  validate_every_steps: 1000
+  validation_steps: 100
+  keep_last: 3
+  resume: true
+
+loss:
+  type: cross_entropy
+  ignore_padding: true
+  label_smoothing: 0.0
+
+optimizer:
+  type: adamw
+  learning_rate: 0.0003
+  weight_decay: 0.1
+  beta1: 0.9
+  beta2: 0.95
+  epsilon: 0.00000001
+  separate_weight_decay: true
+
+scheduler:
+  type: cosine
+  warmup_steps: 1000
+  minimum_learning_rate_ratio: 0.1
+
+checkpoint:
+  directory: checkpoints/code_base
+  filename_prefix: genpy_code
+  best_filename: genpy_code_best.pt
+  monitor: validation_loss
+  mode: min
+  save_best: true
+
+generation:
+  max_new_tokens: 128
+  temperature: 0.7
+  top_k: 50
+  top_p: 0.95
+  do_sample: true
+  repetition_penalty: 1.1
+  stop_on_eos: true
+
+fine_tuning:
+  dataset_file: data/fine_tuning/train.jsonl
+  output_directory: checkpoints/code_instruct
+  best_filename: genpy_code_instruct_best.pt
+  max_steps: 3000
+  batch_size: 4
+  gradient_accumulation_steps: 8
+  learning_rate: 0.00005
+  validation_ratio: 0.05
+  response_only_loss: true
+  max_sequence_length: 512
+  save_every_steps: 500
+  validate_every_steps: 500
+  validation_steps: 100

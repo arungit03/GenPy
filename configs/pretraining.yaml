@@ -1,0 +1,80 @@
+version: 1
+project_root: ..
+progress: true
+
+pretraining_corpus:
+  enabled: true
+  progress: true
+  resume: true
+  dataset_pipeline_config: configs/dataset_pipeline.yaml
+  rebuild_corpus_index: false
+
+  # Future corpus sources become eligible after they are collected into the
+  # shared data/raw provenance manifest with one of these source types.
+  source_types:
+    - github
+    - pypi
+    - local
+    - git
+    - zip
+    - file
+    - manual_raw
+
+  paths:
+    source_manifest: data/raw/collection_manifest.jsonl
+    corpus_root: data/raw
+    corpus_index: data/raw/corpus_index.sqlite3
+    output_directory: data/pretraining
+    merged_manifest: data/pretraining/corpus_manifest.jsonl
+    index: data/pretraining/index.json
+    manifest: data/pretraining/manifest.json
+    statistics: data/pretraining/statistics.json
+    report_directory: reports/pretraining
+    checkpoint: data/pretraining/checkpoint.json
+    log_file: logs/pretraining_corpus.jsonl
+
+  validation:
+    minimum_file_bytes: 1
+    maximum_file_bytes: 250000
+    require_python_syntax: true
+    reject_generated: true
+    reject_vendor: true
+    cleaner:
+      require_known_license: false
+      accepted_licenses:
+        - MIT
+        - Apache-2.0
+        - BSD-2-Clause
+        - BSD-3-Clause
+        - ISC
+        - Unlicense
+        - MPL-2.0
+
+  deduplication:
+    exact_sha256: true
+    whitespace_normalization: true
+    comment_normalization: true
+    newline_normalization: true
+    ast_normalization: false
+    include_duplicate_groups: true
+    maximum_duplicate_groups: 1000
+
+  tokenization:
+    tokenizer: data/tokenizer/tokenizer.json
+    workers: 0
+    max_pending_tasks_per_worker: 4
+
+  packing:
+    context_length: 1024
+    add_bos: false
+    add_eos: true
+    document_boundary: eos
+    pad_final_sequence: false
+
+  shards:
+    prefix: shard
+    max_tokens_per_shard: 10000000
+    compression: metadata_gzip
+
+logging:
+  level: INFO

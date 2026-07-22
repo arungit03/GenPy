@@ -1,0 +1,45 @@
+version: 1
+
+model:
+  # Active default: Small. Copy values from profiles.medium or profiles.large
+  # when scaling up.
+  vocabulary_size: 32000
+  context_length: 1024
+  hidden_size: 512
+  ffn_size: 2048
+  decoder_layers: 6
+  attention_heads: 8
+  dropout: 0.1
+  attention_dropout: 0.1
+  residual_dropout: 0.1
+  activation: gelu
+  layer_norm_epsilon: 0.00001
+  # Supported: learned, sinusoidal, rotary.
+  positional_embedding: learned
+  tied_embedding_weights: true
+  use_bias: true
+  initialization_std: 0.02
+  gradient_checkpointing: false
+  torch_compile: false
+  compile_mode: default
+  flash_attention: auto
+
+profiles:
+  small:
+    decoder_layers: 6
+    hidden_size: 512
+    ffn_size: 2048
+    attention_heads: 8
+    context_length: 1024
+  medium:
+    decoder_layers: 12
+    hidden_size: 768
+    ffn_size: 3072
+    attention_heads: 12
+    context_length: 1024
+  large:
+    decoder_layers: 24
+    hidden_size: 1024
+    ffn_size: 4096
+    attention_heads: 16
+    context_length: 1024
