@@ -1,0 +1,242 @@
+{
+  "metadata": {
+    "checkpoint": "/Users/macbook/Downloads/GenPy/checkpoints/lora/last_adapter.pt",
+    "checkpoint_step": 1,
+    "checkpoint_epoch": 1,
+    "device": "mps",
+    "evaluated_at": "2026-07-23T02:25:49.047115+00:00",
+    "prompt_count": 20,
+    "validation": {
+      "loss": 5.354034423828125,
+      "perplexity": 211.45969730024768,
+      "tokens": 215,
+      "batches": 1
+    },
+    "total_generation_time_seconds": 0.6436937500184285,
+    "total_generated_tokens": 40,
+    "tokens_per_second": 62.141352155205524,
+    "automatic_checks": "Static syntax and task-term heuristics; generated code is not executed."
+  },
+  "results": [
+    {
+      "id": "bubble_sort",
+      "prompt": "Write bubble sort.",
+      "generated_answer": "",
+      "generation_time_seconds": 0.04244341600133339,
+      "generated_tokens": 2,
+      "tokens_per_second": 47.121560619370705,
+      "passed": false,
+      "check_details": "missing required terms: def, return; missing one of: for, while; missing one of: bubble, swapped; no Python code found",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "quick_sort",
+      "prompt": "Write quick sort.",
+      "generated_answer": "",
+      "generation_time_seconds": 0.04226741599995876,
+      "generated_tokens": 2,
+      "tokens_per_second": 47.31777310451037,
+      "passed": false,
+      "check_details": "missing required terms: def, return; missing one of: pivot, partition; missing one of: quick_sort, quicksort; no Python code found",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "reverse_linked_list",
+      "prompt": "Reverse a linked list.",
+      "generated_answer": "",
+      "generation_time_seconds": 0.02071425000031013,
+      "generated_tokens": 2,
+      "tokens_per_second": 96.55189060526239,
+      "passed": false,
+      "check_details": "missing required terms: def, next, return; missing one of: prev, previous; no Python code found",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "binary_search",
+      "prompt": "Implement binary search.",
+      "generated_answer": "",
+      "generation_time_seconds": 0.02173900000343565,
+      "generated_tokens": 2,
+      "tokens_per_second": 92.00055198877217,
+      "passed": false,
+      "check_details": "missing required terms: def, return; missing one of: while, for; missing one of: mid, middle; no Python code found",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "pandas_csv",
+      "prompt": "Read a CSV using pandas.",
+      "generated_answer": "",
+      "generation_time_seconds": 0.021097292003105395,
+      "generated_tokens": 2,
+      "tokens_per_second": 94.7988964510522,
+      "passed": false,
+      "check_details": "missing required terms: pandas, read_csv; no Python code found",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "decorators",
+      "prompt": "Explain Python decorators.",
+      "generated_answer": "",
+      "generation_time_seconds": 0.021212167004705407,
+      "generated_tokens": 2,
+      "tokens_per_second": 94.28551074278965,
+      "passed": false,
+      "check_details": "missing required terms: decorator, function; missing one of: wrapper, wrap; missing one of: @, syntax",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "fastapi_crud",
+      "prompt": "Write a FastAPI CRUD API.",
+      "generated_answer": "",
+      "generation_time_seconds": 0.05092533299466595,
+      "generated_tokens": 2,
+      "tokens_per_second": 39.273184530958005,
+      "passed": false,
+      "check_details": "missing required terms: fastapi, get, post, put, delete; no Python code found",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "fix_reverse",
+      "prompt": "Fix the following Python code:\ndef reverse(lst):\nfor i in range(len(lst)):\nreturn lst[::-1]",
+      "generated_answer": "",
+      "generation_time_seconds": 0.05726733399933437,
+      "generated_tokens": 2,
+      "tokens_per_second": 34.92392364595227,
+      "passed": false,
+      "check_details": "missing required terms: def reverse, return, [::-1]; no Python code found",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "list_comprehensions",
+      "prompt": "Explain list comprehensions.",
+      "generated_answer": "",
+      "generation_time_seconds": 0.030107250000583008,
+      "generated_tokens": 2,
+      "tokens_per_second": 66.42918233851552,
+      "passed": false,
+      "check_details": "missing required terms: list, for; missing one of: expression, iterable, loop; missing one of: [, bracket",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "stack",
+      "prompt": "Write a stack implementation.",
+      "generated_answer": "",
+      "generation_time_seconds": 0.020344583004771266,
+      "generated_tokens": 2,
+      "tokens_per_second": 98.30626656397699,
+      "passed": false,
+      "check_details": "missing required terms: class, push, pop; no Python code found",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "queue",
+      "prompt": "Write a queue implementation.",
+      "generated_answer": "",
+      "generation_time_seconds": 0.020129708995227702,
+      "generated_tokens": 2,
+      "tokens_per_second": 99.35563402700728,
+      "passed": false,
+      "check_details": "missing required terms: class; missing one of: enqueue, append; missing one of: dequeue, popleft; no Python code found",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "generators",
+      "prompt": "Explain generators.",
+      "generated_answer": "",
+      "generation_time_seconds": 0.0355367500014836,
+      "generated_tokens": 2,
+      "tokens_per_second": 56.27976671801736,
+      "passed": false,
+      "check_details": "missing required terms: yield; missing one of: iterator, iteration; missing one of: lazy, memory",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "async_await",
+      "prompt": "Explain async/await.",
+      "generated_answer": "",
+      "generation_time_seconds": 0.025735000002896413,
+      "generated_tokens": 2,
+      "tokens_per_second": 77.71517387895491,
+      "passed": false,
+      "check_details": "missing required terms: async, await; missing one of: coroutine, event loop, concurrent",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "bfs",
+      "prompt": "Write a BFS algorithm.",
+      "generated_answer": "",
+      "generation_time_seconds": 0.026345457998104393,
+      "generated_tokens": 2,
+      "tokens_per_second": 75.91441379170193,
+      "passed": false,
+      "check_details": "missing required terms: visited; missing one of: queue, deque; missing one of: bfs, breadth; no Python code found",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "dfs",
+      "prompt": "Write a DFS algorithm.",
+      "generated_answer": "",
+      "generation_time_seconds": 0.025666458997875452,
+      "generated_tokens": 2,
+      "tokens_per_second": 77.92270839407767,
+      "passed": false,
+      "check_details": "missing required terms: visited; missing one of: stack, recursive, recursion; missing one of: dfs, depth; no Python code found",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "dijkstra",
+      "prompt": "Write Dijkstra's algorithm.",
+      "generated_answer": "",
+      "generation_time_seconds": 0.024464500005706213,
+      "generated_tokens": 2,
+      "tokens_per_second": 81.75110873034441,
+      "passed": false,
+      "check_details": "missing required terms: distance; missing one of: heap, priority; missing one of: dijkstra, shortest; no Python code found",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "merge_sort",
+      "prompt": "Write merge sort.",
+      "generated_answer": "",
+      "generation_time_seconds": 0.03465437499835389,
+      "generated_tokens": 2,
+      "tokens_per_second": 57.712770756794825,
+      "passed": false,
+      "check_details": "missing required terms: def, merge, return; no Python code found",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "recursion",
+      "prompt": "Explain recursion.",
+      "generated_answer": "",
+      "generation_time_seconds": 0.032949791006103624,
+      "generated_tokens": 2,
+      "tokens_per_second": 60.6984123094899,
+      "passed": false,
+      "check_details": "missing required terms: function, base case; missing one of: itself, recursive call",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "quick_sort_complexity",
+      "prompt": "Explain time complexity of quick sort.",
+      "generated_answer": "",
+      "generation_time_seconds": 0.03639537500566803,
+      "generated_tokens": 2,
+      "tokens_per_second": 54.9520371664952,
+      "passed": false,
+      "check_details": "missing required terms: o(n log n), o(n^2); missing one of: average, expected; missing one of: worst, worst-case",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "loop_to_comprehension",
+      "prompt": "Convert a for loop into a list comprehension.",
+      "generated_answer": "",
+      "generation_time_seconds": 0.05369829199480591,
+      "generated_tokens": 2,
+      "tokens_per_second": 37.24513249310527,
+      "passed": false,
+      "check_details": "missing required terms: [, ], for, in",
+      "pass_fail": "Fail"
+    }
+  ]
+}

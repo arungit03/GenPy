@@ -6,7 +6,7 @@ import json
 import os
 from collections.abc import Iterable
 from dataclasses import asdict, dataclass
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -15,6 +15,8 @@ from genpy_llm.code_filtering import (
     filter_code_record,
 )
 from genpy_llm.code_sharding import CompressedShardWriter
+
+UTC = timezone.utc
 
 DATASET_SOURCE = "codeparrot/codeparrot-clean"
 INSTRUCTION_SOURCE = "sahil2801/CodeAlpaca-20k"

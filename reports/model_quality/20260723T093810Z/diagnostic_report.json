@@ -1,0 +1,503 @@
+{
+  "api_config": "/Users/macbook/Downloads/GenPy/configs/api.yaml",
+  "benchmarks": {
+    "checkpoint_path": "/Users/macbook/Downloads/GenPy/checkpoints/quantized/last_checkpoint_fp16.pt",
+    "device": "mps",
+    "issue_counts": {
+      "invalid_python_syntax": 5,
+      "repetition_loop": 1
+    },
+    "plain_checkpoint_path": "/Users/macbook/Downloads/GenPy/checkpoints/fine_tuned/best_checkpoint.pt",
+    "prompts": [
+      "Hello",
+      "1 + 1 =",
+      "Write bubble sort",
+      "Reverse a linked list",
+      "Explain Python decorators",
+      "Fibonacci",
+      "Prime numbers"
+    ],
+    "quantization": "fp16",
+    "results": [
+      {
+        "elapsed_seconds": 1.460237875005987,
+        "emitted_token_count": 24,
+        "formatted_prompt": "<|system|>\nYou are GenPy, a Python coding assistant.\n\n<|user|>\nHello\n\n<|assistant|>\n",
+        "generated_token_count": 25,
+        "generator_diagnostic_report": null,
+        "issues": {
+          "conversation_marker_counts": {
+            "<|assistant|>": 0,
+            "<|system|>": 0,
+            "<|user|>": 0
+          },
+          "hallucinated_identifiers": [],
+          "invalid_python_syntax": true,
+          "max_consecutive_token_repeat": 1,
+          "possible_undefined_identifiers": [],
+          "prompt_echoing": false,
+          "repeated_conversation_markers": false,
+          "repeated_ngram": null,
+          "repetition_loop": false,
+          "syntax_errors": [
+            "duplicate argument 'self' in function definition at line 1, column 20"
+          ],
+          "unfinished_functions": false
+        },
+        "prompt": "Hello",
+        "raw_generated_text": "def __init__(self, self, x):\n        self.from_url.user_name = self.name",
+        "response": "def __init__(self, self, x):\n        self.from_url.user_name = self.name",
+        "response_path": "/Users/macbook/Downloads/GenPy/reports/model_quality/20260723T093810Z/responses/01_hello.json",
+        "stopped": true
+      },
+      {
+        "elapsed_seconds": 1.7195068750006612,
+        "emitted_token_count": 63,
+        "formatted_prompt": "<|system|>\nYou are GenPy, a Python coding assistant.\n\n<|user|>\n1 + 1 =\n\n<|assistant|>\n",
+        "generated_token_count": 64,
+        "generator_diagnostic_report": null,
+        "issues": {
+          "conversation_marker_counts": {
+            "<|assistant|>": 0,
+            "<|system|>": 0,
+            "<|user|>": 0
+          },
+          "hallucinated_identifiers": [],
+          "invalid_python_syntax": true,
+          "max_consecutive_token_repeat": 1,
+          "possible_undefined_identifiers": [],
+          "prompt_echoing": false,
+          "repeated_conversation_markers": false,
+          "repeated_ngram": {
+            "count": 3,
+            "length": 6,
+            "token_ids": [
+              1019,
+              15,
+              850,
+              16,
+              345,
+              1285
+            ]
+          },
+          "repetition_loop": false,
+          "syntax_errors": [
+            "invalid syntax at line 2, column 72"
+          ],
+          "unfinished_functions": false
+        },
+        "prompt": "1 + 1 =",
+        "raw_generated_text": "def a():\n    with pytest.raises(ValidationError) as exc_raises(ValidationError) as exc_message(ValidationError) as exc_raises(ValidationError) as exc.value:\n        exc_message(\n            exc_value.value) as exc_value.value:\n            return exc_value.value",
+        "response": "def a():\n    with pytest.raises(ValidationError) as exc_raises(ValidationError) as exc_message(ValidationError) as exc_raises(ValidationError) as exc.value:\n        exc_message(\n            exc_value.value) as exc_value.value:\n            return exc_value.value",
+        "response_path": "/Users/macbook/Downloads/GenPy/reports/model_quality/20260723T093810Z/responses/02_1_1.json",
+        "stopped": true
+      },
+      {
+        "elapsed_seconds": 0.5020255839990568,
+        "emitted_token_count": 25,
+        "formatted_prompt": "<|system|>\nYou are GenPy, a Python coding assistant.\n\n<|user|>\nWrite bubble sort\n\n<|assistant|>\n",
+        "generated_token_count": 26,
+        "generator_diagnostic_report": null,
+        "issues": {
+          "conversation_marker_counts": {
+            "<|assistant|>": 0,
+            "<|system|>": 0,
+            "<|user|>": 0
+          },
+          "hallucinated_identifiers": [],
+          "invalid_python_syntax": true,
+          "max_consecutive_token_repeat": 1,
+          "possible_undefined_identifiers": [],
+          "prompt_echoing": false,
+          "repeated_conversation_markers": false,
+          "repeated_ngram": {
+            "count": 3,
+            "length": 3,
+            "token_ids": [
+              9,
+              1554,
+              334
+            ]
+          },
+          "repetition_loop": false,
+          "syntax_errors": [
+            "unterminated string literal (detected at line 2) at line 2, column 46"
+          ],
+          "unfinished_functions": false
+        },
+        "prompt": "Write bubble sort",
+        "raw_generated_text": "def f():\n    print(f\"Hello {f\"Hello {f\" f\"Hello {line r\"docs }",
+        "response": "def f():\n    print(f\"Hello {f\"Hello {f\" f\"Hello {line r\"docs }",
+        "response_path": "/Users/macbook/Downloads/GenPy/reports/model_quality/20260723T093810Z/responses/03_write_bubble_sort.json",
+        "stopped": true
+      },
+      {
+        "elapsed_seconds": 0.19408666600065771,
+        "emitted_token_count": 11,
+        "formatted_prompt": "<|system|>\nYou are GenPy, a Python coding assistant.\n\n<|user|>\nReverse a linked list\n\n<|assistant|>\n",
+        "generated_token_count": 12,
+        "generator_diagnostic_report": null,
+        "issues": {
+          "conversation_marker_counts": {
+            "<|assistant|>": 0,
+            "<|system|>": 0,
+            "<|user|>": 0
+          },
+          "hallucinated_identifiers": [],
+          "invalid_python_syntax": false,
+          "max_consecutive_token_repeat": 1,
+          "possible_undefined_identifiers": [],
+          "prompt_echoing": false,
+          "repeated_conversation_markers": false,
+          "repeated_ngram": null,
+          "repetition_loop": false,
+          "syntax_errors": [],
+          "unfinished_functions": false
+        },
+        "prompt": "Reverse a linked list",
+        "raw_generated_text": "def f():\n    print(f\"-0\")",
+        "response": "def f():\n    print(f\"-0\")",
+        "response_path": "/Users/macbook/Downloads/GenPy/reports/model_quality/20260723T093810Z/responses/04_reverse_a_linked_list.json",
+        "stopped": true
+      },
+      {
+        "elapsed_seconds": 0.29367437500332016,
+        "emitted_token_count": 16,
+        "formatted_prompt": "<|system|>\nYou are GenPy, a Python coding assistant.\n\n<|user|>\nExplain Python decorators\n\n<|assistant|>\n",
+        "generated_token_count": 17,
+        "generator_diagnostic_report": null,
+        "issues": {
+          "conversation_marker_counts": {
+            "<|assistant|>": 0,
+            "<|system|>": 0,
+            "<|user|>": 0
+          },
+          "hallucinated_identifiers": [
+            "Base",
+            "Mapped"
+          ],
+          "invalid_python_syntax": false,
+          "max_consecutive_token_repeat": 1,
+          "possible_undefined_identifiers": [
+            "Base",
+            "Mapped"
+          ],
+          "prompt_echoing": false,
+          "repeated_conversation_markers": false,
+          "repeated_ngram": null,
+          "repetition_loop": false,
+          "syntax_errors": [],
+          "unfinished_functions": false
+        },
+        "prompt": "Explain Python decorators",
+        "raw_generated_text": "class B(Base):\n    id: Mapped[str] = \"q\"",
+        "response": "class B(Base):\n    id: Mapped[str] = \"q\"",
+        "response_path": "/Users/macbook/Downloads/GenPy/reports/model_quality/20260723T093810Z/responses/05_explain_python_decorators.json",
+        "stopped": true
+      },
+      {
+        "elapsed_seconds": 0.30020012499880977,
+        "emitted_token_count": 15,
+        "formatted_prompt": "<|system|>\nYou are GenPy, a Python coding assistant.\n\n<|user|>\nFibonacci\n\n<|assistant|>\n",
+        "generated_token_count": 16,
+        "generator_diagnostic_report": null,
+        "issues": {
+          "conversation_marker_counts": {
+            "<|assistant|>": 0,
+            "<|system|>": 0,
+            "<|user|>": 0
+          },
+          "hallucinated_identifiers": [],
+          "invalid_python_syntax": true,
+          "max_consecutive_token_repeat": 1,
+          "possible_undefined_identifiers": [],
+          "prompt_echoing": false,
+          "repeated_conversation_markers": false,
+          "repeated_ngram": null,
+          "repetition_loop": false,
+          "syntax_errors": [
+            "invalid syntax at line 2, column 28"
+          ],
+          "unfinished_functions": false
+        },
+        "prompt": "Fibonacci",
+        "raw_generated_text": "class A(Base):\n    __init__(self.TestBase):\n        pass",
+        "response": "class A(Base):\n    __init__(self.TestBase):\n        pass",
+        "response_path": "/Users/macbook/Downloads/GenPy/reports/model_quality/20260723T093810Z/responses/06_fibonacci.json",
+        "stopped": true
+      },
+      {
+        "elapsed_seconds": 3.401744291993964,
+        "emitted_token_count": 129,
+        "formatted_prompt": "<|system|>\nYou are GenPy, a Python coding assistant.\n\n<|user|>\nPrime numbers\n\n<|assistant|>\n",
+        "generated_token_count": 130,
+        "generator_diagnostic_report": null,
+        "issues": {
+          "conversation_marker_counts": {
+            "<|assistant|>": 0,
+            "<|system|>": 0,
+            "<|user|>": 0
+          },
+          "hallucinated_identifiers": [],
+          "invalid_python_syntax": true,
+          "max_consecutive_token_repeat": 1,
+          "possible_undefined_identifiers": [],
+          "prompt_echoing": false,
+          "repeated_conversation_markers": false,
+          "repeated_ngram": {
+            "count": 4,
+            "length": 7,
+            "token_ids": [
+              21,
+              1161,
+              21,
+              1161,
+              21,
+              1161,
+              21
+            ]
+          },
+          "repetition_loop": true,
+          "syntax_errors": [
+            "invalid syntax at line 1, column 70"
+          ],
+          "unfinished_functions": false
+        },
+        "prompt": "Prime numbers",
+        "raw_generated_text": "def __init__(self, self, cls, self, self, self,self, self, self, self.classes.classes.classes.classes.classes.User, self.User, self.tables.User, self.classes.User, self.classes.classes.classes.mapper_imperatively(self.map_map_registry.tables.classes.classes.User,\n            self.mapper_registry.mapper_imperatively(User, self.mapper_imperatively(User,\n        )\n        sess = fixture_session()\n        User, backref=\"o, addresses.id\": relationship(User).all(),\n        )",
+        "response": "def __init__(self, self, cls, self, self, self,self, self, self, self.classes.classes.classes.classes.classes.User, self.User, self.tables.User, self.classes.User, self.classes.classes.classes.mapper_imperatively(self.map_map_registry.tables.classes.classes.User,\n            self.mapper_registry.mapper_imperatively(User, self.mapper_imperatively(User,\n        )\n        sess = fixture_session()\n        User, backref=\"o, addresses.id\": relationship(User).all(),\n        )",
+        "response_path": "/Users/macbook/Downloads/GenPy/reports/model_quality/20260723T093810Z/responses/07_prime_numbers.json",
+        "stopped": true
+      }
+    ],
+    "settings": {
+      "do_sample": true,
+      "max_new_tokens": 256,
+      "prompts": [],
+      "repetition_penalty": 1.0,
+      "stop_tokens": [
+        "<eos>"
+      ],
+      "temperature": 0.7,
+      "top_k": null,
+      "top_p": 0.95
+    }
+  },
+  "checkpoint": {
+    "final_validation_loss": 3.7122096669336675,
+    "kind": "quantized",
+    "optimizer_state": {
+      "available": true,
+      "param_groups": 2,
+      "state_entries": 76,
+      "tensor_bytes": 286589232,
+      "tensor_count": 228
+    },
+    "parameter_count": 35823616,
+    "path": "/Users/macbook/Downloads/GenPy/checkpoints/quantized/last_checkpoint_fp16.pt",
+    "perplexity": 40.9441796428588,
+    "quantization": {
+      "created_at": "2026-07-23T07:59:31.875610+00:00",
+      "dtype": "float16",
+      "method": "fp16",
+      "model_state_bytes": 104415232,
+      "parameter_count": 35823616,
+      "source_checkpoint": "/Users/macbook/Downloads/GenPy/checkpoints/fine_tuned/last_checkpoint.pt",
+      "source_checkpoint_sha256": "1e13a59a865699d0cb4021de6e373265ed583db7a91955775ba2a6c8a7ecf877"
+    },
+    "source_checkpoint": "/Users/macbook/Downloads/GenPy/checkpoints/fine_tuned/last_checkpoint.pt",
+    "source_metadata": {
+      "best_metric": 3.7122096669336675,
+      "context_length": 1024,
+      "epoch": 1,
+      "format_version": 1,
+      "global_step": 2000,
+      "model_parameter_count": 35823616,
+      "training_loss": 2.4961183071136475,
+      "validation_loss": 3.7122096669336675,
+      "vocabulary_size": 32000
+    },
+    "training_steps": 2000
+  },
+  "created_at": "2026-07-23T09:38:53.344316+00:00",
+  "diagnosis": {
+    "conclusion": "The strongest supported diagnosis is A. pretraining. This is based only on collected dataset, checkpoint, and benchmark evidence.",
+    "evidence": [
+      "Pretraining corpus is small for an LLM: 10,777,409 tokens.",
+      "Checkpoint validation loss is high: 3.7122 (perplexity 40.94).",
+      "Instruction duplicate-output rate is 32.59%.",
+      "Instruction template inserts exactly one system/user/assistant marker per record.",
+      "Benchmark repetition loops: 1 / 7 prompts.",
+      "Model is small: 35,823,616 parameters."
+    ],
+    "primary_issue": "A",
+    "primary_issue_label": "pretraining",
+    "scores": {
+      "A": 3,
+      "B": 2,
+      "C": 2,
+      "E": 1
+    }
+  },
+  "instruction_dataset": {
+    "average_prompt_characters": 472.57672923946825,
+    "average_prompt_tokens": 131.36216130788276,
+    "average_response_characters": 479.65167611990097,
+    "average_response_tokens": 112.93722232953448,
+    "conversation_template_format": {
+      "assistant_prefix": "<|assistant|>",
+      "format": "<|system|>\\n{system_prompt}\\n\\n<|user|>\\n{instruction}[\\n\\n{input}]\\n\\n<|assistant|>\\n{output}",
+      "system_prefix": "<|system|>",
+      "system_prompt": "You are GenPy, a Python coding assistant.",
+      "user_prefix": "<|user|>"
+    },
+    "dataset_context_length": 256,
+    "duplicate_output_rate": 0.3259346409819657,
+    "examples": 56947,
+    "mask_prompt_tokens": true,
+    "paths": [
+      "/Users/macbook/Downloads/GenPy/data/fine_tuning/train.jsonl",
+      "/Users/macbook/Downloads/GenPy/data/fine_tuning/validation.jsonl",
+      "/Users/macbook/Downloads/GenPy/data/fine_tuning/test.jsonl"
+    ],
+    "records_with_repeated_markers": {},
+    "splits": {
+      "test": {
+        "average_prompt_tokens": 132.6883444424428,
+        "average_response_tokens": 114.50243199423527,
+        "examples": 5551,
+        "path": "/Users/macbook/Downloads/GenPy/data/fine_tuning/test.jsonl"
+      },
+      "train": {
+        "average_prompt_tokens": 131.5387518651804,
+        "average_response_tokens": 112.60622750811902,
+        "examples": 45572,
+        "path": "/Users/macbook/Downloads/GenPy/data/fine_tuning/train.jsonl"
+      },
+      "validation": {
+        "average_prompt_tokens": 128.71634615384616,
+        "average_response_tokens": 114.03537087912088,
+        "examples": 5824,
+        "path": "/Users/macbook/Downloads/GenPy/data/fine_tuning/validation.jsonl"
+      }
+    }
+  },
+  "phase7_config": "/Users/macbook/Downloads/GenPy/configs/finetuning.yaml",
+  "pretraining_dataset": {
+    "accepted_count": 5532,
+    "byte_count": 21553700,
+    "corpus_files": 5532,
+    "duplicate_count": 84,
+    "duplicate_rate": 0.014957264957264958,
+    "language_token_counts": {
+      "Python": 10777409
+    },
+    "natural_language_percentage": 0.18392334820964318,
+    "packed_token_count": 10776850,
+    "paths": {
+      "index": "/Users/macbook/Downloads/GenPy/data/pretraining/index.json",
+      "manifest": "/Users/macbook/Downloads/GenPy/data/pretraining/corpus_manifest.jsonl",
+      "statistics": "/Users/macbook/Downloads/GenPy/data/pretraining/statistics.json"
+    },
+    "python_code_percentage": 0.8160766517903568,
+    "python_language_token_percentage": 1.0,
+    "source_mix_method": "Character-weighted over pretraining source files: comments and AST docstrings count as natural language; remaining non-whitespace Python source counts as code.",
+    "source_report": {
+      "source_types": {
+        "git": 5454,
+        "local": 78
+      },
+      "sources": {
+        "genpy_library": {
+          "bytes": 589050,
+          "files": 39,
+          "source_type": "local"
+        },
+        "genpy_scripts": {
+          "bytes": 258977,
+          "files": 39,
+          "source_type": "local"
+        },
+        "import-black": {
+          "bytes": 1339905,
+          "files": 224,
+          "source_type": "git"
+        },
+        "import-click": {
+          "bytes": 884387,
+          "files": 71,
+          "source_type": "git"
+        },
+        "import-fastapi": {
+          "bytes": 3263541,
+          "files": 934,
+          "source_type": "git"
+        },
+        "import-flask": {
+          "bytes": 589696,
+          "files": 80,
+          "source_type": "git"
+        },
+        "import-httpx": {
+          "bytes": 570031,
+          "files": 57,
+          "source_type": "git"
+        },
+        "import-jinja": {
+          "bytes": 734138,
+          "files": 56,
+          "source_type": "git"
+        },
+        "import-pillow": {
+          "bytes": 2493581,
+          "files": 298,
+          "source_type": "git"
+        },
+        "import-pydantic": {
+          "bytes": 5518525,
+          "files": 356,
+          "source_type": "git"
+        },
+        "import-pytest": {
+          "bytes": 3654170,
+          "files": 249,
+          "source_type": "git"
+        },
+        "import-requests": {
+          "bytes": 394979,
+          "files": 35,
+          "source_type": "git"
+        },
+        "import-rich": {
+          "bytes": 1187367,
+          "files": 181,
+          "source_type": "git"
+        },
+        "import-ruff": {
+          "bytes": 2203913,
+          "files": 1783,
+          "source_type": "git"
+        },
+        "import-sqlalchemy": {
+          "bytes": 19042925,
+          "files": 617,
+          "source_type": "git"
+        },
+        "import-typer": {
+          "bytes": 979255,
+          "files": 513,
+          "source_type": "git"
+        }
+      },
+      "total_packages": 0,
+      "total_repositories": 0,
+      "total_sources": 16
+    },
+    "total_tokens": 10777409,
+    "used_token_ids": 29366,
+    "vocab_size": 32000,
+    "vocabulary_coverage": 0.9176875
+  },
+  "project_root": "/Users/macbook/Downloads/GenPy",
+  "run_id": "20260723T093810Z"
+}

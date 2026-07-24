@@ -1,0 +1,34 @@
+id,prompt,generated_answer,generation_time_seconds,generated_tokens,tokens_per_second,pass_fail,check_details
+bubble_sort,Write bubble sort.,"def __init__(self, self, self, self, self, self,",0.401514,16,39.849163,Fail,"missing required terms: return; missing one of: for, while; missing one of: bubble, swapped; Python syntax error at line 1"
+quick_sort,Write quick sort.,"def __init__(self, self, self, self, self, self,",0.298577,16,53.587502,Fail,"missing required terms: return; missing one of: pivot, partition; missing one of: quick_sort, quicksort; Python syntax error at line 1"
+reverse_linked_list,Reverse a linked list.,"def __init__(self, self, self, self, self, self,",0.273840,16,58.428217,Fail,"missing required terms: next, return; missing one of: prev, previous; Python syntax error at line 1"
+binary_search,Implement binary search.,"def __init__(self, self, self, self, self, self,",0.278202,16,57.512098,Fail,"missing required terms: return; missing one of: while, for; missing one of: mid, middle; Python syntax error at line 1"
+pandas_csv,Read a CSV using pandas.,"def __init__(self, other):
+        pass",0.182621,11,60.234037,Fail,"missing required terms: pandas, read_csv"
+decorators,Explain Python decorators.,"def __init__(self, self, self, self, self, self,",0.271035,16,59.033048,Fail,"missing required terms: decorator, function; missing one of: wrapper, wrap; missing one of: @, syntax"
+fastapi_crud,Write a FastAPI CRUD API.,"class A(Base):
+    __tablename__ = ""id""
+    id =",0.288783,16,55.404979,Fail,"missing required terms: fastapi, get, post, put, delete; Python syntax error at line 3"
+fix_reverse,"Fix the following Python code:
+def reverse(lst):
+for i in range(len(lst)):
+return lst[::-1]","def f(1):
+    return 1",0.233733,9,38.505543,Fail,"missing required terms: def reverse, [::-1]; Python syntax error at line 1"
+list_comprehensions,Explain list comprehensions.,"def __init__(self, self, self, self, self, self,",0.273092,16,58.588395,Fail,"missing required terms: list, for; missing one of: expression, iterable, loop; missing one of: [, bracket"
+stack,Write a stack implementation.,"def f():
+    pass",0.098339,6,61.013200,Fail,"missing required terms: class, push, pop"
+queue,Write a queue implementation.,"def f():
+    pass",0.083443,6,71.905265,Fail,"missing required terms: class; missing one of: enqueue, append; missing one of: dequeue, popleft"
+generators,Explain generators.,"def __init__(self, other):
+        self.name = self.name",0.284525,16,56.233984,Fail,"missing required terms: yield; missing one of: iterator, iteration; missing one of: lazy, memory"
+async_await,Explain async/await.,"def __init__(self, self, self, self, self, self,",0.272412,16,58.734456,Fail,"missing required terms: async, await; missing one of: coroutine, event loop, concurrent"
+bfs,Write a BFS algorithm.,"def a():
+    pass",0.100241,6,59.855623,Fail,"missing required terms: visited; missing one of: queue, deque; missing one of: bfs, breadth"
+dfs,Write a DFS algorithm.,"def __init__(self, self, self, self, self, self,",0.254177,16,62.948271,Fail,"missing required terms: visited; missing one of: stack, recursive, recursion; missing one of: dfs, depth; Python syntax error at line 1"
+dijkstra,Write Dijkstra's algorithm.,"def __init__(self, self, self, self, self, self,",0.265803,16,60.195060,Fail,"missing required terms: distance; missing one of: heap, priority; missing one of: dijkstra, shortest; Python syntax error at line 1"
+merge_sort,Write merge sort.,"def __init__(self, self, self, self, self, self,",0.273814,16,58.433872,Fail,"missing required terms: merge, return; Python syntax error at line 1"
+recursion,Explain recursion.,"def __init__(self, other):
+        return self.self.self.",0.274228,16,58.345575,Fail,"missing required terms: function, base case; missing one of: itself, recursive call"
+quick_sort_complexity,Explain time complexity of quick sort.,"def __init__(self, self, self, self, self, self,",0.277996,16,57.554751,Fail,"missing required terms: o(n log n), o(n^2); missing one of: average, expected; missing one of: worst, worst-case"
+loop_to_comprehension,Convert a for loop into a list comprehension.,"def a():
+    pass",0.106980,6,56.085424,Fail,"missing required terms: [, ], for, in"

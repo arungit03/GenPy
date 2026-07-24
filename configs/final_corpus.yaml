@@ -1,0 +1,69 @@
+project_root: ..
+
+final_corpus:
+  corpus_root: python_corpus
+  output_directory: final_corpus
+  source_directories:
+    - github
+    - docs
+    - peps
+    - tutorials
+    - cleaned
+    - cleaned_docs
+
+  tokenizer: data/tokenizer/tokenizer.json
+
+  minimum_size: 80
+  maximum_size: 2000000
+  allowed_extensions:
+    - .py
+    - .pyi
+    - .md
+    - .rst
+    - .html
+    - .txt
+
+  deduplication: true
+  comment_removal: false
+
+  ignored_directories:
+    - .git
+    - .github
+    - __pycache__
+    - node_modules
+    - venv
+    - .venv
+    - env
+    - ENV
+    - build
+    - dist
+    - _build
+    - site
+    - final_corpus
+    - packed
+    - packed_docs
+    - metadata
+    - statistics
+
+  ignored_suffixes:
+    - .png
+    - .jpg
+    - .jpeg
+    - .gif
+    - .pdf
+    - .zip
+    - .exe
+    - .dll
+    - .so
+    - .bin
+
+  packing:
+    sequence_length: 1025
+    overlap: 0
+    packing_strategy: packed
+    max_tokens_per_shard: 10000000
+    shard_prefix: final_corpus
+    add_bos: false
+    add_eos: true
+    document_boundary: eos
+    pad_final_sequence: false

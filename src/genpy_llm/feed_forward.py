@@ -66,7 +66,7 @@ class FeedForwardNetwork(nn.Module):
         if activation not in {"gelu", "relu", "silu", "swiglu"}:
             raise FeedForwardError("activation must be one of: gelu, relu, silu, swiglu.")
         if (
-            not isinstance(dropout, int | float)
+            not isinstance(dropout, (int, float))
             or isinstance(dropout, bool)
             or not 0.0 <= dropout < 1.0
         ):
@@ -74,7 +74,7 @@ class FeedForwardNetwork(nn.Module):
         if not isinstance(use_bias, bool):
             raise FeedForwardError("use_bias must be true or false.")
         if (
-            not isinstance(initialization_std, int | float)
+            not isinstance(initialization_std, (int, float))
             or isinstance(initialization_std, bool)
             or initialization_std <= 0
         ):

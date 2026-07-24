@@ -1,0 +1,33 @@
+{
+  "bos_token_id": 2,
+  "build_fingerprint": "f64784217ae64ad8daf22256d2c20a3828913383d4003d2e668fee23935f2ad0",
+  "byte_count": 791300,
+  "byte_order": "little",
+  "context_length": 1024,
+  "creation_timestamp": "2026-07-23T10:32:40.370459+00:00",
+  "dtype": "uint16",
+  "eos_token_id": 3,
+  "format": "genpy_uint16_packed_sequence_shards",
+  "format_version": 1,
+  "pad_token_id": 0,
+  "sequence_count": 386,
+  "sequence_layout": "contiguous_fixed_length",
+  "sequence_length": 1025,
+  "shards": [
+    {
+      "byte_count": 791300,
+      "filename": "corpus_v2_00000.bin",
+      "metadata_filename": "corpus_v2_00000.metadata.json.gz",
+      "metadata_sha256": "f852885de26b2e5f26da1f1b6d115a020df293702bc31c61872522e3a65aed27",
+      "sequence_count": 386,
+      "sha256": "32583dbb15b2e8f40bdb75063f593474c8443b2c6c9e17925600142b89cfdebc",
+      "shard_index": 0,
+      "token_count": 395650
+    }
+  ],
+  "source_manifest": "/Users/macbook/Downloads/GenPy/data/corpus_v2/document_manifest.jsonl",
+  "token_count": 395650,
+  "tokenizer": "/Users/macbook/Downloads/GenPy/data/tokenizer/tokenizer.json",
+  "tokenizer_sha256": "dc88d1cd66355e38cdfd1c3289eea138ea7c457b9f4534e8f1e24f6a0e7f6492",
+  "vocab_size": 32000
+}

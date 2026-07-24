@@ -1,0 +1,18 @@
+[
+  {
+    "checkpoint": "/Users/macbook/Desktop/GenPy/checkpoints/continued_pretraining/checkpoint_step_07500",
+    "checkpoint_size_bytes": 495524867,
+    "epoch": 4,
+    "global_step": 7500,
+    "last_checkpoint": "/Users/macbook/Desktop/GenPy/checkpoints/continued_pretraining/last_checkpoint.pt",
+    "timestamp": "2026-07-24T10:57:40.320737+00:00"
+  },
+  {
+    "checkpoint": "/Users/macbook/Desktop/GenPy/checkpoints/continued_pretraining/checkpoint_step_10000",
+    "checkpoint_size_bytes": 495524867,
+    "epoch": 4,
+    "global_step": 10000,
+    "last_checkpoint": "/Users/macbook/Desktop/GenPy/checkpoints/continued_pretraining/last_checkpoint.pt",
+    "timestamp": "2026-07-24T12:15:11.284680+00:00"
+  }
+]

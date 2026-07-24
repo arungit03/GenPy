@@ -1,0 +1,169 @@
+[
+  {
+    "id": "bubble_sort",
+    "prompt": "Write bubble sort.",
+    "check": {
+      "python_syntax": true,
+      "required_terms": ["def", "return"],
+      "required_any": [["for", "while"], ["bubble", "swapped"]]
+    }
+  },
+  {
+    "id": "quick_sort",
+    "prompt": "Write quick sort.",
+    "check": {
+      "python_syntax": true,
+      "required_terms": ["def", "return"],
+      "required_any": [["pivot", "partition"], ["quick_sort", "quicksort"]]
+    }
+  },
+  {
+    "id": "reverse_linked_list",
+    "prompt": "Reverse a linked list.",
+    "check": {
+      "python_syntax": true,
+      "required_terms": ["def", "next", "return"],
+      "required_any": [["prev", "previous"]]
+    }
+  },
+  {
+    "id": "binary_search",
+    "prompt": "Implement binary search.",
+    "check": {
+      "python_syntax": true,
+      "required_terms": ["def", "return"],
+      "required_any": [["while", "for"], ["mid", "middle"]]
+    }
+  },
+  {
+    "id": "pandas_csv",
+    "prompt": "Read a CSV using pandas.",
+    "check": {
+      "python_syntax": true,
+      "required_terms": ["pandas", "read_csv"]
+    }
+  },
+  {
+    "id": "decorators",
+    "prompt": "Explain Python decorators.",
+    "check": {
+      "required_terms": ["decorator", "function"],
+      "required_any": [["wrapper", "wrap"], ["@", "syntax"]]
+    }
+  },
+  {
+    "id": "fastapi_crud",
+    "prompt": "Write a FastAPI CRUD API.",
+    "check": {
+      "python_syntax": true,
+      "required_terms": ["fastapi", "get", "post", "put", "delete"]
+    }
+  },
+  {
+    "id": "fix_reverse",
+    "prompt": "Fix the following Python code:\ndef reverse(lst):\nfor i in range(len(lst)):\nreturn lst[::-1]",
+    "check": {
+      "python_syntax": true,
+      "required_terms": ["def reverse", "return", "[::-1]"]
+    }
+  },
+  {
+    "id": "list_comprehensions",
+    "prompt": "Explain list comprehensions.",
+    "check": {
+      "required_terms": ["list", "for"],
+      "required_any": [["expression", "iterable", "loop"], ["[", "bracket"]]
+    }
+  },
+  {
+    "id": "stack",
+    "prompt": "Write a stack implementation.",
+    "check": {
+      "python_syntax": true,
+      "required_terms": ["class", "push", "pop"]
+    }
+  },
+  {
+    "id": "queue",
+    "prompt": "Write a queue implementation.",
+    "check": {
+      "python_syntax": true,
+      "required_terms": ["class"],
+      "required_any": [["enqueue", "append"], ["dequeue", "popleft"]]
+    }
+  },
+  {
+    "id": "generators",
+    "prompt": "Explain generators.",
+    "check": {
+      "required_terms": ["yield"],
+      "required_any": [["iterator", "iteration"], ["lazy", "memory"]]
+    }
+  },
+  {
+    "id": "async_await",
+    "prompt": "Explain async/await.",
+    "check": {
+      "required_terms": ["async", "await"],
+      "required_any": [["coroutine", "event loop", "concurrent"]]
+    }
+  },
+  {
+    "id": "bfs",
+    "prompt": "Write a BFS algorithm.",
+    "check": {
+      "python_syntax": true,
+      "required_terms": ["visited"],
+      "required_any": [["queue", "deque"], ["bfs", "breadth"]]
+    }
+  },
+  {
+    "id": "dfs",
+    "prompt": "Write a DFS algorithm.",
+    "check": {
+      "python_syntax": true,
+      "required_terms": ["visited"],
+      "required_any": [["stack", "recursive", "recursion"], ["dfs", "depth"]]
+    }
+  },
+  {
+    "id": "dijkstra",
+    "prompt": "Write Dijkstra's algorithm.",
+    "check": {
+      "python_syntax": true,
+      "required_terms": ["distance"],
+      "required_any": [["heap", "priority"], ["dijkstra", "shortest"]]
+    }
+  },
+  {
+    "id": "merge_sort",
+    "prompt": "Write merge sort.",
+    "check": {
+      "python_syntax": true,
+      "required_terms": ["def", "merge", "return"]
+    }
+  },
+  {
+    "id": "recursion",
+    "prompt": "Explain recursion.",
+    "check": {
+      "required_terms": ["function", "base case"],
+      "required_any": [["itself", "recursive call"]]
+    }
+  },
+  {
+    "id": "quick_sort_complexity",
+    "prompt": "Explain time complexity of quick sort.",
+    "check": {
+      "required_terms": ["o(n log n)", "o(n^2)"],
+      "required_any": [["average", "expected"], ["worst", "worst-case"]]
+    }
+  },
+  {
+    "id": "loop_to_comprehension",
+    "prompt": "Convert a for loop into a list comprehension.",
+    "check": {
+      "required_terms": ["[", "]", "for", "in"]
+    }
+  }
+]

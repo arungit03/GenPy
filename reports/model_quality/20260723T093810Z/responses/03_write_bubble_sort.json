@@ -1,0 +1,38 @@
+{
+  "elapsed_seconds": 0.5020255839990568,
+  "emitted_token_count": 25,
+  "formatted_prompt": "<|system|>\nYou are GenPy, a Python coding assistant.\n\n<|user|>\nWrite bubble sort\n\n<|assistant|>\n",
+  "generated_token_count": 26,
+  "generator_diagnostic_report": null,
+  "issues": {
+    "conversation_marker_counts": {
+      "<|assistant|>": 0,
+      "<|system|>": 0,
+      "<|user|>": 0
+    },
+    "hallucinated_identifiers": [],
+    "invalid_python_syntax": true,
+    "max_consecutive_token_repeat": 1,
+    "possible_undefined_identifiers": [],
+    "prompt_echoing": false,
+    "repeated_conversation_markers": false,
+    "repeated_ngram": {
+      "count": 3,
+      "length": 3,
+      "token_ids": [
+        9,
+        1554,
+        334
+      ]
+    },
+    "repetition_loop": false,
+    "syntax_errors": [
+      "unterminated string literal (detected at line 2) at line 2, column 46"
+    ],
+    "unfinished_functions": false
+  },
+  "prompt": "Write bubble sort",
+  "raw_generated_text": "def f():\n    print(f\"Hello {f\"Hello {f\" f\"Hello {line r\"docs }",
+  "response": "def f():\n    print(f\"Hello {f\"Hello {f\" f\"Hello {line r\"docs }",
+  "stopped": true
+}

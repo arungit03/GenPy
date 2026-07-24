@@ -9,7 +9,7 @@ import os
 import sqlite3
 import sys
 from dataclasses import asdict, dataclass
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -22,6 +22,8 @@ from genpy_llm.python_corpus_expansion import (
     expand_python_corpus,
     load_corpus_expansion_config,
 )
+
+UTC = timezone.utc
 
 LOGGER = logging.getLogger("genpy_llm.python_corpus_population")
 POPULATION_VERSION = 1

@@ -1,0 +1,22 @@
+device: auto
+
+phase7_config: configs/finetuning.yaml
+
+checkpoint: checkpoints/fine_tuned/best_checkpoint.pt
+
+quantized_checkpoint: checkpoints/quantized/last_checkpoint_fp16.pt
+
+lora_adapter:
+
+generation:
+  temperature: 0.7
+  top_p: 0.95
+  max_new_tokens: 256
+  # Keep at least this many tokens before honoring <eos>; counters the SFT
+  # model's tendency to stop after a minimal stub.
+  min_new_tokens: 24
+  # Sampling avoids greedy decoding collapsing to the modal short answer.
+  do_sample: true
+  repetition_penalty: 1.15
+  stop_tokens:
+    - "<eos>"

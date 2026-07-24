@@ -1,0 +1,59 @@
+{
+  "deduplication": {
+    "category_counts_after": {
+      "api_usage": 4788,
+      "bug_fixing": 3482,
+      "code_completion": 7492,
+      "code_generation": 7324,
+      "complexity_analysis": 1228,
+      "documentation": 1536,
+      "explanation": 7455,
+      "optimization": 4,
+      "refactoring": 6540,
+      "type_hints": 3485,
+      "unit_testing": 2238
+    },
+    "category_counts_before": {
+      "api_usage": 4788,
+      "bug_fixing": 3482,
+      "code_completion": 7492,
+      "code_generation": 7324,
+      "complexity_analysis": 1228,
+      "documentation": 1536,
+      "explanation": 7455,
+      "optimization": 4,
+      "refactoring": 6540,
+      "type_hints": 3485,
+      "unit_testing": 2238
+    },
+    "duplicate_instruction_records": 10298,
+    "duplicate_output_records": 14616,
+    "duplicate_pair_groups": 0,
+    "duplicate_pair_records_removed": 0,
+    "new_size": 45572,
+    "original_size": 45572
+  },
+  "output": "/Users/macbook/Desktop/GenPy/data/fine_tuning/train.deduplicated.jsonl",
+  "source": "/Users/macbook/Desktop/GenPy/data/fine_tuning/train.jsonl",
+  "validation": {
+    "broken_json_lines": 0,
+    "category_counts": {
+      "api_usage": 4788,
+      "bug_fixing": 3482,
+      "code_completion": 7492,
+      "code_generation": 7324,
+      "complexity_analysis": 1228,
+      "documentation": 1536,
+      "explanation": 7455,
+      "optimization": 4,
+      "refactoring": 6540,
+      "type_hints": 3485,
+      "unit_testing": 2238
+    },
+    "empty_instruction_records": 0,
+    "empty_output_records": 0,
+    "malformed_records": 0,
+    "total_lines": 45572,
+    "usable_records": 45572
+  }
+}

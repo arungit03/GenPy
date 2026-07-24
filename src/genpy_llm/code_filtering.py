@@ -161,7 +161,7 @@ def stable_split(hash_value: str, validation_percent: int | float = 2) -> str:
 
     if not isinstance(hash_value, str) or not re.fullmatch(r"[0-9a-fA-F]{64}", hash_value):
         raise CodeFilteringError("hash_value must be a SHA-256 hex digest.")
-    if not isinstance(validation_percent, int | float) or not 0 <= validation_percent <= 100:
+    if not isinstance(validation_percent, (int, float)) or not 0 <= validation_percent <= 100:
         raise CodeFilteringError("validation_percent must be between 0 and 100.")
     bucket = int(hash_value[:8], 16) % 10_000
     return "validation" if bucket < int(float(validation_percent) * 100) else "train"

@@ -25,7 +25,7 @@ from collections import Counter
 from collections.abc import Iterable, Mapping, Sequence
 from concurrent.futures import Future, ProcessPoolExecutor, as_completed
 from dataclasses import asdict, dataclass, replace
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path, PurePosixPath
 from typing import Any
@@ -57,6 +57,8 @@ from genpy_llm.python_corpus_expansion import (
     load_corpus_expansion_config,
 )
 from genpy_llm.python_dataset_pipeline import ProgressBar
+
+UTC = timezone.utc
 
 LOGGER = logging.getLogger("genpy_llm.pypi_corpus_builder")
 PYPI_CORPUS_VERSION = 1
@@ -711,7 +713,7 @@ class PyPIDuplicateIndex:
             ).fetchall()
             for existing_digest, encoded_hash in rows:
                 existing = _unsigned64(int(encoded_hash))
-                if existing_digest != digest and (existing ^ simhash).bit_count() <= (
+                if existing_digest != digest and bin(existing ^ simhash).count("1") <= (
                     self.settings.near_duplicate_distance
                 ):
                     self.reasons["near_duplicate"] += 1

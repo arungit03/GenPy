@@ -27,7 +27,7 @@ class GPTLayerNorm(nn.Module):
             or embedding_dim <= 0
         ):
             raise NormalizationError("embedding_dim must be an integer greater than zero.")
-        if not isinstance(epsilon, int | float) or isinstance(epsilon, bool) or epsilon <= 0:
+        if not isinstance(epsilon, (int, float)) or isinstance(epsilon, bool) or epsilon <= 0:
             raise NormalizationError("epsilon must be greater than zero.")
         if not isinstance(elementwise_affine, bool):
             raise NormalizationError("elementwise_affine must be true or false.")

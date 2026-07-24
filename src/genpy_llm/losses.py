@@ -33,7 +33,7 @@ class GPTCrossEntropyLoss(nn.Module):
         if not isinstance(ignore_padding, bool):
             raise LossError("ignore_padding must be true or false.")
         if (
-            not isinstance(label_smoothing, int | float)
+            not isinstance(label_smoothing, (int, float))
             or isinstance(label_smoothing, bool)
             or not 0.0 <= label_smoothing < 1.0
         ):

@@ -14,11 +14,15 @@ import tempfile
 import unicodedata
 from collections.abc import Iterable, Iterator
 from dataclasses import dataclass, replace
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 import yaml
+
+from genpy_llm.compat import zip_strict
+
+UTC = timezone.utc
 
 
 class CodeTokenizerError(ValueError):
@@ -713,7 +717,7 @@ def _write_phase5_configuration(
             "id": tokenizer.token_to_id(token),
             "special": True,
         }
-        for role, token in zip(roles, config.special_tokens, strict=True)
+        for role, token in zip_strict(roles, config.special_tokens)
     }
     _atomic_write_json(
         config.output_directory / config.special_tokens_filename,

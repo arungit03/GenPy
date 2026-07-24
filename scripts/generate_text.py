@@ -15,6 +15,7 @@ if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
 from genpy_llm.checkpointing import CheckpointError
+from genpy_llm.compat import zip_strict
 from genpy_llm.config import ConfigError, load_config
 from genpy_llm.device import select_device
 from genpy_llm.generation import GenerationError, create_generator_from_checkpoint
@@ -147,7 +148,7 @@ def _parse_args() -> argparse.Namespace:
 def _unknown_prompt_tokens(result, unknown_id: int) -> tuple[str, ...]:
     return tuple(
         token
-        for token, token_id in zip(result.prompt_tokens, result.prompt_token_ids, strict=True)
+        for token, token_id in zip_strict(result.prompt_tokens, result.prompt_token_ids)
         if token_id == unknown_id and token != "<UNK>"
     )
 

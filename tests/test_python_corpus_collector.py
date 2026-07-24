@@ -167,6 +167,46 @@ def test_files_placed_directly_in_raw_are_registered_incrementally(tmp_path: Pat
     assert provenance["stored_path"] == "approved/manual.py"
 
 
+def test_technical_text_collection_is_opt_in(tmp_path: Path) -> None:
+    source = tmp_path / "source"
+    source.mkdir()
+    (source / "guide.md").write_text(
+        "# Parser Guide\n\nUse tokens, syntax trees, and deterministic tests for debugging.\n",
+        encoding="utf-8",
+    )
+    default_config = _config(
+        tmp_path / "default",
+        [{"id": "docs", "type": "local", "location": "../source", "license": "MIT"}],
+    )
+
+    default_result = collect_python_corpus(default_config)
+
+    assert default_result.files_scanned == 0
+
+    text_config = _config(
+        tmp_path / "text",
+        [
+            {
+                "id": "docs",
+                "type": "local",
+                "location": "../source",
+                "license": "MIT",
+                "include": ["**/*.md"],
+            }
+        ],
+        allowed_extensions=[".py", ".md"],
+    )
+
+    result = collect_python_corpus(text_config)
+
+    assert result.files_scanned == 1
+    assert result.files_accepted == 1
+    provenance = _manifest(text_config.provenance_manifest)[0]
+    assert provenance["content_type"] == "technical_text"
+    assert provenance["language"] == "Markdown"
+    assert provenance["stored_path"] == "docs/guide.md"
+
+
 def test_collector_cli_writes_json_report(tmp_path: Path) -> None:
     config = _config(tmp_path, [])
 
@@ -263,7 +303,9 @@ def _config(
     minimum: int = 1,
     maximum: int = 10_000,
     automatic_imports: bool = False,
+    allowed_extensions: list[str] | None = None,
 ):
+    root.mkdir(parents=True, exist_ok=True)
     config_path = root / "dataset_pipeline.yaml"
     payload = {
         "version": 1,
@@ -280,6 +322,8 @@ def _config(
         },
         "logging": {"level": "INFO"},
     }
+    if allowed_extensions is not None:
+        payload["corpus_collection"]["allowed_extensions"] = allowed_extensions
     if automatic_imports:
         payload["corpus_collection"]["automatic_imports"] = {
             "enabled": True,

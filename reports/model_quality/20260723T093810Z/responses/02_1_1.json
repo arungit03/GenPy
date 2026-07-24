@@ -1,0 +1,41 @@
+{
+  "elapsed_seconds": 1.7195068750006612,
+  "emitted_token_count": 63,
+  "formatted_prompt": "<|system|>\nYou are GenPy, a Python coding assistant.\n\n<|user|>\n1 + 1 =\n\n<|assistant|>\n",
+  "generated_token_count": 64,
+  "generator_diagnostic_report": null,
+  "issues": {
+    "conversation_marker_counts": {
+      "<|assistant|>": 0,
+      "<|system|>": 0,
+      "<|user|>": 0
+    },
+    "hallucinated_identifiers": [],
+    "invalid_python_syntax": true,
+    "max_consecutive_token_repeat": 1,
+    "possible_undefined_identifiers": [],
+    "prompt_echoing": false,
+    "repeated_conversation_markers": false,
+    "repeated_ngram": {
+      "count": 3,
+      "length": 6,
+      "token_ids": [
+        1019,
+        15,
+        850,
+        16,
+        345,
+        1285
+      ]
+    },
+    "repetition_loop": false,
+    "syntax_errors": [
+      "invalid syntax at line 2, column 72"
+    ],
+    "unfinished_functions": false
+  },
+  "prompt": "1 + 1 =",
+  "raw_generated_text": "def a():\n    with pytest.raises(ValidationError) as exc_raises(ValidationError) as exc_message(ValidationError) as exc_raises(ValidationError) as exc.value:\n        exc_message(\n            exc_value.value) as exc_value.value:\n            return exc_value.value",
+  "response": "def a():\n    with pytest.raises(ValidationError) as exc_raises(ValidationError) as exc_message(ValidationError) as exc_raises(ValidationError) as exc.value:\n        exc_message(\n            exc_value.value) as exc_value.value:\n            return exc_value.value",
+  "stopped": true
+}

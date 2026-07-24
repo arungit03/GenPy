@@ -14,6 +14,7 @@ from typing import Any
 import torch
 from torch.utils.data import DataLoader, Dataset
 
+from genpy_llm.compat import zip_strict
 from genpy_llm.config import DatasetConfig
 from genpy_llm.vocabulary import Vocabulary
 
@@ -491,7 +492,7 @@ def _samples_from_token_ids(
             attention_mask=(1,) * config.context_length,
             source_sequence_id=source_sequence_id,
         )
-        for input_ids, target_ids in zip(inputs, targets, strict=True)
+        for input_ids, target_ids in zip_strict(inputs, targets)
     ]
 
 

@@ -18,7 +18,7 @@ class ResidualConnection(nn.Module):
     def __init__(self, dropout: float = 0.1) -> None:
         super().__init__()
         if (
-            not isinstance(dropout, int | float)
+            not isinstance(dropout, (int, float))
             or isinstance(dropout, bool)
             or not 0.0 <= dropout < 1.0
         ):

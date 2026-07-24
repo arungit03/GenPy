@@ -20,7 +20,7 @@ from collections import Counter
 from collections.abc import Iterator, Mapping, Sequence
 from concurrent.futures import Future, ThreadPoolExecutor, as_completed
 from dataclasses import asdict, dataclass, replace
-from datetime import UTC, date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -44,6 +44,8 @@ from genpy_llm.python_corpus_collector import (
     load_corpus_collector_config,
 )
 from genpy_llm.python_dataset_pipeline import ProgressBar
+
+UTC = timezone.utc
 
 LOGGER = logging.getLogger("genpy_llm.github_corpus_builder")
 GITHUB_CORPUS_VERSION = 1

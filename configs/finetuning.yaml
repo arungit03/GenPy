@@ -8,11 +8,14 @@ phase7:
   log_level: INFO
 
   data:
-    train_path: data/fine_tuning/train.jsonl
+    # Deduplicated by scripts/prepare_sft_dataset.py; see reports/training_pipeline/dataset.md.
+    train_path: data/fine_tuning/train.deduplicated.jsonl
     validation_path: data/fine_tuning/validation.jsonl
     validation_fraction: 0.0
     tokenizer: data/tokenizer/tokenizer.json
-    context_length: 256
+    # Matches configs/model.yaml's context_length (1024); was 256, which
+    # truncated ~15% of training examples and forced a mid-answer <eos>.
+    context_length: 1024
     mask_prompt_tokens: true
     batch_size: 1
     dataloader_workers: 0

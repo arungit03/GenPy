@@ -1,0 +1,28 @@
+{
+  "elapsed_seconds": 0.19408666600065771,
+  "emitted_token_count": 11,
+  "formatted_prompt": "<|system|>\nYou are GenPy, a Python coding assistant.\n\n<|user|>\nReverse a linked list\n\n<|assistant|>\n",
+  "generated_token_count": 12,
+  "generator_diagnostic_report": null,
+  "issues": {
+    "conversation_marker_counts": {
+      "<|assistant|>": 0,
+      "<|system|>": 0,
+      "<|user|>": 0
+    },
+    "hallucinated_identifiers": [],
+    "invalid_python_syntax": false,
+    "max_consecutive_token_repeat": 1,
+    "possible_undefined_identifiers": [],
+    "prompt_echoing": false,
+    "repeated_conversation_markers": false,
+    "repeated_ngram": null,
+    "repetition_loop": false,
+    "syntax_errors": [],
+    "unfinished_functions": false
+  },
+  "prompt": "Reverse a linked list",
+  "raw_generated_text": "def f():\n    print(f\"-0\")",
+  "response": "def f():\n    print(f\"-0\")",
+  "stopped": true
+}

@@ -443,7 +443,7 @@ def _validate_config(config: EmbeddingConfig) -> None:
     if config.initialization not in {"normal", "uniform", "xavier_uniform"}:
         raise EmbeddingError(f"Unsupported embedding initialization: {config.initialization}")
     if (
-        not isinstance(config.initialization_std, int | float)
+        not isinstance(config.initialization_std, (int, float))
         or isinstance(config.initialization_std, bool)
         or config.initialization_std <= 0
     ):

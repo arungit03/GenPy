@@ -1,0 +1,3 @@
+method,checkpoint,checkpoint_size_bytes,trainable_parameters,validation_loss,perplexity,generation_tokens_per_second,automatic_checks_passed,prompt_count
+Full fine-tuning,/Users/macbook/Downloads/GenPy/checkpoints/fine_tuned/last_checkpoint.pt,495526171,35823616,5.479551792144775,239.73923028379772,65.93242678645281,0,20
+LoRA,/Users/macbook/Downloads/GenPy/checkpoints/lora/last_adapter.pt,598987,147456,5.354034423828125,211.45969730024768,62.141352155205524,0,20

@@ -1,0 +1,25 @@
+{
+  "continued": {
+    "checkpoint": "/Users/macbook/Desktop/GenPy/checkpoints/continued_pretraining/last_checkpoint.pt",
+    "generation_tokens_per_second": 72.13006171734101,
+    "perplexity": 1184.4632102830521,
+    "python_benchmark_score": 0.0,
+    "repetition_rate": 0.3125,
+    "syntax_correctness": 0.0,
+    "validation_loss": 7.07704496383667,
+    "validation_tokens": 4096
+  },
+  "generated_at": "2026-07-24T08:09:47.973150+00:00",
+  "perplexity_delta": -26.900271008060372,
+  "previous": {
+    "checkpoint": "/Users/macbook/Desktop/GenPy/checkpoints/last_checkpoint.pt",
+    "generation_tokens_per_second": 22.496442530333663,
+    "perplexity": 1211.3634812911125,
+    "python_benchmark_score": 0.0,
+    "repetition_rate": 0.25,
+    "syntax_correctness": 0.0,
+    "validation_loss": 7.099501848220825,
+    "validation_tokens": 4096
+  },
+  "validation_loss_delta": -0.022456884384155273
+}

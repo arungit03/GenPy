@@ -389,7 +389,7 @@ def _validate_monitor_and_mode(monitor: str, mode: str) -> None:
 def _validate_optional_metric(name: str, value: float | None) -> float | None:
     if value is None:
         return None
-    if not isinstance(value, int | float) or isinstance(value, bool):
+    if not isinstance(value, (int, float)) or isinstance(value, bool):
         raise CheckpointError(f"{name} must be a finite number or None.")
     number = float(value)
     if not math.isfinite(number):

@@ -1,4 +1,4 @@
-"""Incremental collection of approved Python source material into ``data/raw``."""
+"""Incremental collection of approved source material into ``data/raw``."""
 
 from __future__ import annotations
 
@@ -19,11 +19,13 @@ import zipfile
 from collections import Counter
 from collections.abc import Callable, Iterable, Iterator, Mapping, Sequence
 from dataclasses import asdict, dataclass, field
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
-from typing import Any
+from typing import Any, Optional
 
 import yaml
+
+UTC = timezone.utc
 
 LOGGER = logging.getLogger("genpy_llm.python_corpus_collector")
 COLLECTOR_VERSION = 1
@@ -67,6 +69,8 @@ DEFAULT_GENERATED_CONTENT_MARKERS = (
     "do not edit",
 )
 DEFAULT_IMPORT_METADATA_FILE = ".genpy-corpus.yaml"
+DEFAULT_ALLOWED_EXTENSIONS = (".py",)
+TECHNICAL_TEXT_EXTENSIONS = (".md", ".rst", ".txt")
 
 
 class CorpusCollectionError(RuntimeError):
@@ -107,7 +111,7 @@ class CorpusSource:
 
 @dataclass(frozen=True)
 class CorpusCollectorConfig:
-    """Validated configuration for raw Python corpus collection."""
+    """Validated configuration for raw corpus collection."""
 
     config_path: Path
     project_root: Path
@@ -116,6 +120,7 @@ class CorpusCollectorConfig:
     report_path: Path
     minimum_file_bytes: int
     maximum_file_bytes: int
+    allowed_extensions: tuple[str, ...]
     ignored_directories: tuple[str, ...]
     generated_file_patterns: tuple[str, ...]
     generated_content_markers: tuple[str, ...]
@@ -164,7 +169,7 @@ class CollectionResult:
     rejection_reasons: dict[str, int]
 
 
-CandidateDuplicateFilter = Callable[[SourceCandidate, str, str], str | None]
+CandidateDuplicateFilter = Callable[[SourceCandidate, str, str], Optional[str]]
 
 
 def load_corpus_collector_config(
@@ -240,6 +245,10 @@ def load_corpus_collector_config(
         report_path=report_path,
         minimum_file_bytes=int(section.get("minimum_file_bytes", 1)),
         maximum_file_bytes=int(section.get("maximum_file_bytes", 250_000)),
+        allowed_extensions=_extension_tuple(
+            section.get("allowed_extensions", DEFAULT_ALLOWED_EXTENSIONS),
+            "corpus_collection.allowed_extensions",
+        ),
         ignored_directories=_string_tuple(
             section.get("ignored_directories", DEFAULT_IGNORED_DIRECTORIES),
             "corpus_collection.ignored_directories",
@@ -505,7 +514,7 @@ def _collect_manual_raw_files(
         license=config.manual_license,
     )
     source_stats = statistics.setdefault(manual.source_id, SourceStatistics())
-    for path, relative in _walk_python_files(config, config.output_directory):
+    for path, relative in _walk_supported_files(config, config.output_directory):
         stored_path = relative.as_posix()
         existing_entry = manifest.get(stored_path)
         existing_source = (
@@ -603,7 +612,7 @@ def _directory_candidates(
     *,
     revision: str | None = None,
 ) -> Iterator[SourceCandidate]:
-    for path, relative in _walk_python_files(config, root):
+    for path, relative in _walk_supported_files(config, root):
         if not _source_path_selected(source, relative):
             continue
         yield _file_candidate(config, source, path, relative, revision=revision)
@@ -619,7 +628,7 @@ def _file_candidate(
 ) -> SourceCandidate:
     size = path.stat().st_size
     rejection = None
-    if path.suffix.lower() != ".py":
+    if not _is_supported_extension(path.name, config.allowed_extensions):
         rejection = "unsupported_extension"
     elif _is_generated(config, relative):
         rejection = "generated_file"
@@ -647,7 +656,10 @@ def _zip_candidates(
         raise CorpusCollectionError(f"Invalid ZIP archive {archive_path}: {exc}") from exc
     with archive:
         for member in sorted(archive.infolist(), key=lambda item: item.filename):
-            if member.is_dir() or not member.filename.lower().endswith(".py"):
+            if member.is_dir() or not _is_supported_extension(
+                member.filename,
+                config.allowed_extensions,
+            ):
                 continue
             relative = PurePosixPath(member.filename)
             if _unsafe_archive_path(relative):
@@ -751,7 +763,7 @@ def _run_git(command: list[str], timeout: int, source_id: str) -> subprocess.Com
         ) from exc
 
 
-def _walk_python_files(
+def _walk_supported_files(
     config: CorpusCollectorConfig,
     root: Path,
 ) -> Iterator[tuple[Path, PurePosixPath]]:
@@ -769,7 +781,7 @@ def _walk_python_files(
             )
         )
         for file_name in sorted(file_names):
-            if not file_name.lower().endswith(".py"):
+            if not _is_supported_extension(file_name, config.allowed_extensions):
                 continue
             path = Path(directory) / file_name
             if path.is_symlink() or not path.is_file():
@@ -796,10 +808,11 @@ def _validate_candidate(
     header = "\n".join(decoded.splitlines()[:8]).casefold()
     if any(marker.casefold() in header for marker in config.generated_content_markers):
         return "generated_file", None
-    try:
-        ast.parse(decoded, filename=candidate.relative_path.as_posix())
-    except (SyntaxError, ValueError, TypeError):
-        return "invalid_python_syntax", None
+    if _is_python_path(candidate.relative_path):
+        try:
+            ast.parse(decoded, filename=candidate.relative_path.as_posix())
+        except (SyntaxError, ValueError, TypeError):
+            return "invalid_python_syntax", None
     return None, decoded
 
 
@@ -849,6 +862,8 @@ def _provenance_record(
         },
         "source_path": candidate.relative_path.as_posix(),
         "stored_path": stored_path,
+        "content_type": _content_type(candidate.relative_path),
+        "language": _content_language(candidate.relative_path),
         "license": candidate.source.license,
         "collection_timestamp": collection_timestamp,
         "last_seen_timestamp": _timestamp(),
@@ -1165,6 +1180,8 @@ def _validate_config(config: CorpusCollectorConfig) -> None:
         )
     if config.git_timeout_seconds <= 0:
         raise CorpusCollectionError("corpus_collection.git_timeout_seconds must be positive.")
+    if not config.allowed_extensions:
+        raise CorpusCollectionError("corpus_collection.allowed_extensions must not be empty.")
     for metadata_path in (config.provenance_manifest, config.report_path):
         try:
             metadata_path.resolve().relative_to(config.output_directory.resolve())
@@ -1187,6 +1204,30 @@ def _matches_any(path: str, patterns: Iterable[str]) -> bool:
         or (pattern.startswith("**/") and fnmatch.fnmatch(path, pattern[3:]))
         for pattern in patterns
     )
+
+
+def _is_supported_extension(path: str | PurePosixPath, extensions: Iterable[str]) -> bool:
+    suffix = PurePosixPath(str(path)).suffix.casefold()
+    return suffix in {extension.casefold() for extension in extensions}
+
+
+def _is_python_path(path: str | PurePosixPath) -> bool:
+    return PurePosixPath(str(path)).suffix.casefold() == ".py"
+
+
+def _content_type(path: str | PurePosixPath) -> str:
+    return "python_code" if _is_python_path(path) else "technical_text"
+
+
+def _content_language(path: str | PurePosixPath) -> str:
+    suffix = PurePosixPath(str(path)).suffix.casefold()
+    if suffix == ".py":
+        return "Python"
+    if suffix == ".md":
+        return "Markdown"
+    if suffix == ".rst":
+        return "reStructuredText"
+    return "Text"
 
 
 def _is_generated(config: CorpusCollectorConfig, path: PurePosixPath) -> bool:
@@ -1282,6 +1323,17 @@ def _string_tuple(value: object, label: str) -> tuple[str, ...]:
     ):
         raise CorpusCollectionError(f"{label} must be a list of non-empty strings.")
     return tuple(item.strip() for item in value)
+
+
+def _extension_tuple(value: object, label: str) -> tuple[str, ...]:
+    extensions = _string_tuple(value, label)
+    normalized: list[str] = []
+    for extension in extensions:
+        item = extension.casefold()
+        if not item.startswith(".") or len(item) < 2:
+            raise CorpusCollectionError(f"{label} entries must look like '.py'.")
+        normalized.append(item)
+    return tuple(dict.fromkeys(normalized))
 
 
 def _bytes_hash(content: bytes) -> str:

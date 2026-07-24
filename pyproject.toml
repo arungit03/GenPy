@@ -7,7 +7,7 @@ name = "genpy-llm"
 version = "0.1.0"
 description = "Educational GPT-style language model built from scratch in Python."
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.9"
 dependencies = [
     "numpy>=1.26,<3.0",
     "python-dotenv>=1.0,<2.0",
@@ -16,12 +16,15 @@ dependencies = [
     "gradio>=4.44,<6.0",
     "datasets>=2.19,<4.0",
     "tokenizers>=0.19,<1.0",
+    "fastapi>=0.111,<1.0",
+    "uvicorn>=0.30,<1.0",
 ]
 
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0,<9.0",
     "ruff>=0.5,<1.0",
+    "httpx>=0.27,<1.0",
 ]
 
 [tool.setuptools.packages.find]
@@ -34,15 +37,21 @@ addopts = "-q"
 
 [tool.ruff]
 line-length = 100
-target-version = "py311"
-# Imported third-party corpora are data, not GenPy source to lint.
-extend-exclude = ["data/raw", "data/imports"]
+target-version = "py39"
+# Imported third-party corpora are data, not GenPy source to lint;
+# GenPy-v1.0 is a built release artifact containing copies of already-linted code.
+extend-exclude = ["data/raw", "data/imports", "python_corpus", "GenPy-v1.0"]
 
 [tool.ruff.lint]
 select = ["B", "BLE", "E", "F", "I", "UP", "W"]
 ignore = []
 
 [tool.ruff.lint.per-file-ignores]
+# Pydantic evaluates field annotations at runtime; `X | None` requires Python
+# 3.10+ even under `from __future__ import annotations`, so these stay on
+# `typing.Optional` for Python 3.9 compatibility.
+"api/config.py" = ["UP045"]
+"api/schemas.py" = ["UP045"]
 "main.py" = ["E402"]
 "scripts/check_setup.py" = ["E402"]
 "scripts/preprocess_text.py" = ["E402"]
@@ -73,6 +82,12 @@ ignore = []
 "scripts/fine_tune_code_model.py" = ["E402"]
 "scripts/generate_code.py" = ["E402"]
 "scripts/evaluate_code_model.py" = ["E402"]
+"scripts/evaluate_gpt.py" = ["E402"]
+"scripts/lora_train.py" = ["E402"]
+"scripts/evaluate_lora.py" = ["E402"]
+"scripts/quantize_model.py" = ["E402"]
+"scripts/benchmark_quantization.py" = ["E402"]
+"scripts/run_api.py" = ["E402"]
 "scripts/collect_python_data.py" = ["E402", "I001"]
 "scripts/clean_python_dataset.py" = ["E402", "I001"]
 "scripts/generate_instruction_pairs.py" = ["E402", "I001"]
@@ -87,6 +102,12 @@ ignore = []
 "scripts/build_pypi_corpus.py" = ["E402", "I001"]
 "scripts/build_pretraining_corpus.py" = ["E402", "I001"]
 "scripts/pretrain_gpt.py" = ["E402", "I001"]
+"scripts/run_phase6_1.py" = ["E402", "I001"]
+"scripts/build_corpus_v2.py" = ["E402", "I001"]
+"scripts/analyze_corpus_v2.py" = ["E402", "I001"]
+"scripts/run_phase6_3.py" = ["E402", "I001"]
+"scripts/resume_training.py" = ["E402", "I001"]
+"scripts/benchmark_phase6_3.py" = ["E402", "I001"]
 
 [tool.ruff.format]
 quote-style = "double"

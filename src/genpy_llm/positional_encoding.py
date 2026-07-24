@@ -33,13 +33,13 @@ class PositionalEncoding(nn.Module):
                 "encoding_type must be either 'learned', 'sinusoidal', or 'none'."
             )
         if (
-            not isinstance(dropout, int | float)
+            not isinstance(dropout, (int, float))
             or isinstance(dropout, bool)
             or not 0.0 <= dropout < 1.0
         ):
             raise PositionalEncodingError("dropout must be at least 0.0 and less than 1.0.")
         if (
-            not isinstance(initialization_std, int | float)
+            not isinstance(initialization_std, (int, float))
             or isinstance(initialization_std, bool)
             or initialization_std <= 0
         ):

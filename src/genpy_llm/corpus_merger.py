@@ -11,7 +11,7 @@ import sys
 from collections.abc import Iterable, Iterator, Mapping, Sequence
 from concurrent.futures import Future, ProcessPoolExecutor
 from dataclasses import dataclass
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -55,6 +55,8 @@ from genpy_llm.validation_report import (
     ValidationReporter,
     validate_manifest_record,
 )
+
+UTC = timezone.utc
 
 LOGGER = logging.getLogger("genpy_llm.corpus_merger")
 FINAL_CORPUS_VERSION = 1
@@ -262,6 +264,11 @@ def load_pretraining_config(path: Path | str = "configs/pretraining.yaml") -> Co
             require_python_syntax=bool(validation_raw.get("require_python_syntax", True)),
             reject_generated=bool(validation_raw.get("reject_generated", True)),
             reject_vendor=bool(validation_raw.get("reject_vendor", True)),
+            allow_technical_text=bool(validation_raw.get("allow_technical_text", False)),
+            technical_text_extensions=_string_tuple(
+                validation_raw.get("technical_text_extensions", (".md", ".rst", ".txt")),
+                "pretraining_corpus.validation.technical_text_extensions",
+            ),
             cleaner=CodeFilterSettings(
                 minimum_file_bytes=int(validation_raw.get("minimum_file_bytes", 1)),
                 maximum_file_bytes=int(validation_raw.get("maximum_file_bytes", 250_000)),
@@ -706,7 +713,12 @@ def _enrich_record(
         "size": item.byte_size,
         "size_bytes": item.byte_size,
         "line_count": item.line_count,
-        "language": "Python",
+        "content_type": provenance.get("content_type") or _content_type_from_path(
+            str(provenance.get("source_path") or provenance.get("stored_path") or "")
+        ),
+        "language": provenance.get("language") or _language_from_path(
+            str(provenance.get("source_path") or provenance.get("stored_path") or "")
+        ),
         "validation_status": "accepted",
         "_text": item.text,
     }
@@ -808,6 +820,21 @@ def _record_sort_key(record: Mapping[str, Any]) -> tuple[str, str, str]:
         str(source.get("id") or ""),
         str(record.get("stored_path") or ""),
     )
+
+
+def _content_type_from_path(path: str) -> str:
+    return "python_code" if path.casefold().endswith(".py") else "technical_text"
+
+
+def _language_from_path(path: str) -> str:
+    suffix = Path(path).suffix.casefold()
+    if suffix == ".py":
+        return "Python"
+    if suffix == ".md":
+        return "Markdown"
+    if suffix == ".rst":
+        return "reStructuredText"
+    return "Text"
 
 
 def _write_checkpoint(path: Path, payload: Mapping[str, Any]) -> None:

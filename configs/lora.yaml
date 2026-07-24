@@ -1,0 +1,50 @@
+version: 1
+
+phase9:
+  phase7_config: configs/finetuning.yaml
+
+  adapter:
+    rank: 8
+    alpha: 16.0
+    dropout: 0.05
+    target_modules:
+      - attention.qkv_projection
+      - attention.output_projection
+
+  training:
+    base_checkpoint: checkpoints/last_checkpoint.pt
+    device: auto
+    mixed_precision: none
+    epochs: 1
+    max_steps: 2000
+    batch_size: 1
+    gradient_accumulation_steps: 1
+    max_grad_norm: 1.0
+    learning_rate: 0.0002
+    weight_decay: 0.0
+    warmup_steps: 100
+    log_every_steps: 10
+    save_every_steps: 100
+    eval_every_steps: 100
+    evaluation_steps: 10
+    seed: 42
+    resume_from:
+
+  checkpoints:
+    output_dir: checkpoints/lora
+    adapter_filename: last_adapter.pt
+    best_filename: best_adapter.pt
+    step_prefix: step
+    keep_last: 3
+
+  evaluation:
+    full_fine_tuned_checkpoint: checkpoints/fine_tuned/last_checkpoint.pt
+    prompt_dataset: data/evaluation/prompts.json
+    output_dir: evaluation/lora_comparison
+    max_new_tokens: 64
+    validation_batches: 10
+
+  outputs:
+    metrics_dir: metrics/phase9
+    log_file: logs/phase9_lora.jsonl
+    log_level: INFO

@@ -241,7 +241,7 @@ def apply_top_p(
     _validate_logits(logits)
     if top_p is None:
         return logits
-    if not isinstance(top_p, int | float) or isinstance(top_p, bool) or not 0 < top_p <= 1:
+    if not isinstance(top_p, (int, float)) or isinstance(top_p, bool) or not 0 < top_p <= 1:
         raise GenerationError("top_p must be None or greater than zero and at most one.")
     if top_p >= 1:
         return logits
@@ -297,9 +297,9 @@ def create_generator_from_checkpoint(
         raise GenerationError("device must be a torch.device.")
     config = load_config(config_path)
     resolved_vocabulary_path = vocabulary_path or config.data.vocabulary_file
+    checkpoint_metadata = _read_checkpoint_metadata(checkpoint_path)
     vocabulary = Vocabulary.load(resolved_vocabulary_path, encoding=config.data.encoding)
     model, metadata = create_gpt_model(resolved_vocabulary_path, config)
-    checkpoint_metadata = _read_checkpoint_metadata(checkpoint_path)
     if checkpoint_metadata.get("vocabulary_size") != len(vocabulary):
         raise GenerationError(
             "Checkpoint vocabulary size does not match the loaded vocabulary. "
@@ -357,7 +357,7 @@ def _validate_generation_args(
     if top_k is not None and (not isinstance(top_k, int) or isinstance(top_k, bool) or top_k <= 0):
         raise GenerationError("top_k must be None or an integer greater than zero.")
     if top_p is not None and (
-        not isinstance(top_p, int | float) or isinstance(top_p, bool) or not 0 < top_p <= 1
+        not isinstance(top_p, (int, float)) or isinstance(top_p, bool) or not 0 < top_p <= 1
     ):
         raise GenerationError("top_p must be None or greater than zero and at most one.")
     if not isinstance(do_sample, bool):
@@ -382,7 +382,7 @@ def _validate_logits(logits: torch.Tensor) -> None:
 
 def _validate_positive_float(name: str, value: float) -> None:
     if (
-        not isinstance(value, int | float)
+        not isinstance(value, (int, float))
         or isinstance(value, bool)
         or value <= 0
         or not math.isfinite(float(value))

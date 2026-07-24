@@ -1,0 +1,278 @@
+{
+  "base": {
+    "documentation_qa": {
+      "average_score": 0.0,
+      "question_count": 105,
+      "source_scores": {
+        "django": 0.0,
+        "fastapi": 0.0,
+        "flask": 0.0,
+        "numpy": 0.0,
+        "pandas": 0.0,
+        "peps": 0.0,
+        "python_docs": 0.0
+      },
+      "tokens_per_second": 67.36847943368956
+    },
+    "latency": {
+      "max_seconds": 0.347344540999984,
+      "mean_seconds": 0.20328006660020037,
+      "min_seconds": 0.1587217080013943,
+      "per_run_seconds": [
+        0.347344540999984,
+        0.1587217080013943,
+        0.16170279200014193,
+        0.18557099999998172,
+        0.1630602919994999
+      ],
+      "runs": 5,
+      "tokens_per_run": 16,
+      "tokens_per_second": 78.70914383094869
+    },
+    "profile": {
+      "checkpoint_size_bytes": 495526619,
+      "device_memory_mb": 142.65625,
+      "epoch": 1,
+      "global_step": 5000,
+      "load_seconds": 0.6338433750006516,
+      "parameter_count": 35823616,
+      "parameter_memory_mb": 136.65625,
+      "path": "/Users/macbook/Desktop/GenPy/checkpoints/last_checkpoint.pt",
+      "role": "base",
+      "rss_after_load_mb": 659.4375
+    },
+    "python_benchmark": {
+      "average_generated_tokens": 48.0,
+      "average_response_chars": 173.16190476190476,
+      "category_pass_rates": {
+        "algorithms": 0.2,
+        "asyncio": 0.4,
+        "cli": 0.2,
+        "csv": 0.2,
+        "data_structures": 0.2,
+        "decorators": 0.0,
+        "django": 0.2,
+        "fastapi": 0.2,
+        "file_handling": 0.0,
+        "flask": 0.0,
+        "generators": 0.0,
+        "json": 0.0,
+        "logging": 0.2,
+        "numpy": 0.2,
+        "oop": 0.0,
+        "pandas": 0.4,
+        "pytorch": 0.2,
+        "regex": 0.0,
+        "sql": 0.2,
+        "testing": 0.2,
+        "typing": 0.0
+      },
+      "compile_rate": 0.14285714285714285,
+      "execution_rate": 0.10476190476190476,
+      "pass_rate": 0.14285714285714285,
+      "prompt_count": 105,
+      "syntax_rate": 0.14285714285714285,
+      "tokens_per_second": 62.08029077192809
+    },
+    "text_generation": {
+      "average_response_chars": 164.66666666666666,
+      "code_fence_rate": 0.0,
+      "coherence_score": 0.12411347517730499,
+      "formatting_score": 0.0,
+      "instruction_following": 0.041666666666666664,
+      "markdown_rate": 0.0,
+      "repetition_rate": 0.8836805555555557,
+      "task_count": 12
+    },
+    "validation": {
+      "batches": 20,
+      "loss": 5.5745530128479,
+      "next_token_accuracy": 0.2209228515625,
+      "perplexity": 263.6316893185247,
+      "tokens": 40960,
+      "tokens_per_second": 6076.90628361411
+    }
+  },
+  "comparison": {
+    "checkpoint_size": {
+      "base_bytes": 495526619,
+      "base_human": "472.57 MiB",
+      "continued_bytes": 495524867,
+      "continued_human": "472.57 MiB"
+    },
+    "documentation_qa": {
+      "base_score": 0.0,
+      "continued_score": 0.0,
+      "delta_pp": 0.0
+    },
+    "latency": {
+      "base_mean_seconds": 0.20328006660020037,
+      "continued_mean_seconds": 0.23667472500019357,
+      "improvement_percent": -16.4279060699404
+    },
+    "load_time": {
+      "base_seconds": 0.6338433750006516,
+      "continued_seconds": 0.5975106669993693
+    },
+    "memory": {
+      "base_device_memory_mb": 142.65625,
+      "base_parameter_memory_mb": 136.65625,
+      "base_rss_mb": 659.4375,
+      "continued_device_memory_mb": 142.65625,
+      "continued_parameter_memory_mb": 136.65625,
+      "continued_rss_mb": 1055.171875
+    },
+    "next_token_accuracy": {
+      "base": 0.2209228515625,
+      "continued": 0.22646484375,
+      "delta_pp": 0.5541992187500011
+    },
+    "overall_improvement_components": {
+      "documentation_qa_delta_pp": 0.0,
+      "instruction_following_delta_pp": 4.166666666666666,
+      "next_token_accuracy_delta_pp": 0.5541992187500011,
+      "perplexity_improvement_percent": 9.314252094462635,
+      "python_pass_rate_delta_pp": 9.523809523809524,
+      "validation_loss_improvement_percent": 1.7538621560669883
+    },
+    "overall_improvement_percent": 4.218798276625969,
+    "perplexity": {
+      "base": 263.6316893185247,
+      "continued": 239.0763691745068,
+      "delta": -24.555320144017912,
+      "improvement_percent": 9.314252094462635
+    },
+    "python_benchmark": {
+      "base_execution_rate": 0.10476190476190476,
+      "base_pass_rate": 0.14285714285714285,
+      "continued_execution_rate": 0.23809523809523808,
+      "continued_pass_rate": 0.23809523809523808,
+      "delta_pp": 9.523809523809524
+    },
+    "speed": {
+      "base_generation_tokens_per_second": 78.70914383094869,
+      "base_validation_tokens_per_second": 6076.90628361411,
+      "continued_generation_tokens_per_second": 67.60333195691645,
+      "continued_validation_tokens_per_second": 6733.158571397615,
+      "improvement_percent": -14.109938608766063
+    },
+    "text_generation": {
+      "base_instruction_following": 0.041666666666666664,
+      "base_repetition_rate": 0.8836805555555557,
+      "continued_instruction_following": 0.08333333333333333,
+      "continued_repetition_rate": 0.935763888888889,
+      "delta_pp": 4.166666666666666
+    },
+    "validation_loss": {
+      "base": 5.5745530128479,
+      "continued": 5.476783037185669,
+      "delta": -0.09776997566223145,
+      "improvement_percent": 1.7538621560669883
+    }
+  },
+  "config": "/Users/macbook/Desktop/GenPy/configs/benchmark.yaml",
+  "continued": {
+    "documentation_qa": {
+      "average_score": 0.0,
+      "question_count": 105,
+      "source_scores": {
+        "django": 0.0,
+        "fastapi": 0.0,
+        "flask": 0.0,
+        "numpy": 0.0,
+        "pandas": 0.0,
+        "peps": 0.0,
+        "python_docs": 0.0
+      },
+      "tokens_per_second": 67.01710280445023
+    },
+    "latency": {
+      "max_seconds": 0.29194187500070257,
+      "mean_seconds": 0.23667472500019357,
+      "min_seconds": 0.1641883330012206,
+      "per_run_seconds": [
+        0.29194187500070257,
+        0.1641883330012206,
+        0.26490533299875096,
+        0.23558391699953063,
+        0.22675416700076312
+      ],
+      "runs": 5,
+      "tokens_per_run": 16,
+      "tokens_per_second": 67.60333195691645
+    },
+    "profile": {
+      "checkpoint_size_bytes": 495524867,
+      "device_memory_mb": 142.65625,
+      "epoch": 3,
+      "global_step": 5040,
+      "load_seconds": 0.5975106669993693,
+      "parameter_count": 35823616,
+      "parameter_memory_mb": 136.65625,
+      "path": "/Users/macbook/Desktop/GenPy/checkpoints/continued_pretraining/checkpoint_step_05040/model.pt",
+      "role": "continued",
+      "rss_after_load_mb": 1055.171875
+    },
+    "python_benchmark": {
+      "average_generated_tokens": 48.0,
+      "average_response_chars": 180.98095238095237,
+      "category_pass_rates": {
+        "algorithms": 0.2,
+        "asyncio": 0.2,
+        "cli": 0.4,
+        "csv": 0.4,
+        "data_structures": 0.2,
+        "decorators": 0.2,
+        "django": 0.2,
+        "fastapi": 0.2,
+        "file_handling": 0.0,
+        "flask": 0.0,
+        "generators": 0.2,
+        "json": 0.2,
+        "logging": 0.2,
+        "numpy": 0.2,
+        "oop": 0.4,
+        "pandas": 0.6,
+        "pytorch": 0.2,
+        "regex": 0.0,
+        "sql": 0.4,
+        "testing": 0.2,
+        "typing": 0.4
+      },
+      "compile_rate": 0.23809523809523808,
+      "execution_rate": 0.23809523809523808,
+      "pass_rate": 0.23809523809523808,
+      "prompt_count": 105,
+      "syntax_rate": 0.23809523809523808,
+      "tokens_per_second": 63.00262343554116
+    },
+    "text_generation": {
+      "average_response_chars": 169.16666666666666,
+      "code_fence_rate": 0.0,
+      "coherence_score": 0.0726950354609929,
+      "formatting_score": 0.08333333333333333,
+      "instruction_following": 0.08333333333333333,
+      "markdown_rate": 0.16666666666666666,
+      "repetition_rate": 0.935763888888889,
+      "task_count": 12
+    },
+    "validation": {
+      "batches": 20,
+      "loss": 5.476783037185669,
+      "next_token_accuracy": 0.22646484375,
+      "perplexity": 239.0763691745068,
+      "tokens": 40960,
+      "tokens_per_second": 6733.158571397615
+    }
+  },
+  "device": "mps",
+  "generated_at": "2026-07-24T08:30:37.404041+00:00",
+  "generation": {
+    "do_sample": false,
+    "max_new_tokens": 48,
+    "repetition_penalty": 1.0,
+    "temperature": 0.7,
+    "top_k": null,
+    "top_p": 0.95
+  }
+}

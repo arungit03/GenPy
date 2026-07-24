@@ -350,9 +350,9 @@ def _ratio(numerator: int, denominator: int) -> float:
 
 
 def _timestamp() -> str:
-    from datetime import UTC, datetime
+    from datetime import datetime, timezone
 
-    return datetime.now(UTC).isoformat()
+    return datetime.now(timezone.utc).isoformat()
 
 
 def _file_hash(path: Path) -> str:

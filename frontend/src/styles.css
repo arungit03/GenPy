@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root.dark {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #f8faf9;
+}
+
+.dark body {
+  background: #0b100e;
+}
+
+button,
+textarea,
+input,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(47, 185, 161, 0.28);
+}
+
+@layer components {
+  .icon-button {
+    @apply inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-transparent text-surface-700 transition hover:border-surface-200 hover:bg-white hover:text-surface-900 focus:outline-none focus:ring-2 focus:ring-brand-500/40 dark:text-surface-200 dark:hover:border-surface-700 dark:hover:bg-surface-800 dark:hover:text-white;
+  }
+
+  .panel {
+    @apply border border-surface-200 bg-white shadow-soft dark:border-surface-800 dark:bg-surface-900;
+  }
+
+  .markdown {
+    @apply space-y-4 text-[15px] leading-7 text-surface-900 dark:text-surface-100;
+  }
+
+  .markdown p {
+    @apply m-0;
+  }
+
+  .markdown ul,
+  .markdown ol {
+    @apply my-0 pl-6;
+  }
+
+  .markdown ul {
+    @apply list-disc;
+  }
+
+  .markdown ol {
+    @apply list-decimal;
+  }
+
+  .markdown a {
+    @apply font-medium text-brand-600 underline underline-offset-4 dark:text-brand-400;
+  }
+
+  .markdown blockquote {
+    @apply m-0 border-l-4 border-brand-500/60 pl-4 text-surface-700 dark:text-surface-200;
+  }
+
+  .markdown table {
+    @apply w-full border-collapse overflow-hidden text-sm;
+  }
+
+  .markdown th,
+  .markdown td {
+    @apply border border-surface-200 px-3 py-2 text-left dark:border-surface-700;
+  }
+
+  .markdown th {
+    @apply bg-surface-100 dark:bg-surface-800;
+  }
+
+  .markdown :not(pre) > code {
+    @apply rounded bg-surface-100 px-1.5 py-0.5 font-mono text-[0.9em] text-ember-500 dark:bg-surface-800;
+  }
+}

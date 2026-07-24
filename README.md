@@ -25,6 +25,8 @@ Completed pieces:
 - Final merged pretraining corpus builder with global deduplication and packed
   binary sequence shards
 - Official Phase 6 GPT pretraining engine for packed binary corpora
+- Phase 6.1 continued pretraining orchestration with corpus readiness gates,
+  code/text balance checks, checkpoint resume, and benchmark commands
 
 ## GitHub Corpus Builder
 
@@ -97,6 +99,50 @@ and maps to `mixed_precision: none`. Apple MPS defaults to full precision; `bf16
 requests fall back to full precision with a warning, while `fp16` is used only
 when the installed PyTorch/MPS stack supports it.
 
+## Continued Pretraining
+
+Phase 6.1 expands the corpus target to 200M-500M tokens, admits approved
+technical text alongside Python code, verifies the packed-corpus balance, resumes
+from an existing Phase 6 checkpoint, and can run before/after coding benchmarks:
+
+```bash
+python scripts/run_phase6_1.py
+```
+
+The default readiness gate refuses to train until the corpus target and balance
+requirements are met. See
+[Phase 6.1 Continued Pretraining](docs/phase6_1_continued_pretraining.md).
+
+## Corpus V2 Expansion
+
+Phase 6.2 builds a scalable, local-only corpus expansion pipeline for continued
+pretraining readiness. It collects approved Python and technical-text sources,
+cleans, validates, deduplicates, tokenizes with the existing tokenizer, packs
+Phase-6-compatible binary shards, writes reports, and stops before training:
+
+```bash
+python scripts/build_corpus_v2.py
+python scripts/analyze_corpus_v2.py
+```
+
+Configuration lives in `configs/corpus_v2.yaml`. See
+[Phase 6.2 Corpus V2](docs/phase6_2_corpus.md).
+
+## Phase 6.3 Continued Pretraining
+
+Phase 6.3 resumes GPT pretraining from the latest Phase 6 checkpoint using the
+validated Corpus V2 packed shards. It verifies corpus readiness, tokenizer and
+checkpoint compatibility, then writes continued checkpoints under
+`checkpoints/pretraining_v2/`:
+
+```bash
+python scripts/run_phase6_3.py
+python scripts/benchmark_phase6_3.py
+```
+
+If Corpus V2 readiness fails, Phase 6.3 aborts before training. See
+[Phase 6.3 Continued Pretraining](docs/phase6_3_continued_pretraining.md).
+
 ## Supervised Instruction Fine-Tuning
 
 Phase 7 fine-tunes a pretrained GenPy GPT checkpoint into a Python coding
@@ -110,6 +156,34 @@ The trainer reuses the Phase 5 tokenizer and Phase 6 checkpoint/model path,
 supports assistant-only loss masking, checkpoint resume, evaluation, metrics,
 and generated coding samples. See
 [Phase 7 Fine-Tuning](docs/phase7_finetuning.md).
+
+## Evaluation and Benchmarking
+
+Phase 8 evaluates the latest fine-tuned checkpoint on a fixed 20-prompt Python
+assistant benchmark, measures generation latency and throughput, calculates
+validation loss and perplexity, and writes JSON, CSV, and Markdown reports:
+
+```bash
+python scripts/evaluate_gpt.py
+```
+
+Use `--checkpoint`, `--device`, or `--output-dir` to override the defaults. The
+automatic pass/fail checks are safe static syntax and keyword heuristics; generated
+code is never executed.
+
+## LoRA / Parameter-Efficient Fine-Tuning
+
+Phase 9 attaches low-rank weight parametrizations to the fused QKV and attention
+output projections. All original model weights remain frozen, and the effective
+weights are visible to GenPy's direct `F.linear` attention path:
+
+```bash
+python scripts/lora_train.py
+python scripts/evaluate_lora.py
+```
+
+Adapters support rank, alpha, dropout, merge/unmerge, adapter-only save/load, and
+CPU, CUDA, and Apple MPS execution. See [Phase 9 LoRA](docs/phase9_lora.md).
 
 ## Code Training
 

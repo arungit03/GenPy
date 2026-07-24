@@ -84,7 +84,7 @@ class GPTTrainer:
         ):
             raise TrainingError("gradient_accumulation_steps must be greater than zero.")
         if max_grad_norm is not None and (
-            not isinstance(max_grad_norm, int | float)
+            not isinstance(max_grad_norm, (int, float))
             or isinstance(max_grad_norm, bool)
             or max_grad_norm <= 0
         ):

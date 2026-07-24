@@ -564,7 +564,7 @@ def _optional_int(value: object) -> int | None:
 def _optional_float(value: object) -> float | None:
     if value is None:
         return None
-    if isinstance(value, int | float) and not isinstance(value, bool):
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
         number = float(value)
         return number if math.isfinite(number) else None
     return None
@@ -671,7 +671,7 @@ def _plot_series(
     for x, y in transformed:
         canvas.line(x - 3, y, x + 3, y, color)
         canvas.line(x, y - 3, x, y + 3, color)
-    for first, second in zip(transformed, transformed[1:], strict=False):
+    for first, second in zip(transformed, transformed[1:]):
         canvas.line(first[0], first[1], second[0], second[1], color)
 
 

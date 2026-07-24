@@ -17,6 +17,7 @@ from genpy_llm.code_tokenizer import (
     tokenizer_file_hash,
     validate_python_tokenization,
 )
+from genpy_llm.compat import zip_strict
 
 
 def test_phase5_build_writes_all_artifacts_and_tokenizes_python(tmp_path: Path) -> None:
@@ -127,7 +128,7 @@ def _pipeline_config(tmp_path: Path):
         {"instruction": "Write Unicode output.", "input": "", "output": "print('வணக்கம் 🐍')"},
     )
     names = ("train.jsonl", "validation.jsonl", "test.jsonl")
-    for name, record in zip(names, records, strict=True):
+    for name, record in zip_strict(names, records):
         (corpus / name).write_text(json.dumps(record, ensure_ascii=False) + "\n", encoding="utf-8")
     raw = {
         "corpus": {

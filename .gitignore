@@ -57,6 +57,7 @@ data/fine_tuning/code_instructions.jsonl
 !data/vocabulary/sample_vocab.json
 !data/vocabulary/sample_vocab_metadata.json
 !data/datasets/.gitkeep
+python_corpus/
 
 # Jupyter
 .ipynb_checkpoints/
@@ -64,6 +65,7 @@ data/fine_tuning/code_instructions.jsonl
 # IDEs
 .idea/
 .vscode/
+.DS_Store
 
 # Build artifacts
 build/
@@ -75,3 +77,6 @@ dist/
 # Code-model artifacts
 checkpoints/code_base/
 checkpoints/code_instruct/
+
+# Release packages (built artifacts, not source)
+GenPy-v1.0/

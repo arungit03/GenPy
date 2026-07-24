@@ -7,7 +7,7 @@ import hashlib
 from collections import Counter
 from collections.abc import Mapping
 from dataclasses import dataclass
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any
 
 from genpy_llm.code_filtering import CodeFilterSettings, filter_code_record
@@ -23,6 +23,8 @@ class FinalValidationConfig:
     require_python_syntax: bool = True
     reject_generated: bool = True
     reject_vendor: bool = True
+    allow_technical_text: bool = False
+    technical_text_extensions: tuple[str, ...] = (".md", ".rst", ".txt")
 
 
 @dataclass(frozen=True)
@@ -114,22 +116,28 @@ def validate_manifest_record(
         return None, "invalid_utf8"
     if not text.strip():
         return None, "empty_file"
-    if config.require_python_syntax:
+    content_type = _content_type(record, stored_path, config)
+    if content_type == "python_code" and config.require_python_syntax:
         try:
             ast.parse(text, filename=stored_path)
         except (SyntaxError, ValueError, TypeError):
             return None, "invalid_python_syntax"
-    filter_result = filter_code_record(
-        {
-            "text": text,
-            "path": record.get("source_path") or stored_path,
-            "license": record.get("license"),
-            "repo_name": source.get("id"),
-        },
-        settings=config.cleaner,
-    )
-    if not filter_result.accepted:
-        return None, f"cleaner_{filter_result.reason}"
+    if content_type == "python_code":
+        filter_result = filter_code_record(
+            {
+                "text": text,
+                "path": record.get("source_path") or stored_path,
+                "license": record.get("license"),
+                "repo_name": source.get("id"),
+            },
+            settings=config.cleaner,
+        )
+        if not filter_result.accepted:
+            return None, f"cleaner_{filter_result.reason}"
+    elif not config.allow_technical_text:
+        return None, "technical_text_disabled"
+    elif not _technical_text_has_signal(text):
+        return None, "low_text_signal"
     return (
         ValidatedCorpusRecord(
             provenance=dict(record),
@@ -140,6 +148,32 @@ def validate_manifest_record(
         ),
         None,
     )
+
+
+def _content_type(
+    record: Mapping[str, Any],
+    stored_path: str,
+    config: FinalValidationConfig,
+) -> str:
+    declared = record.get("content_type")
+    if declared == "python_code":
+        return "python_code"
+    if declared == "technical_text":
+        return "technical_text"
+    suffix = PurePosixPath(str(record.get("source_path") or stored_path)).suffix.casefold()
+    if suffix == ".py":
+        return "python_code"
+    if suffix in {item.casefold() for item in config.technical_text_extensions}:
+        return "technical_text"
+    return "unknown"
+
+
+def _technical_text_has_signal(text: str) -> bool:
+    words = [word for word in text.replace("_", " ").split() if any(ch.isalpha() for ch in word)]
+    if len(words) < 8:
+        return False
+    printable = sum(char.isprintable() or char in {"\n", "\t"} for char in text)
+    return printable / max(1, len(text)) >= 0.95
 
 
 __all__ = [

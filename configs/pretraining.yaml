@@ -37,6 +37,11 @@ pretraining_corpus:
     minimum_file_bytes: 1
     maximum_file_bytes: 250000
     require_python_syntax: true
+    allow_technical_text: true
+    technical_text_extensions:
+      - .md
+      - .rst
+      - .txt
     reject_generated: true
     reject_vendor: true
     cleaner:

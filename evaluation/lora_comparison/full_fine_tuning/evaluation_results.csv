@@ -1,0 +1,24 @@
+id,prompt,generated_answer,generation_time_seconds,generated_tokens,tokens_per_second,pass_fail,check_details
+bubble_sort,Write bubble sort.,def __,0.042861,2,46.662150,Fail,"missing required terms: return; missing one of: for, while; missing one of: bubble, swapped; Python syntax error at line 1"
+quick_sort,Write quick sort.,def __,0.044775,2,44.667326,Fail,"missing required terms: return; missing one of: pivot, partition; missing one of: quick_sort, quicksort; Python syntax error at line 1"
+reverse_linked_list,Reverse a linked list.,def __,0.026222,2,76.273287,Fail,"missing required terms: next, return; missing one of: prev, previous; Python syntax error at line 1"
+binary_search,Implement binary search.,def __,0.027848,2,71.817262,Fail,"missing required terms: return; missing one of: while, for; missing one of: mid, middle; Python syntax error at line 1"
+pandas_csv,Read a CSV using pandas.,def __,0.025455,2,78.568998,Fail,"missing required terms: pandas, read_csv; Python syntax error at line 1"
+decorators,Explain Python decorators.,def __,0.016765,2,119.294075,Fail,"missing required terms: decorator, function; missing one of: wrapper, wrap; missing one of: @, syntax"
+fastapi_crud,Write a FastAPI CRUD API.,class A,0.045914,2,43.560054,Fail,"missing required terms: fastapi, get, post, put, delete; Python syntax error at line 1"
+fix_reverse,"Fix the following Python code:
+def reverse(lst):
+for i in range(len(lst)):
+return lst[::-1]",def f,0.048752,2,41.023958,Fail,"missing required terms: def reverse, return, [::-1]; Python syntax error at line 1"
+list_comprehensions,Explain list comprehensions.,def __,0.028540,2,70.077902,Fail,"missing required terms: list, for; missing one of: expression, iterable, loop; missing one of: [, bracket"
+stack,Write a stack implementation.,def f,0.025919,2,77.163718,Fail,"missing required terms: class, push, pop; Python syntax error at line 1"
+queue,Write a queue implementation.,def f,0.017136,2,116.712501,Fail,"missing required terms: class; missing one of: enqueue, append; missing one of: dequeue, popleft; Python syntax error at line 1"
+generators,Explain generators.,def __,0.034006,2,58.812789,Fail,"missing required terms: yield; missing one of: iterator, iteration; missing one of: lazy, memory"
+async_await,Explain async/await.,def __,0.020977,2,95.342327,Fail,"missing required terms: async, await; missing one of: coroutine, event loop, concurrent"
+bfs,Write a BFS algorithm.,def a,0.020349,2,98.283923,Fail,"missing required terms: visited; missing one of: queue, deque; missing one of: bfs, breadth; Python syntax error at line 1"
+dfs,Write a DFS algorithm.,def __,0.020386,2,98.107747,Fail,"missing required terms: visited; missing one of: stack, recursive, recursion; missing one of: dfs, depth; Python syntax error at line 1"
+dijkstra,Write Dijkstra's algorithm.,def __,0.023984,2,83.389218,Fail,"missing required terms: distance; missing one of: heap, priority; missing one of: dijkstra, shortest; Python syntax error at line 1"
+merge_sort,Write merge sort.,def __,0.031613,2,63.265447,Fail,"missing required terms: merge, return; Python syntax error at line 1"
+recursion,Explain recursion.,def __,0.026422,2,75.693901,Fail,"missing required terms: function, base case; missing one of: itself, recursive call"
+quick_sort_complexity,Explain time complexity of quick sort.,def __,0.033251,2,60.148943,Fail,"missing required terms: o(n log n), o(n^2); missing one of: average, expected; missing one of: worst, worst-case"
+loop_to_comprehension,Convert a for loop into a list comprehension.,def a,0.045506,2,43.950128,Fail,"missing required terms: [, ], for, in"

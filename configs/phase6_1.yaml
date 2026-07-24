@@ -1,0 +1,49 @@
+version: 1
+project_root: ..
+
+phase6_1:
+  corpus:
+    minimum_tokens: 200000000
+    maximum_tokens: 500000000
+    min_python_code_fraction: 0.45
+    max_python_code_fraction: 0.75
+    min_technical_text_fraction: 0.20
+    max_technical_text_fraction: 0.55
+    allow_under_target: false
+
+  stages:
+    build_final_corpus: true
+    train: true
+    evaluate: true
+
+  paths:
+    pretraining_corpus_config: configs/pretraining.yaml
+    training_config: configs/training.yaml
+    model_config: configs/model.yaml
+    optimizer_config: configs/optimizer.yaml
+    generation_config: configs/generation.yaml
+    report_directory: reports/phase6_1
+    log_file: logs/phase6_1.jsonl
+
+  training:
+    max_steps:
+    device:
+    resume_from: checkpoints/last_checkpoint.pt
+
+  evaluation:
+    commands:
+      - - "{python}"
+        - scripts/evaluate_gpt.py
+        - --checkpoint
+        - checkpoints/best_model.pt
+        - --output-dir
+        - evaluation/phase6_1/baseline
+      - - "{python}"
+        - scripts/evaluate_gpt.py
+        - --checkpoint
+        - checkpoints/last_checkpoint.pt
+        - --output-dir
+        - evaluation/phase6_1/continued
+
+logging:
+  level: INFO

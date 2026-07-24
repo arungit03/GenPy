@@ -1,0 +1,65 @@
+version: 1
+project_root: ..
+
+continued_pretraining:
+  paths:
+    training_config: configs/training.yaml
+    model_config: configs/model.yaml
+    optimizer_config: configs/optimizer.yaml
+    generation_config: configs/generation.yaml
+    corpus_directory: python_corpus/final_corpus/packed
+    tokenizer: data/tokenizer/tokenizer.json
+    checkpoint_search_dir: checkpoints
+    checkpoint_output_dir: checkpoints/continued_pretraining
+    report_dir: reports/continued_pretraining
+    log_file: logs/continued_pretraining.jsonl
+
+  training:
+    # Lower than the 3e-4 pretraining peak; typical for continued pretraining.
+    learning_rate: 0.00006
+    # Null inherits configs/training.yaml (pretraining.data.batch_size).
+    batch_size:
+    gradient_accumulation_steps: 1
+    epochs: 1
+    # One full epoch over the Final Corpus from the current resume step:
+    # 514,740 sequences - 514 held out for validation (validation_fraction
+    # below) = 514,226 training sequences / batch_size 2 = 257,113 optimizer
+    # steps. epochs: 1 already stops the run at one full pass regardless of
+    # max_steps, so this value is set to match that pass exactly (not a
+    # smaller demo value) so the cosine schedule decays across the whole run.
+    max_steps: 257113
+    # Paced for a 257k-step run (was 200/100/10, sized for the earlier
+    # 40-step smoke test). Checkpointing, validation, and logging remain
+    # fully enabled at every listed feature; only the cadence changed to
+    # avoid ~1,300 checkpoint saves' worth of I/O overhead on a run this long.
+    checkpoint_interval_steps: 2500
+    validation_interval_steps: 2500
+    log_interval_steps: 50
+    warmup_steps: 50
+    weight_decay: 0.1
+    # Must match the packed Final Corpus shards (model context_length + 1).
+    sequence_length: 1025
+    device: auto
+    # fp32, fp16, or bf16 (fp16/bf16 fall back to fp32 where unsupported).
+    precision: fp32
+    max_grad_norm: 1.0
+    keep_last_checkpoints: 3
+    # Null values inherit configs/training.yaml.
+    validation_fraction: 0.001
+    validation_steps: 20
+    shuffle: true
+    seed: 42
+
+  early_stopping:
+    enabled: false
+    patience: 3
+    min_improvement: 0.001
+
+  benchmark:
+    enabled: true
+    validation_batches: 2
+    prompt_count: 3
+    max_new_tokens: 32
+
+logging:
+  level: INFO

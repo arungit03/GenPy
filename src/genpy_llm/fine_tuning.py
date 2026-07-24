@@ -38,7 +38,12 @@ from genpy_llm.performance import (
     reset_peak_memory,
     resolve_mixed_precision,
 )
-from genpy_llm.pretraining import CosineWarmupScheduler, Phase6ModelConfig, create_phase6_model
+from genpy_llm.pretraining import (
+    CosineWarmupScheduler,
+    Phase6ModelConfig,
+    compute_scheduler_total_steps,
+    create_phase6_model,
+)
 from genpy_llm.pretraining_generation import CodeGenerationSettings, generate_code_sample
 from genpy_llm.tokenization import TextTokenizer
 from genpy_llm.training import EpochMetrics, GPTTrainer
@@ -513,7 +518,7 @@ def _validate_prepare_inputs(
     ):
         raise FineTuningError("context_length must be greater than zero.")
     if (
-        not isinstance(train_validation_ratio, int | float)
+        not isinstance(train_validation_ratio, (int, float))
         or isinstance(train_validation_ratio, bool)
         or not 0 < train_validation_ratio <= 1
     ):
@@ -682,7 +687,14 @@ class Phase7Trainer:
             self.model,
             config.optimizer,
         )
-        max_steps = config.training.max_steps or max(1, config.training.epochs)
+        self.train_dataset, self.validation_dataset = self._datasets()
+        max_steps = compute_scheduler_total_steps(
+            dataset_size=len(self.train_dataset),
+            batch_size=config.data.batch_size,
+            gradient_accumulation_steps=config.training.gradient_accumulation_steps,
+            epochs=config.training.epochs,
+            max_steps=config.training.max_steps,
+        )
         self.scheduler = CosineWarmupScheduler(
             self.optimizer,
             max_steps=max_steps,
@@ -690,7 +702,6 @@ class Phase7Trainer:
             minimum_learning_rate_ratio=0.1,
         )
         self.scaler = create_grad_scaler(self.mixed_precision, self.device)
-        self.train_dataset, self.validation_dataset = self._datasets()
         self.global_step = 0
         self.epoch = 0
         self.micro_step = 0

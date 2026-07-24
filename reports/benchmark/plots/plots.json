@@ -1,0 +1,8 @@
+{
+  "latency.png": "Per-run generation latency in seconds: base (blue) vs continued (green).",
+  "loss.png": "Training loss (blue) and validation loss (red) over global steps.",
+  "memory.png": "Bars, left to right: base checkpoint MB, continued checkpoint MB, base parameter MB, continued parameter MB.",
+  "note": "PNGs are rendered with the dependency-free canvas and carry no text labels.",
+  "perplexity.png": "Perplexity from the discovered loss history (blue line) with final base/continued validation perplexity bars.",
+  "speed.png": "Bars, left to right: base generation tok/s, continued generation tok/s, base validation tok/s, continued validation tok/s."
+}

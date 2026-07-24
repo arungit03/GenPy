@@ -1,0 +1,28 @@
+{
+  "full_fine_tuning": {
+    "method": "Full fine-tuning",
+    "checkpoint": "/Users/macbook/Downloads/GenPy/checkpoints/fine_tuned/last_checkpoint.pt",
+    "checkpoint_size_bytes": 495526171,
+    "trainable_parameters": 35823616,
+    "validation_loss": 5.479551792144775,
+    "perplexity": 239.73923028379772,
+    "generation_tokens_per_second": 65.93242678645281,
+    "automatic_checks_passed": 0,
+    "prompt_count": 20
+  },
+  "lora": {
+    "method": "LoRA",
+    "checkpoint": "/Users/macbook/Downloads/GenPy/checkpoints/lora/last_adapter.pt",
+    "checkpoint_size_bytes": 598987,
+    "trainable_parameters": 147456,
+    "validation_loss": 5.354034423828125,
+    "perplexity": 211.45969730024768,
+    "generation_tokens_per_second": 62.141352155205524,
+    "automatic_checks_passed": 0,
+    "prompt_count": 20
+  },
+  "comparison": {
+    "trainable_parameter_reduction_percent": 99.58838326091927,
+    "checkpoint_size_reduction_percent": 99.87912101619351
+  }
+}

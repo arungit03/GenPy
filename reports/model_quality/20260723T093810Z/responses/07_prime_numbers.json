@@ -1,0 +1,42 @@
+{
+  "elapsed_seconds": 3.401744291993964,
+  "emitted_token_count": 129,
+  "formatted_prompt": "<|system|>\nYou are GenPy, a Python coding assistant.\n\n<|user|>\nPrime numbers\n\n<|assistant|>\n",
+  "generated_token_count": 130,
+  "generator_diagnostic_report": null,
+  "issues": {
+    "conversation_marker_counts": {
+      "<|assistant|>": 0,
+      "<|system|>": 0,
+      "<|user|>": 0
+    },
+    "hallucinated_identifiers": [],
+    "invalid_python_syntax": true,
+    "max_consecutive_token_repeat": 1,
+    "possible_undefined_identifiers": [],
+    "prompt_echoing": false,
+    "repeated_conversation_markers": false,
+    "repeated_ngram": {
+      "count": 4,
+      "length": 7,
+      "token_ids": [
+        21,
+        1161,
+        21,
+        1161,
+        21,
+        1161,
+        21
+      ]
+    },
+    "repetition_loop": true,
+    "syntax_errors": [
+      "invalid syntax at line 1, column 70"
+    ],
+    "unfinished_functions": false
+  },
+  "prompt": "Prime numbers",
+  "raw_generated_text": "def __init__(self, self, cls, self, self, self,self, self, self, self.classes.classes.classes.classes.classes.User, self.User, self.tables.User, self.classes.User, self.classes.classes.classes.mapper_imperatively(self.map_map_registry.tables.classes.classes.User,\n            self.mapper_registry.mapper_imperatively(User, self.mapper_imperatively(User,\n        )\n        sess = fixture_session()\n        User, backref=\"o, addresses.id\": relationship(User).all(),\n        )",
+  "response": "def __init__(self, self, cls, self, self, self,self, self, self, self.classes.classes.classes.classes.classes.User, self.User, self.tables.User, self.classes.User, self.classes.classes.classes.mapper_imperatively(self.map_map_registry.tables.classes.classes.User,\n            self.mapper_registry.mapper_imperatively(User, self.mapper_imperatively(User,\n        )\n        sess = fixture_session()\n        User, backref=\"o, addresses.id\": relationship(User).all(),\n        )",
+  "stopped": true
+}

@@ -996,7 +996,7 @@ def _resolve(path: Path) -> Path:
 
 
 def _resolve_path_value(value: object) -> Path:
-    if not isinstance(value, str | Path):
+    if not isinstance(value, (str, Path)):
         raise FineTuningError(f"Expected path value, found {type(value).__name__}.")
     return _resolve(Path(value))
 

@@ -1,0 +1,242 @@
+{
+  "metadata": {
+    "checkpoint": "/Users/macbook/Downloads/GenPy/checkpoints/fine_tuned/last_checkpoint.pt",
+    "checkpoint_step": 2000,
+    "checkpoint_epoch": 1,
+    "device": "mps",
+    "evaluated_at": "2026-07-23T02:25:44.369957+00:00",
+    "prompt_count": 20,
+    "validation": {
+      "loss": 5.479551792144775,
+      "perplexity": 239.73923028379772,
+      "tokens": 215,
+      "batches": 1
+    },
+    "total_generation_time_seconds": 0.606681749020936,
+    "total_generated_tokens": 40,
+    "tokens_per_second": 65.93242678645281,
+    "automatic_checks": "Static syntax and task-term heuristics; generated code is not executed."
+  },
+  "results": [
+    {
+      "id": "bubble_sort",
+      "prompt": "Write bubble sort.",
+      "generated_answer": "def __",
+      "generation_time_seconds": 0.04286129099637037,
+      "generated_tokens": 2,
+      "tokens_per_second": 46.66215024109671,
+      "passed": false,
+      "check_details": "missing required terms: return; missing one of: for, while; missing one of: bubble, swapped; Python syntax error at line 1",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "quick_sort",
+      "prompt": "Write quick sort.",
+      "generated_answer": "def __",
+      "generation_time_seconds": 0.0447754580018227,
+      "generated_tokens": 2,
+      "tokens_per_second": 44.66732646081666,
+      "passed": false,
+      "check_details": "missing required terms: return; missing one of: pivot, partition; missing one of: quick_sort, quicksort; Python syntax error at line 1",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "reverse_linked_list",
+      "prompt": "Reverse a linked list.",
+      "generated_answer": "def __",
+      "generation_time_seconds": 0.026221500003885012,
+      "generated_tokens": 2,
+      "tokens_per_second": 76.27328717669383,
+      "passed": false,
+      "check_details": "missing required terms: next, return; missing one of: prev, previous; Python syntax error at line 1",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "binary_search",
+      "prompt": "Implement binary search.",
+      "generated_answer": "def __",
+      "generation_time_seconds": 0.0278484579976066,
+      "generated_tokens": 2,
+      "tokens_per_second": 71.8172618452299,
+      "passed": false,
+      "check_details": "missing required terms: return; missing one of: while, for; missing one of: mid, middle; Python syntax error at line 1",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "pandas_csv",
+      "prompt": "Read a CSV using pandas.",
+      "generated_answer": "def __",
+      "generation_time_seconds": 0.02545533299417002,
+      "generated_tokens": 2,
+      "tokens_per_second": 78.56899772075485,
+      "passed": false,
+      "check_details": "missing required terms: pandas, read_csv; Python syntax error at line 1",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "decorators",
+      "prompt": "Explain Python decorators.",
+      "generated_answer": "def __",
+      "generation_time_seconds": 0.016765292006311938,
+      "generated_tokens": 2,
+      "tokens_per_second": 119.29407488083257,
+      "passed": false,
+      "check_details": "missing required terms: decorator, function; missing one of: wrapper, wrap; missing one of: @, syntax",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "fastapi_crud",
+      "prompt": "Write a FastAPI CRUD API.",
+      "generated_answer": "class A",
+      "generation_time_seconds": 0.045913624999229796,
+      "generated_tokens": 2,
+      "tokens_per_second": 43.560054341898514,
+      "passed": false,
+      "check_details": "missing required terms: fastapi, get, post, put, delete; Python syntax error at line 1",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "fix_reverse",
+      "prompt": "Fix the following Python code:\ndef reverse(lst):\nfor i in range(len(lst)):\nreturn lst[::-1]",
+      "generated_answer": "def f",
+      "generation_time_seconds": 0.0487520000024233,
+      "generated_tokens": 2,
+      "tokens_per_second": 41.02395798942785,
+      "passed": false,
+      "check_details": "missing required terms: def reverse, return, [::-1]; Python syntax error at line 1",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "list_comprehensions",
+      "prompt": "Explain list comprehensions.",
+      "generated_answer": "def __",
+      "generation_time_seconds": 0.028539667000586633,
+      "generated_tokens": 2,
+      "tokens_per_second": 70.07790244920832,
+      "passed": false,
+      "check_details": "missing required terms: list, for; missing one of: expression, iterable, loop; missing one of: [, bracket",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "stack",
+      "prompt": "Write a stack implementation.",
+      "generated_answer": "def f",
+      "generation_time_seconds": 0.02591891700285487,
+      "generated_tokens": 2,
+      "tokens_per_second": 77.16371790456012,
+      "passed": false,
+      "check_details": "missing required terms: class, push, pop; Python syntax error at line 1",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "queue",
+      "prompt": "Write a queue implementation.",
+      "generated_answer": "def f",
+      "generation_time_seconds": 0.017136125003162306,
+      "generated_tokens": 2,
+      "tokens_per_second": 116.71250061673332,
+      "passed": false,
+      "check_details": "missing required terms: class; missing one of: enqueue, append; missing one of: dequeue, popleft; Python syntax error at line 1",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "generators",
+      "prompt": "Explain generators.",
+      "generated_answer": "def __",
+      "generation_time_seconds": 0.03400620899628848,
+      "generated_tokens": 2,
+      "tokens_per_second": 58.81278916501057,
+      "passed": false,
+      "check_details": "missing required terms: yield; missing one of: iterator, iteration; missing one of: lazy, memory",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "async_await",
+      "prompt": "Explain async/await.",
+      "generated_answer": "def __",
+      "generation_time_seconds": 0.02097704199695727,
+      "generated_tokens": 2,
+      "tokens_per_second": 95.34232711600144,
+      "passed": false,
+      "check_details": "missing required terms: async, await; missing one of: coroutine, event loop, concurrent",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "bfs",
+      "prompt": "Write a BFS algorithm.",
+      "generated_answer": "def a",
+      "generation_time_seconds": 0.02034920800360851,
+      "generated_tokens": 2,
+      "tokens_per_second": 98.28392336671489,
+      "passed": false,
+      "check_details": "missing required terms: visited; missing one of: queue, deque; missing one of: bfs, breadth; Python syntax error at line 1",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "dfs",
+      "prompt": "Write a DFS algorithm.",
+      "generated_answer": "def __",
+      "generation_time_seconds": 0.020385750001878478,
+      "generated_tokens": 2,
+      "tokens_per_second": 98.107746823919,
+      "passed": false,
+      "check_details": "missing required terms: visited; missing one of: stack, recursive, recursion; missing one of: dfs, depth; Python syntax error at line 1",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "dijkstra",
+      "prompt": "Write Dijkstra's algorithm.",
+      "generated_answer": "def __",
+      "generation_time_seconds": 0.023983916005818173,
+      "generated_tokens": 2,
+      "tokens_per_second": 83.38921798737233,
+      "passed": false,
+      "check_details": "missing required terms: distance; missing one of: heap, priority; missing one of: dijkstra, shortest; Python syntax error at line 1",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "merge_sort",
+      "prompt": "Write merge sort.",
+      "generated_answer": "def __",
+      "generation_time_seconds": 0.03161283300141804,
+      "generated_tokens": 2,
+      "tokens_per_second": 63.26544665928191,
+      "passed": false,
+      "check_details": "missing required terms: merge, return; Python syntax error at line 1",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "recursion",
+      "prompt": "Explain recursion.",
+      "generated_answer": "def __",
+      "generation_time_seconds": 0.02642220800044015,
+      "generated_tokens": 2,
+      "tokens_per_second": 75.69390112918207,
+      "passed": false,
+      "check_details": "missing required terms: function, base case; missing one of: itself, recursive call",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "quick_sort_complexity",
+      "prompt": "Explain time complexity of quick sort.",
+      "generated_answer": "def __",
+      "generation_time_seconds": 0.03325079200294567,
+      "generated_tokens": 2,
+      "tokens_per_second": 60.14894321382844,
+      "passed": false,
+      "check_details": "missing required terms: o(n log n), o(n^2); missing one of: average, expected; missing one of: worst, worst-case",
+      "pass_fail": "Fail"
+    },
+    {
+      "id": "loop_to_comprehension",
+      "prompt": "Convert a for loop into a list comprehension.",
+      "generated_answer": "def a",
+      "generation_time_seconds": 0.04550612500315765,
+      "generated_tokens": 2,
+      "tokens_per_second": 43.95012758966449,
+      "passed": false,
+      "check_details": "missing required terms: [, ], for, in",
+      "pass_fail": "Fail"
+    }
+  ]
+}

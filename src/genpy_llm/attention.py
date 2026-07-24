@@ -27,7 +27,7 @@ class CausalSelfAttention(nn.Module):
         _validate_positive_int("embedding_dim", embedding_dim)
         _validate_positive_int("max_sequence_length", max_sequence_length)
         if (
-            not isinstance(dropout, int | float)
+            not isinstance(dropout, (int, float))
             or isinstance(dropout, bool)
             or not 0.0 <= dropout < 1.0
         ):
@@ -181,7 +181,7 @@ class MultiHeadCausalSelfAttention(nn.Module):
                 f"Received embedding_dim={embedding_dim} and num_heads={num_heads}."
             )
         if (
-            not isinstance(dropout, int | float)
+            not isinstance(dropout, (int, float))
             or isinstance(dropout, bool)
             or not 0.0 <= dropout < 1.0
         ):

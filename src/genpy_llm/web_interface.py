@@ -517,7 +517,7 @@ def _validate_prompt(prompt: str, max_characters: int) -> str:
 
 
 def _positive_int(value: int | float, name: str) -> int:
-    if not isinstance(value, int | float) or isinstance(value, bool):
+    if not isinstance(value, (int, float)) or isinstance(value, bool):
         raise WebInterfaceError(f"{name} must be greater than 0.")
     number = int(value)
     if number <= 0 or number != float(value):
@@ -526,7 +526,7 @@ def _positive_int(value: int | float, name: str) -> int:
 
 
 def _positive_float(value: int | float, name: str) -> float:
-    if not isinstance(value, int | float) or isinstance(value, bool) or float(value) <= 0:
+    if not isinstance(value, (int, float)) or isinstance(value, bool) or float(value) <= 0:
         raise WebInterfaceError(f"{name} must be greater than 0.")
     return float(value)
 
@@ -541,7 +541,7 @@ def _top_p(value: int | float) -> float:
 def _normalize_optional_int(value: int | float | None) -> int | None:
     if value is None:
         return None
-    if not isinstance(value, int | float) or isinstance(value, bool):
+    if not isinstance(value, (int, float)) or isinstance(value, bool):
         raise WebInterfaceError("top_k must be an integer greater than or equal to 0.")
     if float(value) == 0:
         return None

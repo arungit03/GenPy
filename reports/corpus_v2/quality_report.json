@@ -1,0 +1,54 @@
+{
+  "duplicate_percentage": 0.0,
+  "duplicate_report": {
+    "accepted_count": 147,
+    "duplicate_count": 0,
+    "duplicate_percentage": 0.0,
+    "reasons": {}
+  },
+  "readiness": {
+    "failures": [
+      "token_target",
+      "python_ratio",
+      "technical_text_ratio"
+    ],
+    "passed": false,
+    "settings": {
+      "max_duplicate_percentage": 0.15,
+      "max_python_ratio": 0.75,
+      "max_technical_text_ratio": 0.55,
+      "min_python_ratio": 0.45,
+      "min_technical_text_ratio": 0.2,
+      "minimum_tokens": 200000000
+    }
+  },
+  "rejection_reasons": {
+    "generated_file": 1
+  },
+  "statistics": {
+    "average_tokens": 2692.07483,
+    "content_type_documents": {
+      "python_code": 132,
+      "technical_text": 15
+    },
+    "largest_file": "genpy_src/python_dataset_pipeline.py",
+    "largest_file_tokens": 24740,
+    "median_tokens": 1511,
+    "python_ratio": 0.959539,
+    "python_tokens": 379723,
+    "smallest_file": "genpy_src/corpus_v2/__init__.py",
+    "smallest_file_tokens": 107,
+    "technical_text_ratio": 0.040461,
+    "technical_text_tokens": 16012,
+    "token_distribution": {
+      "128_511": 26,
+      "2048_8191": 46,
+      "512_2047": 61,
+      "gte_8192": 12,
+      "lt_128": 2
+    },
+    "total_documents": 147,
+    "total_files": 147,
+    "total_tokens": 395735
+  }
+}

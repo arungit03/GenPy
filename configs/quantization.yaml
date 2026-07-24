@@ -1,0 +1,25 @@
+version: 1
+
+phase10:
+  phase7_config: configs/finetuning.yaml
+  methods:
+    - fp16
+    - bf16
+    - dynamic_int8
+  log_level: INFO
+
+  checkpoints:
+    source_checkpoint: latest
+    output_dir: checkpoints/quantized
+
+  evaluation:
+    output_dir: evaluation
+    prompt_dataset: data/evaluation/prompts.json
+    max_new_tokens: 16
+    validation_batches: 1
+    benchmark_prompt_count: 2
+    warmup_runs: 1
+    timed_runs: 1
+
+  runtime:
+    device: auto

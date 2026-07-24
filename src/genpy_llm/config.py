@@ -608,7 +608,7 @@ def _validate_values(config: AppConfig) -> None:
     if not isinstance(config.model.tie_embeddings, bool):
         raise ConfigError("model.tie_embeddings must be true or false.")
     if (
-        not isinstance(config.model.initialization_std, int | float)
+        not isinstance(config.model.initialization_std, (int, float))
         or isinstance(config.model.initialization_std, bool)
         or config.model.initialization_std <= 0
     ):
@@ -626,7 +626,7 @@ def _validate_values(config: AppConfig) -> None:
     ):
         raise ConfigError("training.gradient_accumulation_steps must be greater than 0.")
     if config.training.max_grad_norm is not None and (
-        not isinstance(config.training.max_grad_norm, int | float)
+        not isinstance(config.training.max_grad_norm, (int, float))
         or isinstance(config.training.max_grad_norm, bool)
         or config.training.max_grad_norm <= 0
     ):
@@ -906,7 +906,7 @@ def _validate_dataset(config: DatasetConfig) -> None:
         "test_ratio": config.test_ratio,
     }
     for name, value in ratios.items():
-        if not isinstance(value, int | float):
+        if not isinstance(value, (int, float)):
             raise ConfigError(f"dataset.{name} must be numeric.")
         if value < 0 or value > 1:
             raise ConfigError(f"dataset.{name} must be between 0 and 1.")
@@ -981,7 +981,7 @@ def _validate_embeddings(config: EmbeddingConfig, model: ModelConfig) -> None:
             "embeddings.initialization must be one of: normal, uniform, xavier_uniform."
         )
     if (
-        not isinstance(config.initialization_std, int | float)
+        not isinstance(config.initialization_std, (int, float))
         or isinstance(config.initialization_std, bool)
         or config.initialization_std <= 0
     ):
@@ -1050,13 +1050,13 @@ def _validate_positional_encoding(
             "positional_encoding.max_sequence_length must be an integer greater than zero."
         )
     if (
-        not isinstance(config.dropout, int | float)
+        not isinstance(config.dropout, (int, float))
         or isinstance(config.dropout, bool)
         or not 0.0 <= config.dropout < 1.0
     ):
         raise ConfigError("positional_encoding.dropout must be at least 0.0 and less than 1.0.")
     if (
-        not isinstance(config.initialization_std, int | float)
+        not isinstance(config.initialization_std, (int, float))
         or isinstance(config.initialization_std, bool)
         or config.initialization_std <= 0
     ):
@@ -1092,7 +1092,7 @@ def _default_attention_values() -> dict[str, Any]:
 
 def _validate_attention(config: AttentionConfig) -> None:
     if (
-        not isinstance(config.dropout, int | float)
+        not isinstance(config.dropout, (int, float))
         or isinstance(config.dropout, bool)
         or not 0.0 <= config.dropout < 1.0
     ):
@@ -1142,7 +1142,7 @@ def _validate_feed_forward(config: FeedForwardConfig, model: ModelConfig) -> Non
     if config.activation not in {"gelu", "relu", "silu"}:
         raise ConfigError("feed_forward.activation must be one of: gelu, relu, silu.")
     if (
-        not isinstance(config.dropout, int | float)
+        not isinstance(config.dropout, (int, float))
         or isinstance(config.dropout, bool)
         or not 0.0 <= config.dropout < 1.0
     ):
@@ -1150,7 +1150,7 @@ def _validate_feed_forward(config: FeedForwardConfig, model: ModelConfig) -> Non
     if not isinstance(config.use_bias, bool):
         raise ConfigError("feed_forward.use_bias must be true or false.")
     if (
-        not isinstance(config.initialization_std, int | float)
+        not isinstance(config.initialization_std, (int, float))
         or isinstance(config.initialization_std, bool)
         or config.initialization_std <= 0
     ):
@@ -1182,7 +1182,7 @@ def _validate_normalization(config: NormalizationConfig, model: ModelConfig) -> 
     if config.type != "layer_norm":
         raise ConfigError("normalization.type must be 'layer_norm'.")
     if (
-        not isinstance(config.epsilon, int | float)
+        not isinstance(config.epsilon, (int, float))
         or isinstance(config.epsilon, bool)
         or config.epsilon <= 0
     ):
@@ -1212,7 +1212,7 @@ def _default_residual_values() -> dict[str, Any]:
 
 def _validate_residual(config: ResidualConfig) -> None:
     if (
-        not isinstance(config.dropout, int | float)
+        not isinstance(config.dropout, (int, float))
         or isinstance(config.dropout, bool)
         or not 0.0 <= config.dropout < 1.0
     ):
@@ -1248,7 +1248,7 @@ def _validate_transformer_block(
         "residual_dropout": config.residual_dropout,
         "feed_forward_dropout": config.feed_forward_dropout,
     }.items():
-        if not isinstance(value, int | float) or isinstance(value, bool) or not 0.0 <= value < 1.0:
+        if not isinstance(value, (int, float)) or isinstance(value, bool) or not 0.0 <= value < 1.0:
             raise ConfigError(f"transformer_block.{name} must be at least 0.0 and less than 1.0.")
     if model.embedding_dim % model.num_heads != 0:
         raise ConfigError(
@@ -1310,7 +1310,7 @@ def _validate_loss(config: LossConfig) -> None:
     if not isinstance(config.ignore_padding, bool):
         raise ConfigError("loss.ignore_padding must be true or false.")
     if (
-        not isinstance(config.label_smoothing, int | float)
+        not isinstance(config.label_smoothing, (int, float))
         or isinstance(config.label_smoothing, bool)
         or not 0.0 <= config.label_smoothing < 1.0
     ):
@@ -1344,31 +1344,31 @@ def _validate_optimizer(config: OptimizerConfig) -> None:
     if config.type != "adamw":
         raise ConfigError("optimizer.type must be 'adamw'.")
     if (
-        not isinstance(config.learning_rate, int | float)
+        not isinstance(config.learning_rate, (int, float))
         or isinstance(config.learning_rate, bool)
         or config.learning_rate <= 0
     ):
         raise ConfigError("optimizer.learning_rate must be greater than 0.")
     if (
-        not isinstance(config.weight_decay, int | float)
+        not isinstance(config.weight_decay, (int, float))
         or isinstance(config.weight_decay, bool)
         or config.weight_decay < 0
     ):
         raise ConfigError("optimizer.weight_decay must be greater than or equal to 0.")
     if (
-        not isinstance(config.beta1, int | float)
+        not isinstance(config.beta1, (int, float))
         or isinstance(config.beta1, bool)
         or not 0 <= config.beta1 < 1
     ):
         raise ConfigError("optimizer.beta1 must be at least 0.0 and less than 1.0.")
     if (
-        not isinstance(config.beta2, int | float)
+        not isinstance(config.beta2, (int, float))
         or isinstance(config.beta2, bool)
         or not 0 <= config.beta2 < 1
     ):
         raise ConfigError("optimizer.beta2 must be at least 0.0 and less than 1.0.")
     if (
-        not isinstance(config.epsilon, int | float)
+        not isinstance(config.epsilon, (int, float))
         or isinstance(config.epsilon, bool)
         or config.epsilon <= 0
     ):
@@ -1459,7 +1459,7 @@ def _validate_generation(config: GenerationConfig) -> None:
     ):
         raise ConfigError("generation.max_new_tokens must be greater than 0.")
     if (
-        not isinstance(config.temperature, int | float)
+        not isinstance(config.temperature, (int, float))
         or isinstance(config.temperature, bool)
         or config.temperature <= 0
     ):
@@ -1469,7 +1469,7 @@ def _validate_generation(config: GenerationConfig) -> None:
     ):
         raise ConfigError("generation.top_k must be null or greater than 0.")
     if config.top_p is not None and (
-        not isinstance(config.top_p, int | float)
+        not isinstance(config.top_p, (int, float))
         or isinstance(config.top_p, bool)
         or not 0 < config.top_p <= 1
     ):
@@ -1477,7 +1477,7 @@ def _validate_generation(config: GenerationConfig) -> None:
     if not isinstance(config.do_sample, bool):
         raise ConfigError("generation.do_sample must be true or false.")
     if (
-        not isinstance(config.repetition_penalty, int | float)
+        not isinstance(config.repetition_penalty, (int, float))
         or isinstance(config.repetition_penalty, bool)
         or config.repetition_penalty <= 0
     ):
@@ -1536,12 +1536,12 @@ def _validate_fine_tuning(config: FineTuningConfig, model: ModelConfig) -> None:
         "learning_rate": config.learning_rate,
         "weight_decay": config.weight_decay,
     }.items():
-        if not isinstance(value, int | float) or isinstance(value, bool) or value < 0:
+        if not isinstance(value, (int, float)) or isinstance(value, bool) or value < 0:
             raise ConfigError(f"fine_tuning.{name} must be greater than or equal to 0.")
     if config.learning_rate <= 0:
         raise ConfigError("fine_tuning.learning_rate must be greater than 0.")
     if config.max_grad_norm is not None and (
-        not isinstance(config.max_grad_norm, int | float)
+        not isinstance(config.max_grad_norm, (int, float))
         or isinstance(config.max_grad_norm, bool)
         or config.max_grad_norm <= 0
     ):
@@ -1558,7 +1558,7 @@ def _validate_fine_tuning(config: FineTuningConfig, model: ModelConfig) -> None:
             "fine_tuning.freeze_first_n_layers must be between 0 and model.num_layers."
         )
     if (
-        not isinstance(config.train_validation_ratio, int | float)
+        not isinstance(config.train_validation_ratio, (int, float))
         or isinstance(config.train_validation_ratio, bool)
         or not 0 < config.train_validation_ratio <= 1
     ):

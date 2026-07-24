@@ -1,0 +1,24 @@
+id,prompt,generated_answer,generation_time_seconds,generated_tokens,tokens_per_second,pass_fail,check_details
+bubble_sort,Write bubble sort.,,0.042443,2,47.121561,Fail,"missing required terms: def, return; missing one of: for, while; missing one of: bubble, swapped; no Python code found"
+quick_sort,Write quick sort.,,0.042267,2,47.317773,Fail,"missing required terms: def, return; missing one of: pivot, partition; missing one of: quick_sort, quicksort; no Python code found"
+reverse_linked_list,Reverse a linked list.,,0.020714,2,96.551891,Fail,"missing required terms: def, next, return; missing one of: prev, previous; no Python code found"
+binary_search,Implement binary search.,,0.021739,2,92.000552,Fail,"missing required terms: def, return; missing one of: while, for; missing one of: mid, middle; no Python code found"
+pandas_csv,Read a CSV using pandas.,,0.021097,2,94.798896,Fail,"missing required terms: pandas, read_csv; no Python code found"
+decorators,Explain Python decorators.,,0.021212,2,94.285511,Fail,"missing required terms: decorator, function; missing one of: wrapper, wrap; missing one of: @, syntax"
+fastapi_crud,Write a FastAPI CRUD API.,,0.050925,2,39.273185,Fail,"missing required terms: fastapi, get, post, put, delete; no Python code found"
+fix_reverse,"Fix the following Python code:
+def reverse(lst):
+for i in range(len(lst)):
+return lst[::-1]",,0.057267,2,34.923924,Fail,"missing required terms: def reverse, return, [::-1]; no Python code found"
+list_comprehensions,Explain list comprehensions.,,0.030107,2,66.429182,Fail,"missing required terms: list, for; missing one of: expression, iterable, loop; missing one of: [, bracket"
+stack,Write a stack implementation.,,0.020345,2,98.306267,Fail,"missing required terms: class, push, pop; no Python code found"
+queue,Write a queue implementation.,,0.020130,2,99.355634,Fail,"missing required terms: class; missing one of: enqueue, append; missing one of: dequeue, popleft; no Python code found"
+generators,Explain generators.,,0.035537,2,56.279767,Fail,"missing required terms: yield; missing one of: iterator, iteration; missing one of: lazy, memory"
+async_await,Explain async/await.,,0.025735,2,77.715174,Fail,"missing required terms: async, await; missing one of: coroutine, event loop, concurrent"
+bfs,Write a BFS algorithm.,,0.026345,2,75.914414,Fail,"missing required terms: visited; missing one of: queue, deque; missing one of: bfs, breadth; no Python code found"
+dfs,Write a DFS algorithm.,,0.025666,2,77.922708,Fail,"missing required terms: visited; missing one of: stack, recursive, recursion; missing one of: dfs, depth; no Python code found"
+dijkstra,Write Dijkstra's algorithm.,,0.024465,2,81.751109,Fail,"missing required terms: distance; missing one of: heap, priority; missing one of: dijkstra, shortest; no Python code found"
+merge_sort,Write merge sort.,,0.034654,2,57.712771,Fail,"missing required terms: def, merge, return; no Python code found"
+recursion,Explain recursion.,,0.032950,2,60.698412,Fail,"missing required terms: function, base case; missing one of: itself, recursive call"
+quick_sort_complexity,Explain time complexity of quick sort.,,0.036395,2,54.952037,Fail,"missing required terms: o(n log n), o(n^2); missing one of: average, expected; missing one of: worst, worst-case"
+loop_to_comprehension,Convert a for loop into a list comprehension.,,0.053698,2,37.245132,Fail,"missing required terms: [, ], for, in"

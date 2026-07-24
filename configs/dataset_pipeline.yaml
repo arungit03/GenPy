@@ -19,6 +19,11 @@ corpus_collection:
   log_file: logs/python_corpus_collector.log
   minimum_file_bytes: 1
   maximum_file_bytes: 250000
+  allowed_extensions:
+    - .py
+    - .md
+    - .rst
+    - .txt
   git_timeout_seconds: 300
   manual_license:
   # Every first-level directory below data/imports is automatically registered
@@ -91,6 +96,16 @@ corpus_collection:
         - "**/*.py"
       exclude:
         - "**/__pycache__/**"
+    - id: genpy_docs
+      type: local
+      location: docs
+      license:
+      approval: GenPy project technical documentation approved for Phase 6.1 corpus balance
+      include:
+        - "**/*.md"
+        - "**/*.rst"
+        - "**/*.txt"
+      exclude: []
 
 # Rebuildable classification/index layer over the validated raw corpus. Running
 # expand_python_corpus.py imports configured sources before rebuilding by default.

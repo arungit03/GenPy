@@ -13,7 +13,7 @@ import sys
 import time
 from collections.abc import Mapping, Sequence
 from dataclasses import asdict, dataclass
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -24,6 +24,7 @@ from torch.utils.data import DataLoader, Subset
 
 from genpy_llm.checkpointing import load_checkpoint, save_checkpoint
 from genpy_llm.code_tokenizer import CodeTokenizer, tokenizer_file_hash
+from genpy_llm.compat import zip_strict
 from genpy_llm.config import OptimizerConfig
 from genpy_llm.device import select_device
 from genpy_llm.gpt import GPTModel
@@ -42,6 +43,8 @@ from genpy_llm.performance import (
 )
 from genpy_llm.pretraining_dataset import DeterministicSequenceSampler, PackedSequenceDataset
 from genpy_llm.pretraining_generation import CodeGenerationSettings, generate_code_sample
+
+UTC = timezone.utc
 
 LOGGER = logging.getLogger("genpy_llm.pretraining")
 PRETRAINING_VERSION = 1
@@ -171,6 +174,41 @@ class PretrainingResult:
     metrics_path: Path
 
 
+def compute_scheduler_total_steps(
+    *,
+    dataset_size: int,
+    batch_size: int,
+    gradient_accumulation_steps: int,
+    epochs: int,
+    max_steps: int | None = None,
+) -> int:
+    """Return the optimizer-step horizon for a cosine/warmup schedule.
+
+    An explicit ``max_steps`` always wins. Otherwise the horizon is derived from
+    how many optimizer steps a full training run actually performs: dataset
+    examples per epoch, divided into micro-batches, divided into optimizer
+    steps after gradient accumulation, multiplied by the number of epochs.
+    Passing ``epochs`` alone (with no dataset size) previously stood in for
+    this and silently produced a 1-step schedule for the common
+    ``epochs=1, max_steps=None`` configuration, collapsing cosine decay to its
+    floor almost immediately.
+    """
+
+    if max_steps is not None:
+        if max_steps <= 0:
+            raise PretrainingError("max_steps must be positive.")
+        return int(max_steps)
+    if dataset_size <= 0:
+        raise PretrainingError("dataset_size must be positive.")
+    if batch_size <= 0:
+        raise PretrainingError("batch_size must be positive.")
+    if gradient_accumulation_steps <= 0:
+        raise PretrainingError("gradient_accumulation_steps must be positive.")
+    if epochs <= 0:
+        raise PretrainingError("epochs must be positive.")
+    return max(1, epochs * dataset_size // batch_size // gradient_accumulation_steps)
+
+
 class CosineWarmupScheduler:
     """AdamW learning-rate schedule with linear warmup and cosine decay."""
 
@@ -222,7 +260,7 @@ class CosineWarmupScheduler:
 
     def _apply(self) -> None:
         factor = self._factor(self.step_count)
-        for base_lr, group in zip(self.base_lrs, self.optimizer.param_groups, strict=True):
+        for base_lr, group in zip_strict(self.base_lrs, self.optimizer.param_groups):
             group["lr"] = base_lr * factor
 
     def _factor(self, step: int) -> float:
@@ -1122,7 +1160,7 @@ def _mapping(value: object, name: str) -> Mapping[str, Any]:
 
 
 def _resolve(root: Path, value: object) -> Path:
-    if not isinstance(value, str | Path) or not str(value).strip():
+    if not isinstance(value, (str, Path)) or not str(value).strip():
         raise PretrainingError("Configured path must be a non-empty string.")
     path = Path(value).expanduser()
     return path.resolve() if path.is_absolute() else (root / path).resolve()
@@ -1176,6 +1214,7 @@ def _timestamp() -> str:
 
 __all__ = [
     "CosineWarmupScheduler",
+    "compute_scheduler_total_steps",
     "Phase6Config",
     "Phase6Trainer",
     "PretrainingError",

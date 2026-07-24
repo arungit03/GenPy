@@ -1,0 +1,17 @@
+metric,value
+total_documents,147
+total_files,147
+total_tokens,395735
+python_tokens,379723
+technical_text_tokens,16012
+python_ratio,0.959539
+technical_text_ratio,0.040461
+average_tokens,2692.07483
+median_tokens,1511
+largest_file,genpy_src/python_dataset_pipeline.py
+smallest_file,genpy_src/corpus_v2/__init__.py
+largest_file_tokens,24740
+smallest_file_tokens,107
+token_distribution,"{'lt_128': 2, '128_511': 26, '512_2047': 61, '2048_8191': 46, 'gte_8192': 12}"
+content_type_documents,"{'python_code': 132, 'technical_text': 15}"
+duplicate_rate,0.0

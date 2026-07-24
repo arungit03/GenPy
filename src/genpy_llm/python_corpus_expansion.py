@@ -13,7 +13,7 @@ import sys
 from collections import Counter
 from collections.abc import Iterator, Mapping, Sequence
 from dataclasses import asdict, dataclass
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -26,6 +26,8 @@ from genpy_llm.python_corpus_collector import (
     configure_collector_logging,
     load_corpus_collector_config,
 )
+
+UTC = timezone.utc
 
 LOGGER = logging.getLogger("genpy_llm.python_corpus_expansion")
 EXPANSION_VERSION = 1
@@ -88,6 +90,20 @@ _DATA_STRUCTURE_TERMS = {
     "tree",
     "trie",
 }
+def _stdlib_module_names() -> frozenset[str]:
+    """Return standard-library top-level module names on any Python 3.9+ runtime."""
+
+    names = getattr(sys, "stdlib_module_names", None)
+    if names is not None:
+        return frozenset(names)
+    import pkgutil
+    import sysconfig
+
+    discovered = {module.name for module in pkgutil.iter_modules([sysconfig.get_path("stdlib")])}
+    return frozenset(discovered | set(sys.builtin_module_names))
+
+
+_STDLIB_MODULE_NAMES = _stdlib_module_names()
 _FILE_MODULES = {"csv", "io", "os", "pathlib", "pickle", "shutil", "tempfile"}
 _FILE_METHODS = {
     "open",
@@ -434,7 +450,7 @@ class _CategoryClassifier(ast.NodeVisitor):
             categories.add("File Handling")
         if self.has_exception_handling:
             categories.add("Exception Handling")
-        if self.imports.intersection(sys.stdlib_module_names):
+        if self.imports.intersection(_STDLIB_MODULE_NAMES):
             categories.add("Standard Library")
         if "numpy" in self.imports:
             categories.add("NumPy")

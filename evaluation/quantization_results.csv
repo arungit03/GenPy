@@ -1,0 +1,5 @@
+method,status,reason,checkpoint,checkpoint_size_bytes,model_state_bytes,load_time_seconds,device,model_memory_mb,peak_device_memory_mb,inference_time_seconds,generated_tokens,tokens_per_second,validation_loss,perplexity
+fp32,ok,,/Users/macbook/Downloads/GenPy/checkpoints/fine_tuned/last_checkpoint.pt,495526171,208830464,1.2200832920061657,mps,199.15625,,0.5589627080044011,32,57.248899688220426,5.479551792144775,239.73923028379772
+fp16,ok,,/Users/macbook/Downloads/GenPy/checkpoints/quantized/last_checkpoint_fp16.pt,104442291,104415232,0.09145120799803408,mps,99.578125,,0.7368045000039274,32,43.43078794962494,5.48046875,239.95916187280093
+bf16,skipped,bf16 inference is supported on CPU or CUDA with bf16 support.,/Users/macbook/Downloads/GenPy/checkpoints/quantized/last_checkpoint_bf16.pt,104442291,0,,mps,,,,0,,,
+dynamic_int8,skipped,dynamic INT8 quantization requires CPU and an available quantized engine.,/Users/macbook/Downloads/GenPy/checkpoints/quantized/last_checkpoint_dynamic_int8.pt,103230141,0,,mps,,,,0,,,

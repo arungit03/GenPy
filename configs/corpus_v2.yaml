@@ -1,0 +1,121 @@
+version: 1
+project_root: ..
+
+corpus_v2:
+  resume: true
+
+  paths:
+    output_directory: data/corpus_v2
+    report_directory: reports/corpus_v2
+    document_manifest: data/corpus_v2/document_manifest.jsonl
+    log_file: logs/corpus_v2.jsonl
+
+  sources:
+    - id: genpy_src
+      type: local_python
+      path: src/genpy_llm
+      license:
+      approval: GenPy project source approved for local continued-pretraining corpus use
+      include:
+        - "**/*.py"
+      exclude:
+        - "**/__pycache__/**"
+    - id: genpy_scripts
+      type: local_python
+      path: scripts
+      license:
+      approval: GenPy project scripts approved for local continued-pretraining corpus use
+      include:
+        - "**/*.py"
+      exclude:
+        - "**/__pycache__/**"
+    - id: genpy_docs
+      type: local_markdown
+      path: docs
+      license:
+      approval: GenPy project technical documentation approved for Corpus V2
+      include:
+        - "**/*.md"
+        - "**/*.rst"
+        - "**/*.txt"
+      exclude: []
+    - id: approved_imports
+      enabled: false
+      type: local_dataset
+      path: data/imports
+      license:
+      approval: Existing user-approved local imports; no network download
+      include:
+        - "**/*.py"
+        - "**/*.md"
+        - "**/*.rst"
+        - "**/*.txt"
+      exclude:
+        - "**/tests/**"
+        - "**/test/**"
+        - "**/docs/_build/**"
+
+  skip_directories:
+    - .git
+    - .hg
+    - .svn
+    - node_modules
+    - venv
+    - .venv
+    - env
+    - ENV
+    - dist
+    - build
+    - __pycache__
+    - .pytest_cache
+    - .ruff_cache
+    - .mypy_cache
+
+  cleaning:
+    minimum_file_bytes: 80
+    maximum_file_bytes: 2000000
+    normalize_tabs: true
+    tab_width: 4
+
+  deduplication:
+    exact: true
+    normalized: true
+    near_duplicate: true
+    near_duplicate_threshold: 0.92
+    shingle_size: 5
+    maximum_near_duplicate_index: 100000
+
+  quality:
+    minimum_entropy: 2.5
+    sample_characters: 200000
+    maximum_base64_fraction: 0.35
+    maximum_hex_fraction: 0.35
+    maximum_repeated_line_fraction: 0.35
+    minimum_technical_score: 2
+
+  validation:
+    require_python_syntax: true
+
+  tokenization:
+    tokenizer: data/tokenizer/tokenizer.json
+    minimum_tokens: 4
+
+  packing:
+    output_directory: data/corpus_v2
+    shard_prefix: corpus_v2
+    context_length: 1024
+    max_tokens_per_shard: 10000000
+    add_bos: false
+    add_eos: true
+    pad_final_sequence: false
+
+  readiness:
+    minimum_tokens: 200000000
+    min_python_ratio: 0.45
+    max_python_ratio: 0.75
+    min_technical_text_ratio: 0.20
+    max_technical_text_ratio: 0.55
+    max_duplicate_percentage: 0.15
+
+logging:
+  level: INFO

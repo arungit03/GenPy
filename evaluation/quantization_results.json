@@ -1,0 +1,87 @@
+{
+  "metadata": {
+    "source_checkpoint": "/Users/macbook/Downloads/GenPy/checkpoints/fine_tuned/last_checkpoint.pt",
+    "evaluated_at": "2026-07-23T07:59:43.048562+00:00",
+    "device": "mps",
+    "capabilities": {
+      "device": "mps",
+      "fp16": true,
+      "bf16": false,
+      "dynamic_int8": false,
+      "skip_reasons": {
+        "bf16": "bf16 inference is supported on CPU or CUDA with bf16 support.",
+        "dynamic_int8": "dynamic INT8 quantization requires CPU and an available quantized engine."
+      }
+    }
+  },
+  "results": [
+    {
+      "method": "fp32",
+      "status": "ok",
+      "reason": "",
+      "checkpoint": "/Users/macbook/Downloads/GenPy/checkpoints/fine_tuned/last_checkpoint.pt",
+      "checkpoint_size_bytes": 495526171,
+      "model_state_bytes": 208830464,
+      "load_time_seconds": 1.2200832920061657,
+      "device": "mps",
+      "model_memory_mb": 199.15625,
+      "peak_device_memory_mb": null,
+      "inference_time_seconds": 0.5589627080044011,
+      "generated_tokens": 32,
+      "tokens_per_second": 57.248899688220426,
+      "validation_loss": 5.479551792144775,
+      "perplexity": 239.73923028379772
+    },
+    {
+      "method": "fp16",
+      "status": "ok",
+      "reason": "",
+      "checkpoint": "/Users/macbook/Downloads/GenPy/checkpoints/quantized/last_checkpoint_fp16.pt",
+      "checkpoint_size_bytes": 104442291,
+      "model_state_bytes": 104415232,
+      "load_time_seconds": 0.09145120799803408,
+      "device": "mps",
+      "model_memory_mb": 99.578125,
+      "peak_device_memory_mb": null,
+      "inference_time_seconds": 0.7368045000039274,
+      "generated_tokens": 32,
+      "tokens_per_second": 43.43078794962494,
+      "validation_loss": 5.48046875,
+      "perplexity": 239.95916187280093
+    },
+    {
+      "method": "bf16",
+      "status": "skipped",
+      "reason": "bf16 inference is supported on CPU or CUDA with bf16 support.",
+      "checkpoint": "/Users/macbook/Downloads/GenPy/checkpoints/quantized/last_checkpoint_bf16.pt",
+      "checkpoint_size_bytes": 104442291,
+      "model_state_bytes": 0,
+      "load_time_seconds": null,
+      "device": "mps",
+      "model_memory_mb": null,
+      "peak_device_memory_mb": null,
+      "inference_time_seconds": null,
+      "generated_tokens": 0,
+      "tokens_per_second": null,
+      "validation_loss": null,
+      "perplexity": null
+    },
+    {
+      "method": "dynamic_int8",
+      "status": "skipped",
+      "reason": "dynamic INT8 quantization requires CPU and an available quantized engine.",
+      "checkpoint": "/Users/macbook/Downloads/GenPy/checkpoints/quantized/last_checkpoint_dynamic_int8.pt",
+      "checkpoint_size_bytes": 103230141,
+      "model_state_bytes": 0,
+      "load_time_seconds": null,
+      "device": "mps",
+      "model_memory_mb": null,
+      "peak_device_memory_mb": null,
+      "inference_time_seconds": null,
+      "generated_tokens": 0,
+      "tokens_per_second": null,
+      "validation_loss": null,
+      "perplexity": null
+    }
+  ]
+}

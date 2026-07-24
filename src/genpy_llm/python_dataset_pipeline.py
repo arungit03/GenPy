@@ -23,13 +23,16 @@ from collections import Counter, deque
 from collections.abc import Callable, Iterable, Iterator, Mapping, Sequence
 from contextlib import contextmanager
 from dataclasses import asdict, dataclass, field
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, TextIO, TypeVar
 
 import yaml
 
 from genpy_llm.code_filtering import normalize_python_source
+from genpy_llm.compat import zip_strict
+
+UTC = timezone.utc
 
 LOGGER = logging.getLogger("genpy_llm.python_dataset_pipeline")
 PIPELINE_VERSION = 1
@@ -556,10 +559,8 @@ def deduplicate_dataset(config: PipelineConfig, *, resume: bool = True) -> Stage
     progress = ProgressBar("deduplicate", total, enabled=config.progress)
     read = written = duplicates = 0
     index_path = config.paths.workspace / "indexes" / "deduplication.sqlite3"
-    with (
-        _temporary_sqlite(index_path) as database,
-        atomic_jsonl_writer(config.paths.deduplicated) as output,
-    ):
+    with _temporary_sqlite(index_path) as database, \
+            atomic_jsonl_writer(config.paths.deduplicated) as output:
         database.execute(
             "CREATE TABLE seen_pairs (pair_hash TEXT PRIMARY KEY) WITHOUT ROWID"
         )
@@ -608,11 +609,9 @@ def validate_dataset(config: PipelineConfig, *, resume: bool = True) -> StageSta
     categories: Counter[str] = Counter()
     read = written = 0
     index_path = config.paths.workspace / "indexes" / "validation.sqlite3"
-    with (
-        _temporary_sqlite(index_path) as database,
-        atomic_jsonl_writer(config.paths.validated) as valid_output,
-        atomic_jsonl_writer(config.paths.rejected) as rejected_output,
-    ):
+    with _temporary_sqlite(index_path) as database, \
+            atomic_jsonl_writer(config.paths.validated) as valid_output, \
+            atomic_jsonl_writer(config.paths.rejected) as rejected_output:
         database.execute(
             "CREATE TABLE seen_ids (record_id TEXT PRIMARY KEY) WITHOUT ROWID"
         )
@@ -810,10 +809,10 @@ def split_dataset(config: PipelineConfig, *, resume: bool = True) -> StageStatis
 
         partials = {
             name: Path(str(path) + ".partial")
-            for name, path in zip(split_names, outputs, strict=True)
+            for name, path in zip_strict(split_names, outputs)
         }
         try:
-            for split_name, destination in zip(split_names, outputs, strict=True):
+            for split_name, destination in zip_strict(split_names, outputs):
                 destination.parent.mkdir(parents=True, exist_ok=True)
                 partial = partials[split_name]
                 partial.unlink(missing_ok=True)
@@ -828,14 +827,14 @@ def split_dataset(config: PipelineConfig, *, resume: bool = True) -> StageStatis
                         output.write("\n")
                         processed += 1
                         progress.update(processed)
-            for split_name, destination in zip(split_names, outputs, strict=True):
+            for split_name, destination in zip_strict(split_names, outputs):
                 os.replace(partials[split_name], destination)
         except Exception:
             for partial in partials.values():
                 partial.unlink(missing_ok=True)
             raise
     progress.close()
-    group_counts = dict(zip(split_names, allocated, strict=True))
+    group_counts = dict(zip_strict(split_names, allocated))
     reasons = {
         **{f"{name}_records": counts.get(name, 0) for name in split_names},
         **{f"{name}_source_groups": group_counts.get(name, 0) for name in split_names},
@@ -2289,7 +2288,7 @@ def _assign_groups(groups: tuple[str, ...], settings: SplitSettings) -> dict[str
     ordered = sorted(groups, key=lambda group: _text_hash(f"{settings.seed}\0{group}"))
     assignments: dict[str, str] = {}
     offset = 0
-    for name, count in zip(split_names, counts, strict=True):
+    for name, count in zip_strict(split_names, counts):
         for group in ordered[offset : offset + count]:
             assignments[group] = name
         offset += count

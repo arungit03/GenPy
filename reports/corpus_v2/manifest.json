@@ -1,0 +1,57 @@
+{
+  "build_fingerprint": "f64784217ae64ad8daf22256d2c20a3828913383d4003d2e668fee23935f2ad0",
+  "config": "/Users/macbook/Downloads/GenPy/configs/corpus_v2.yaml",
+  "created_at": "2026-07-23T10:32:38.418186+00:00",
+  "document_manifest": "/Users/macbook/Downloads/GenPy/data/corpus_v2/document_manifest.jsonl",
+  "duplicate_report": {
+    "accepted_count": 147,
+    "duplicate_count": 0,
+    "duplicate_percentage": 0.0,
+    "reasons": {}
+  },
+  "format_version": 1,
+  "phase": "6.2",
+  "readiness": {
+    "failures": [
+      "token_target",
+      "python_ratio",
+      "technical_text_ratio"
+    ],
+    "passed": false
+  },
+  "shards": {
+    "index": "/Users/macbook/Downloads/GenPy/data/corpus_v2/index.json",
+    "sequence_count": 386,
+    "shard_count": 1,
+    "token_count": 395650
+  },
+  "statistics": {
+    "average_tokens": 2692.07483,
+    "content_type_documents": {
+      "python_code": 132,
+      "technical_text": 15
+    },
+    "largest_file": "genpy_src/python_dataset_pipeline.py",
+    "largest_file_tokens": 24740,
+    "median_tokens": 1511,
+    "python_ratio": 0.959539,
+    "python_tokens": 379723,
+    "smallest_file": "genpy_src/corpus_v2/__init__.py",
+    "smallest_file_tokens": 107,
+    "technical_text_ratio": 0.040461,
+    "technical_text_tokens": 16012,
+    "token_distribution": {
+      "128_511": 26,
+      "2048_8191": 46,
+      "512_2047": 61,
+      "gte_8192": 12,
+      "lt_128": 2
+    },
+    "total_documents": 147,
+    "total_files": 147,
+    "total_tokens": 395735
+  },
+  "tokenizer": "/Users/macbook/Downloads/GenPy/data/tokenizer/tokenizer.json",
+  "tokenizer_sha256": "dc88d1cd66355e38cdfd1c3289eea138ea7c457b9f4534e8f1e24f6a0e7f6492",
+  "vocabulary_retrained": false
+}

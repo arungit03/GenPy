@@ -1,0 +1,30 @@
+{
+  "elapsed_seconds": 1.460237875005987,
+  "emitted_token_count": 24,
+  "formatted_prompt": "<|system|>\nYou are GenPy, a Python coding assistant.\n\n<|user|>\nHello\n\n<|assistant|>\n",
+  "generated_token_count": 25,
+  "generator_diagnostic_report": null,
+  "issues": {
+    "conversation_marker_counts": {
+      "<|assistant|>": 0,
+      "<|system|>": 0,
+      "<|user|>": 0
+    },
+    "hallucinated_identifiers": [],
+    "invalid_python_syntax": true,
+    "max_consecutive_token_repeat": 1,
+    "possible_undefined_identifiers": [],
+    "prompt_echoing": false,
+    "repeated_conversation_markers": false,
+    "repeated_ngram": null,
+    "repetition_loop": false,
+    "syntax_errors": [
+      "duplicate argument 'self' in function definition at line 1, column 20"
+    ],
+    "unfinished_functions": false
+  },
+  "prompt": "Hello",
+  "raw_generated_text": "def __init__(self, self, x):\n        self.from_url.user_name = self.name",
+  "response": "def __init__(self, self, x):\n        self.from_url.user_name = self.name",
+  "stopped": true
+}

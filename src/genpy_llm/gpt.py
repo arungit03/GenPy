@@ -344,12 +344,12 @@ def _validate_positive_int(name: str, value: int) -> None:
 
 
 def _validate_positive_float(name: str, value: float) -> None:
-    if not isinstance(value, int | float) or isinstance(value, bool) or value <= 0:
+    if not isinstance(value, (int, float)) or isinstance(value, bool) or value <= 0:
         raise GPTModelError(f"{name} must be greater than zero.")
 
 
 def _validate_dropout(value: float) -> None:
-    if not isinstance(value, int | float) or isinstance(value, bool) or not 0.0 <= value < 1.0:
+    if not isinstance(value, (int, float)) or isinstance(value, bool) or not 0.0 <= value < 1.0:
         raise GPTModelError("dropout must be at least 0.0 and less than 1.0.")
 
 

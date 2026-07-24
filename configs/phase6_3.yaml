@@ -1,0 +1,48 @@
+version: 1
+project_root: ..
+
+phase6_3:
+  paths:
+    phase6_training_config: configs/training.yaml
+    model_config: configs/model.yaml
+    optimizer_config: configs/optimizer.yaml
+    generation_config: configs/generation.yaml
+    corpus_index: data/corpus_v2/index.json
+    corpus_manifest: data/corpus_v2/document_manifest.jsonl
+    corpus_statistics: data/corpus_v2/statistics.json
+    corpus_report_manifest: reports/corpus_v2/manifest.json
+    corpus_quality_report: reports/corpus_v2/quality_report.json
+    checkpoint_search_dir: checkpoints
+    checkpoint_output_dir: checkpoints/pretraining_v2
+    report_dir: reports/pretraining_v2
+    log_file: logs/phase6_3.jsonl
+
+  training:
+    # Null means resolve checkpoints/last_checkpoint.pt or latest checkpoints/step_*.pt.
+    source_checkpoint:
+    max_steps: 1000
+    max_epochs: 1
+    batch_size:
+    learning_rate:
+    weight_decay:
+    device: auto
+    validation_interval_steps: 100
+    checkpoint_interval_steps: 500
+    max_grad_norm: 1.0
+    exploding_gradient_threshold: 1000.0
+
+  early_stopping:
+    enabled: true
+    patience: 3
+    min_delta: 0.001
+    monitor: validation_loss
+    mode: min
+
+  benchmark:
+    enabled: true
+    validation_batches: 1
+    prompt_count: 3
+    max_new_tokens: 16
+
+logging:
+  level: INFO

@@ -1,0 +1,6 @@
+{"evaluation_seconds":2.335320749998573,"perplexity":240.84375003908826,"step":5010,"timestamp":"2026-07-24T08:08:27.492504+00:00","type":"validation","validation_loss":5.484148383140564,"validation_tokens":16384}
+{"evaluation_seconds":2.3222328329993616,"perplexity":230.80509732242888,"step":5020,"timestamp":"2026-07-24T08:08:47.647039+00:00","type":"validation","validation_loss":5.441573619842529,"validation_tokens":16384}
+{"evaluation_seconds":2.456100958001116,"perplexity":227.9097627750714,"step":5030,"timestamp":"2026-07-24T08:09:09.771025+00:00","type":"validation","validation_loss":5.428949773311615,"validation_tokens":16384}
+{"evaluation_seconds":2.37970633400073,"perplexity":223.447136315397,"step":5040,"timestamp":"2026-07-24T08:10:40.779342+00:00","type":"validation","validation_loss":5.409174859523773,"validation_tokens":16384}
+{"evaluation_seconds":7.906651833000069,"perplexity":48.94618845808057,"step":7500,"timestamp":"2026-07-24T10:57:33.808001+00:00","type":"validation","validation_loss":3.8907214999198914,"validation_tokens":40960}
+{"evaluation_seconds":8.411372875001689,"perplexity":37.450661979701586,"step":10000,"timestamp":"2026-07-24T12:15:04.665017+00:00","type":"validation","validation_loss":3.6230243861675264,"validation_tokens":40960}

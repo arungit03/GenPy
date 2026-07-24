@@ -1,0 +1,52 @@
+version: 1
+project_root: ..
+
+python_corpus:
+  input_directory: python_corpus
+  output_directory: data/python_corpus
+  tokenizer: data/tokenizer/tokenizer.json
+
+  min_file_size: 80
+  max_file_size: 2000000
+  allowed_extensions:
+    - .py
+    - .pyi
+    - .md
+    - .rst
+    - .txt
+
+  ignored_directories:
+    - .git
+    - .github
+    - __pycache__
+    - node_modules
+    - venv
+    - .venv
+    - env
+    - ENV
+    - build
+    - dist
+
+  ignored_suffixes:
+    - .png
+    - .jpg
+    - .jpeg
+    - .gif
+    - .pdf
+    - .zip
+    - .exe
+    - .dll
+    - .so
+    - .bin
+
+  deduplication: true
+  preserve_comments: true
+
+  packing:
+    context_length: 1024
+    max_tokens_per_shard: 10000000
+    shard_prefix: python_corpus
+    add_bos: false
+    add_eos: true
+    document_boundary: eos
+    pad_final_sequence: false

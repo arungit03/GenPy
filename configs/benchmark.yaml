@@ -1,0 +1,44 @@
+version: 1
+project_root: ..
+
+benchmark:
+  paths:
+    model_config: configs/model.yaml
+    training_config: configs/training.yaml
+    optimizer_config: configs/optimizer.yaml
+    generation_config: configs/generation.yaml
+    tokenizer: data/tokenizer/tokenizer.json
+    corpus_directory: python_corpus/final_corpus/packed
+    base_search_dir: checkpoints
+    continued_search_dir: checkpoints/continued_pretraining
+    output_dir: reports/benchmark
+    # Loss-history sources for plots (skipped when missing).
+    training_metrics:
+      - metrics/training_metrics.jsonl
+      - reports/continued_pretraining/training_metrics.jsonl
+    continued_training_log: reports/continued_pretraining/training_log.json
+
+  evaluation:
+    batch_size: 2
+    validation_batches: 20
+    validation_fraction: 0.001
+    seed: 42
+    # Null runs the full built-in sets (105 Python prompts, 105 doc questions).
+    python_prompt_limit:
+    doc_qa_limit:
+    text_task_limit:
+    latency_runs: 5
+    latency_tokens: 16
+    execution_timeout_seconds: 5.0
+    run_generated_code: true
+
+  generation:
+    temperature: 0.7
+    top_p: 0.95
+    top_k:
+    max_new_tokens: 48
+    # Greedy decoding keeps base-vs-continued comparison deterministic.
+    do_sample: false
+    repetition_penalty: 1.0
+
+  device: auto
